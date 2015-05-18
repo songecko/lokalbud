@@ -4,7 +4,7 @@ odiseo_lokalbuddy_frontend_home:
 
 odiseo_lokalbuddy_frontend_product:
     resource: "@OdiseoProductBundle/Resources/config/routing/frontend/product.yml"
-    prefix:   /media
+    prefix:   /experience
 
 #User Security - Profile - Register
 odiseo_lokalbuddy_frontend_user:
