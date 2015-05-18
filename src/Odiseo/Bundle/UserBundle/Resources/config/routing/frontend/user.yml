@@ -1,0 +1,3 @@
+odiseo_user_add_to_wishlist:
+    path:     /wishlist/add/{idWish}
+    defaults: { _controller: "OdiseoUserBundle:Frontend/User:addToWishlist" }

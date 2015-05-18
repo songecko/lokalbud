@@ -1,0 +1,30 @@
+Odiseo\Bundle\OrderBundle\Entity\OrderItem:
+    type: entity
+    table: order_item
+    repositoryClass: Odiseo\Bundle\OrderBundle\Repository\OrderItemRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+       description:
+            column: description
+            type: string
+            length: 255
+    manyToOne:
+       product:
+            targetEntity: \Odiseo\Bundle\ProductBundle\Entity\Product
+            joinColumn:
+                name: id_media
+                referencedColumnName: id
+                onUpdate: 'CASCADE'
+       order:
+            targetEntity: \Odiseo\Bundle\OrderBundle\Entity\Order
+            inversedBy: items
+            joinColumn:
+                name: id_order
+                referencedColumnName: id
+                onUpdate: 'CASCADE'         
+    lifecycleCallbacks: {  }

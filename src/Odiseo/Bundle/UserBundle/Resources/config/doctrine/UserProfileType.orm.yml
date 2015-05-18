@@ -1,0 +1,21 @@
+Odiseo\Bundle\UserBundle\Entity\UserProfileType:
+    type: entity
+    table: profile_type
+    repositoryClass: Odiseo\Bundle\UserBundle\Repository\UserProfileTypeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name: 
+            column: name
+            type: string
+            length: 255
+    oneToMany:
+        fields:
+          targetEntity: \Odiseo\Bundle\UserBundle\Entity\UserProfileTypeField
+          mappedBy: profileType
+        
+    lifecycleCallbacks: {  }

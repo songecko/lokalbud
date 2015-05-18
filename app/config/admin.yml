@@ -1,0 +1,26 @@
+easy_admin:
+    formats:
+        date:     'd/m/Y'
+        time:     'H:i'
+        datetime: 'd/m/Y H:i:s'
+    site_name: 'Lokal Buddy'
+    list_actions: ['edit', 'show']
+    entities:
+        User:
+            label: 'Usuarios'
+            class: Odiseo\Bundle\BrancaRallyBundle\Entity\User
+            list:
+                title: "Usuarios"
+                fields: ['id', { property: 'fullname', label: 'Nombre y Apellido' }, { property: 'phone', label: 'Telefono' },'dni','email', { property: 'facebookUserId', fieldType: 'facebook_link', label: 'Facebook' }]
+                action_edit: "aa"
+            new:
+                action_label: "Nuevo usuario"
+                fields: [ { property: 'fullname', label: 'Nombre y Apellido' }, 'dni', { property: 'email', type: 'email' }]
+                title:  "Nuevo usuario"
+            edit:
+                fields: [ { property: 'fullname', label: 'Nombre y Apellido' }, { property: 'phone', label: 'Telefono' },'dni',{ property: 'email', type: 'email' }]
+                title:  'Editar usuario'
+            show:
+                title: "Mostrando usuario "
+                fields: ['id', { property: 'fullname', label: 'Nombre y Apellido' }, { property: 'phone', label: 'Telefono' }, 'dni','email']
+       

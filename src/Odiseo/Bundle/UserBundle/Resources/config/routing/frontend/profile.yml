@@ -1,0 +1,8 @@
+odiseo_user_profile_show:
+    path:     /
+    defaults: { _controller: "OdiseoUserBundle:Frontend/UserProfile:show" }
+    requirements: { _method: 'GET' }
+    
+odiseo_user_profile_edit:
+    path:     /edit
+    defaults: { _controller: "OdiseoUserBundle:Frontend/UserProfile:edit" }

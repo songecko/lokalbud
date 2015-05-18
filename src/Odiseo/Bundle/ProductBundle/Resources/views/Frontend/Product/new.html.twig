@@ -1,0 +1,135 @@
+{% extends 'OdiseoProductBundle:Frontend:layout.html.twig' %}
+
+{% block javascripts %}
+	{{ parent() }}
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+	<script type="text/javascript" src="{{ asset('bundles/odiseoadscandy/js/app/googleUtil.js') }}"></script>
+	<script type="text/javascript">
+	// setup an "add a image" link
+	var $addLink = $('<a href="#" class="btn add_image_link">Add an image</a>');
+	var $newLinkLi = $('<li></li>').append($addLink);
+
+	$(function() 
+	{
+		var $collectionHolder = $('ul.images');
+		$collectionHolder.append($newLinkLi);
+	    $collectionHolder.data('index', $collectionHolder.find(':input').length);
+	    $addLink.on('click', function(e) 
+		{
+	        e.preventDefault();
+	        addImageForm($collectionHolder, $newLinkLi);
+	    });
+	});
+
+	function addImageForm($collectionHolder, $newLinkLi) 
+	{
+	    var prototype = $collectionHolder.data('prototype');
+	    var index = $collectionHolder.data('index');
+	    var newForm = prototype.replace(/__name__/g, index);
+	    $collectionHolder.data('index', index + 1);
+	    var $newFormLi = $('<li class="clearfix"></li>').append(newForm);
+	    $newFormLi.append('<a href="#" class="remove-image">x</a>');
+	    $newLinkLi.before($newFormLi);
+	    $('.remove-image').click(function(e) 
+		{
+	        e.preventDefault();    
+	        $(this).parent().remove();
+	        return false;
+	    });
+	}
+	</script>
+{% endblock %}
+  
+{% block content %}
+<section id="general">	
+</section>
+
+<div class="container margin_60">
+	<div class="row">
+		<div class="col-md-12">
+			<h2 class="text-center">Complete the <span>form</span> below to add a new media.</h2>
+		</div>
+	</div>   
+	<hr>
+	{% if form is defined %}
+	{{ form_start(form) }}
+		{{ form_errors(form) }}
+	 	{% for flashMessage in app.session.flashbag.get('notice') %}
+	 	<p class="sended"><i class="fa fa-check"></i> {{ flashMessage }}</p>
+		{% endfor %}
+		{% for flashMessage in app.session.flashbag.get('error') %}
+	 	<p class="sended"><i class="fa fa-times"></i> {{ flashMessage }}</p>
+		{% endfor %}
+		<div class="row margin_30">
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							{{ form_label(form.title) }}
+							{{ form_widget(form.title, {'attr': {'class': 'form-control', 'data-rule-required':'true'} }) }}
+						</div>
+						<div class="form-group">
+							{{ form_label(form.shortDescription) }}
+							{{ form_widget(form.shortDescription, {'attr': {'class': 'form-control', 'data-rule-required':'true'} }) }}
+						</div>
+						<div class="form-group">
+							{{ form_label(form.description) }}
+							{{ form_widget(form.description, {'attr': {'class': 'form-control', 'data-rule-required':'true'} }) }}
+						</div>
+						<div class="form-group">
+							{{ form_label(form.town) }}
+							{{ form_widget(form.town, {'attr': {'class': 'form-control', 'data-rule-required':'true' } }) }}
+						</div>
+						<div class="form-group">
+							{{ form_label(form.type) }}
+							{{ form_widget(form.type, {'attr': {'class': 'form-control', 'data-rule-required':'true'} }) }}
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							{{ form_label(form.price) }}
+							{{ form_widget(form.price, {'attr': {'class': 'form-control', 'data-rule-required':'true'} }) }}
+						</div>
+						<div class="form-group">
+							{{ form_label(form.quantity) }}
+							{{ form_widget(form.quantity, {'attr': {'class': 'form-control', 'data-rule-required':'true'} }) }}
+						</div>
+					    <div class="form-group">
+							{{ form_label(form.address) }}
+							{{ form_widget(form.address, {'attr': {'class': 'form-control', 'data-rule-required':'true'} }) }}
+						</div>
+						<div class="form-group">
+							{{ form_widget(form.latitud, {'attr': {'class': 'form-control', 'data-rule-required':'true' , 'style' : 'display:none;'} }) }}
+						</div>
+						<div class="form-group">
+							{{ form_widget(form.longitud, {'attr': {'class': 'form-control', 'data-rule-required':'true' , 'style' : 'display:none;'} }) }}
+						</div>
+						<div class="form-group">
+							{{ form_label(form.assets) }}
+							<ul class="images" data-prototype="{{ form_widget(form.assets.vars.prototype)|e }}">
+								{% for formasset in form.assets %}
+	            				<li>{{ form_row(formasset.file) }}</li>
+	        					{% endfor %}
+        					</ul>
+						</div>
+					</div>				
+				</div>
+				
+				{{ form_row(form._token) }}			  
+			</div>		
+			<div class="col-md-4"> 
+				<div id="map_container">
+				
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				{{ form_widget(form.create, {'attr': {'class': 'btn_full'}}) }}
+			</div>
+		</div>	  
+	{{ form_end(form ,{'render_rest': false}) }}
+	{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+services:   
+    odiseo.ecommerce.town.repository:
+        class: Doctrine\ORM\EntityRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - \Odiseo\Bundle\EcommerceBundle\Entity\Town
+      
+    odiseo.ecommerce.region.repository:
+        class: Doctrine\ORM\EntityRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - \Odiseo\Bundle\EcommerceBundle\Entity\Region
+      
+    odiseo.ecommerce.filter.factory:
+        class: Odiseo\Bundle\EcommerceBundle\Filters\FilterFactory
+        
+    odiseo.ecommerce.location.service:
+        class: Odiseo\Bundle\EcommerceBundle\Services\LocationService
+        arguments:  [ "@doctrine.orm.entity_manager","@odiseo.ecommerce.town.repository", "@odiseo.ecommerce.region.repository"]   

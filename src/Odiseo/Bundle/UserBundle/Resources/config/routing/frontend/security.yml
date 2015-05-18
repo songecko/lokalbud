@@ -1,0 +1,12 @@
+odiseo_security_login:
+    path:     /login
+    defaults: { _controller: "OdiseoUserBundle:Frontend/Security:login" }
+    
+odiseo_security_check:
+    path:     /login_check
+    defaults: { _controller: "OdiseoUserBundle:Frontend/Security:check" }
+    requirements: { _method: 'POST' }
+    
+odiseo_security_logout:
+    path:     /logout
+    defaults: { _controller: "OdiseoUserBundle:Frontend/Security:logout" }

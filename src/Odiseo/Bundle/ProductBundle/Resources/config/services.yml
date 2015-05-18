@@ -1,0 +1,25 @@
+services:
+      odiseo.product.repository:
+        class: Doctrine\ORM\EntityRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - \Odiseo\Bundle\ProductBundle\Entity\Product
+      
+      odiseo.product.type.repository:
+        class: Doctrine\ORM\EntityRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - \Odiseo\Bundle\ProductBundle\Entity\ProductType
+            
+      odiseo.product_state.repository:
+        class: Doctrine\ORM\EntityRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - \Odiseo\Bundle\ProductBundle\Entity\ProductState
+
+      odiseo.product.service:
+        class: Odiseo\Bundle\ProductBundle\Services\ProductService
+        arguments: [ "@doctrine.orm.entity_manager" , "@odiseo.product.repository", "@odiseo.user.repository" , "@odiseo.product.type.repository" , "@odiseo.product_state.repository"]    

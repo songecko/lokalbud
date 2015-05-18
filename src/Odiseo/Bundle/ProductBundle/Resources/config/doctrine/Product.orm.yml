@@ -1,0 +1,80 @@
+Odiseo\Bundle\ProductBundle\Entity\Product:
+    type: entity
+    table: media
+    repositoryClass: Odiseo\Bundle\ProductBundle\Repository\ProductRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title: 
+            column: title
+            type: string
+            length: 255
+        description:
+            column: description
+            type: text
+        shortDescription:
+            column: short_description
+            type: string
+            length: 512
+        price:
+            column: price
+            type: float
+        oldPrice:
+            column: old_price
+            type: float
+            nullable: true
+        dateCreated:
+            column: date_created
+            type: datetime
+            gedmo:
+              timestampable:
+                on: update
+        quantity:
+            column: quantity
+            type: integer
+        latitud:
+            column: latitud
+            type: float
+        longitud:
+            column: longitud
+            type: float
+        address:
+            column: address
+            type: string
+            
+    manyToOne:
+        state:
+            targetEntity: \Odiseo\Bundle\ProductBundle\Entity\ProductState
+            joinColumn:
+                name: id_state
+                referencedColumnName: id
+                onUpdate: 'CASCADE'
+        type:
+            targetEntity: \Odiseo\Bundle\ProductBundle\Entity\ProductType
+            joinColumn:
+                name: id_type
+                referencedColumnName: id
+                onUpdate: 'CASCADE'
+        town:
+            targetEntity: \Odiseo\Bundle\EcommerceBundle\Entity\Town
+            joinColumn:
+                name: id_town
+                referencedColumnName: id
+                onUpdate: 'CASCADE'
+        vendor:
+           targetEntity: \Odiseo\Bundle\UserBundle\Entity\User
+           inversedBy: products
+           joinColumn:
+                name: id_vendor
+                referenceColumnName: id
+                onUpdate: 'CASCADE'
+    oneToMany:
+      assets:
+          targetEntity: \Odiseo\Bundle\ProductBundle\Entity\ProductAsset
+          mappedBy: product
+          cascade: ["persist"]
+    lifecycleCallbacks: {  }

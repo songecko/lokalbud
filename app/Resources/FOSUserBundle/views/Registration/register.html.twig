@@ -1,0 +1,37 @@
+{% extends 'OdiseoLokalBuddyBundle:Frontend:layout.html.twig' %}
+
+{% block content %}
+<section id="hero" class="login">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+				<div id="login">
+					<div class="text-center"><img src="{{ asset('bundles/lokalbuddy/img/logo_sticky.png') }}" alt="" data-retina="true" ></div>
+					<hr>
+					<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+						<div class="form-group">
+							{{ form_label(form.username) }}
+							{{ form_widget(form.username, {'attr': { 'class': 'form-control', 'placeholder': 'Username' }}) }}
+						</div>
+						<div class="form-group">
+							{{ form_label(form.email) }}
+							{{ form_widget(form.email, {'attr': { 'class': 'form-control', 'placeholder': 'Email' }}) }}
+						</div>
+						<div class="form-group">
+							{{ form_label(form.plainPassword.first) }}
+							{{ form_widget(form.plainPassword.first, {'attr': { 'class': 'form-control', 'placeholder': 'Password' }}) }}
+						</div>
+						<div class="form-group">
+							{{ form_label(form.plainPassword.second, 'Confirm password') }}
+							{{ form_widget(form.plainPassword.second, {'attr': { 'class': 'form-control', 'placeholder': 'Confirm password' }}) }}
+						</div>
+						{{ form_widget(form._token) }}
+						<div id="pass-info" class="clearfix"></div>
+						<button type="submit" class="btn_full">Create an account</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

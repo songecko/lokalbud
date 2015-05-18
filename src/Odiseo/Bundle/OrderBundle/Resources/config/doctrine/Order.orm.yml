@@ -1,0 +1,37 @@
+Odiseo\Bundle\OrderBundle\Entity\Order:
+    type: entity
+    table: orders
+    repositoryClass: Odiseo\Bundle\OrderBundle\Repository\OrderRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        dateCreated:
+            column: date_created
+            type: datetime
+            gedmo:
+              timestampable:
+                on: update
+    manyToOne:
+        buyer:
+            targetEntity: \Odiseo\Bundle\UserBundle\Entity\User
+            inversedBy: orders
+            joinColumn:
+                name: id_buyer
+                referencedColumnName: id
+                onUpdate: 'CASCADE'
+        state:
+            targetEntity: \Odiseo\Bundle\OrderBundle\Entity\OrderState
+            joinColumn:
+                name: id_state
+                referencedColumnName: id
+                onUpdate: 'CASCADE'                
+    oneToMany:
+        items:
+          targetEntity: \Odiseo\Bundle\OrderBundle\Entity\OrderItem
+          mappedBy: order
+
+    lifecycleCallbacks: {  }

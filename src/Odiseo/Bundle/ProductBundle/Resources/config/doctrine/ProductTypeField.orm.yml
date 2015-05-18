@@ -1,0 +1,24 @@
+Odiseo\Bundle\ProductBundle\Entity\ProductTypeField:
+    type: entity
+    table: media_type_field
+    repositoryClass: Odiseo\Bundle\ProductBundle\Repository\ProductTypeFieldRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name: 
+            column: name
+            type: string
+            length: 255
+    manyToOne:
+       productType:
+           targetEntity: \Odiseo\Bundle\ProductBundle\Entity\ProductType
+           inversedBy: fields
+           joinColumn:
+                name: id_product_type
+                referenceColumnName: id
+                onUpdate: 'CASCADE'
+    lifecycleCallbacks: {  }

@@ -1,0 +1,16 @@
+Odiseo\Bundle\EcommerceBundle\Entity\Region:
+    type: entity
+    table: region
+    repositoryClass: Odiseo\Bundle\EcommerceBundle\Repository\RegionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+           column: name
+           type: string
+           length: 255
+    lifecycleCallbacks: {  }

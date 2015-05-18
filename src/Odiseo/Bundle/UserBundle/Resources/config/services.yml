@@ -1,0 +1,36 @@
+services:
+      odiseo.user.repository:
+        class: Doctrine\ORM\EntityRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - \Odiseo\Bundle\UserBundle\Entity\User
+     
+      odiseo.user_profile_type_field_values.repository:
+        class: Doctrine\ORM\EntityRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - \Odiseo\Bundle\UserBundle\Entity\UserProfileTypeFieldValue
+            
+      odiseo.user_profile_type.repository:
+        class: Doctrine\ORM\EntityRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - \Odiseo\Bundle\UserBundle\Entity\UserProfileType
+            
+      odiseo.user_wishlist.repository:
+        class: Doctrine\ORM\EntityRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - \Odiseo\Bundle\UserBundle\Entity\UserWishlist
+
+      odiseo.user.service:
+        class: Odiseo\Bundle\UserBundle\Services\UserService
+        arguments:  [ "@doctrine.orm.entity_manager","@odiseo.user.repository", "@odiseo.user_profile_type_field_values.repository" , "@odiseo.user_profile_type.repository"]
+            
+      odiseo.user_wishlist.service:
+        class: Odiseo\Bundle\UserBundle\Services\UserWishlistService
+        arguments:  [ "@doctrine.orm.entity_manager","@odiseo.user_wishlist.repository"]
