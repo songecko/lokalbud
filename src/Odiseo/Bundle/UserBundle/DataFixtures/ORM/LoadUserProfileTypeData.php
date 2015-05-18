@@ -31,6 +31,6 @@ class LoadUserProfileTypeData extends DataFixture
     
     public function getOrder()
     {
-    	return 1;
+    	return 2;
     }
 }

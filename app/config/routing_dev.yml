@@ -18,5 +18,5 @@ _main:
     resource: routing.yml
 
 _test:
-    resource: "@OdiseoAdsCandyBundle/Resources/config/routing/test.yml"
+    resource: "@OdiseoLokalBuddyBundle/Resources/config/routing/test.yml"
     prefix:   /test

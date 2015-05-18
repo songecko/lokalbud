@@ -16,7 +16,7 @@ class LoadUserWishData extends DataFixture
 {
     public function load(ObjectManager $manager)
     {
-    	$wish = new UserWishlist();
+    	/*$wish = new UserWishlist();
     	$wish->setOwnerId($this->getReference('user1')->getId());
     	$wish->setWished($this->getReference('product5'));
    		$manager->persist($wish);	
@@ -31,7 +31,7 @@ class LoadUserWishData extends DataFixture
     	$wish->setWished($this->getReference('product7'));
     	$manager->persist($wish);	
     	
-    	$manager->flush();
+    	$manager->flush();*/
     }
     
     public function getOrder()

@@ -3,16 +3,16 @@
 {% block javascripts %}
 	{{ parent() }}
 	<!-- Check and radio inputs -->
-	<script src="{{ asset('bundles/odiseoadscandy/js/icheck.js') }}"></script>
+	<script src="{{ asset('bundles/odiseolokalbuddy/js/icheck.js') }}"></script>
 	<!-- Map -->
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false&libraries=places"></script>
-	<script src="{{ asset('bundles/odiseoadscandy/js/infobox.js') }}"></script>
-	<script src="{{ asset('bundles/odiseoadscandy/js/vendor/bootstrap-slider.js') }}"></script>
-	<script src="{{ asset('bundles/odiseoadscandy/js/app/Hydra.js') }}"></script>
-	<script src="{{ asset('bundles/odiseoadscandy/js/app/DOM.js') }}"></script>
-	<script src="{{ asset('bundles/odiseoadscandy/js/app/Ajax.js') }}"></script>
-	<script src="{{ asset('bundles/odiseoadscandy/js/app/Events.js') }}"></script>
-	<script src="{{ asset('bundles/odiseoadscandy/js/web/filtersProduct.js') }}"></script>
+	<script src="{{ asset('bundles/odiseolokalbuddy/js/infobox.js') }}"></script>
+	<script src="{{ asset('bundles/odiseolokalbuddy/js/vendor/bootstrap-slider.js') }}"></script>
+	<script src="{{ asset('bundles/odiseolokalbuddy/js/app/Hydra.js') }}"></script>
+	<script src="{{ asset('bundles/odiseolokalbuddy/js/app/DOM.js') }}"></script>
+	<script src="{{ asset('bundles/odiseolokalbuddy/js/app/Ajax.js') }}"></script>
+	<script src="{{ asset('bundles/odiseolokalbuddy/js/app/Events.js') }}"></script>
+	<script src="{{ asset('bundles/odiseolokalbuddy/js/web/filtersProduct.js') }}"></script>
 <script type="text/javascript">
 $(function()
 {
@@ -32,8 +32,8 @@ $(function()
 
 {% block stylesheets %}
 {{ parent() }}
-<link href="{{ asset('bundles/odiseoadscandy/css/bootstrap-slider.css') }}" rel="stylesheet">
-<link href="{{ asset('bundles/odiseoadscandy/css/skins/square/grey.css') }}" rel="stylesheet">
+<link href="{{ asset('bundles/odiseolokalbuddy/css/bootstrap-slider.css') }}" rel="stylesheet">
+<link href="{{ asset('bundles/odiseolokalbuddy/css/skins/square/grey.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -64,7 +64,7 @@ $(function()
 							<div class="hotel_container">
 								<div class="img_container">
 									<a  data-module-field="link-detail" href="single_hotel.html">
-										<img data-module-field='image_item' src="{{ asset('bundles/odiseoadscandy/img/hotel_1.jpg')}}" width="800" height="533" class="img-responsive" alt="">
+										<img data-module-field='image_item' src="{{ asset('bundles/odiseolokalbuddy/img/hotel_1.jpg')}}" width="800" height="533" class="img-responsive" alt="">
 										<div class="ribbon top_rated"></div>
 										<div id="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">

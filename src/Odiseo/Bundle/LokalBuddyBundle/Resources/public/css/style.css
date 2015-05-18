@@ -36,7 +36,7 @@ Author URI: http://themeforest.net/user/Ansonika/
 /*============================================================================================*/
 
 /*-------- Only fo the demo - menu colors bullets --------*/
-i.color_1{color:#e04f67;}
+i.color_1{color:#e14a3f;}
 i.color_2{color:#1cbbb4;}
 i.color_3{color:#82ca9c;}
 i.color_4{color:#f7941d;}
@@ -55,7 +55,7 @@ h3{ font-size:22px;}
 .main_title h2{ text-transform: uppercase; font-weight:700; letter-spacing:-1px; font-size:30px; margin-bottom:0;margin-top:0; }
 .main_title p{ font-family:'Lato',Arial, sans-serif; font-weight:300; font-size:20px}
 
-h2 span, h3 span, h4 span, h5 span, h6 span{color:#e04f67;}
+h2 span, h3 span, h4 span, h5 span, h6 span{color:#e14a3f;}
 
 .box_style_1 h3.inner{ 
 	margin:-30px -30px 20px -30px; 
@@ -96,7 +96,7 @@ a.button_intro, .button_intro  {
 	font-family: inherit;
 	font-size: inherit;
 	color:#fff !important;
-	background: #e04f67;
+	background: #e14a3f;
 	cursor: pointer;
 	padding: 8px 25px;
 	display: inline-block;
@@ -115,7 +115,7 @@ a.button_intro, .button_intro  {
 }
 a.button_intro:hover, .button_intro:hover {
 	background: #fff;
-	color:#e04f67 !important;
+	color:#e14a3f !important;
 }
 a.button_intro.outilne, .button_intro.outline  {
 	border: 2px solid #fff;
@@ -125,14 +125,14 @@ a.button_intro.outilne, .button_intro.outline  {
 }
 a.button_intro:hover, .button_intro:hover {
 	background: #fff;
-	color:#e04f67;
+	color:#e14a3f;
 }
 
 a.button_drop, .button_drop  {
 	border: none;
 	font-family: inherit;
 	font-size: inherit;
-	color:#e04f67 !important;
+	color:#e14a3f !important;
 	background: #ededed;
 	cursor: pointer;
 	padding: 5px 15px !important;
@@ -153,7 +153,7 @@ a.button_drop, .button_drop  {
 
 a.button_drop.outilne, .button_drop.outline  {
 	border: 2px solid #ededed;
-	color:#e04f67;
+	color:#e14a3f;
 	background: none;
 	padding: 3px 23px !important;
 }
@@ -189,7 +189,7 @@ a.btn_1, .btn_1{
 }
 a.btn_1.green, .btn_1.green  {background: #83c99f;}
 
-a.btn_1.white, .btn_1.white  {background: #fff; color:#e04f67;}
+a.btn_1.white, .btn_1.white  {background: #fff; color:#e14a3f;}
 a.btn_1.white:hover, .btn_1.white a:hover  {background: #333; color:#fff;}
 
 a.btn_1.outline,.btn_1.outiline, input .btn_1.outiline{
@@ -200,8 +200,8 @@ a.btn_1.outline,.btn_1.outiline, input .btn_1.outiline{
 }
 a.btn_1.outline:hover,.btn_1.outiline:hover, input .btn_1.outiline:hover{
 	color:#fff;
-	background:#e04f67;
-	border:2px solid #e04f67;
+	background:#e14a3f;
+	border:2px solid #e14a3f;
 }
 
 a.btn_1.medium, .btn_1.medium  {
@@ -252,7 +252,7 @@ a.btn_map{
 	font-family: inherit;
 	font-size: inherit;
 	color:#fff;
-	background: #e04f67;
+	background: #e14a3f;
 	cursor: pointer;
 	padding: 12px 20px;
 	display: inline-block;
@@ -445,7 +445,7 @@ header#plain ul#top_links :hover a{ color:#333; }
 .subheader_plain{margin-top:60px;}
 
 /* Header  colored*/
-header#colored.sticky{background-color:#e04f67;padding-bottom:0; border-bottom:2px solid #e04f67}
+header#colored.sticky{background-color:#e14a3f;padding-bottom:0; border-bottom:2px solid #e14a3f}
 header#colored.sticky ul#top_tools a {color:#fff;}
 
 /* Drop down cart / login / search  */
@@ -469,7 +469,7 @@ header#colored.sticky ul#top_tools a {color:#fff;}
   font-weight: normal;
     text-shadow:none;
 	text-transform:none !important;
-	border-top: 2px solid #e04f67;
+	border-top: 2px solid #e14a3f;
 }
 
 .dropdown-cart .dropdown-menu:before, .dropdown-access .dropdown-menu:before, .dropdown-search .dropdown-menu:before {
@@ -481,7 +481,7 @@ header#colored.sticky ul#top_tools a {color:#fff;}
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-	border-bottom-color: #e04f67;
+	border-bottom-color: #e14a3f;
 	border-width: 7px;
 	margin-left: -7px;
 }
@@ -528,7 +528,7 @@ ul#cart_items li strong > a{
 	display: block;
 }
 ul#cart_items li strong > a:hover{
-	color:#e04f67;
+	color:#e14a3f;
 }
 ul#cart_items li a.action {
 	color:#999;
@@ -602,7 +602,7 @@ a#forgot_pw{
 	right:-25px;
 }
 .input-group button { background-color:#333; color:#fff; border-color:#333}
-.input-group button:hover, .input-group button:focus { background-color:#e04f67; color:#fff; border-color:#e04f67}
+.input-group button:hover, .input-group button:focus { background-color:#e14a3f; color:#fff; border-color:#e14a3f}
 
 /* Footer  */
 footer {
@@ -737,7 +737,7 @@ a#email_footer:before{
 }
 .other_tours ul li a:hover{
 	background-color: #f9f9f9;
-	color:#e04f67;
+	color:#e14a3f;
 }
 .other_tours ul li:last-child a{
 	border-bottom: none;
@@ -1221,7 +1221,7 @@ a#filters_col_bt .icon_set_1_icon-65{
 }
 
 /*-------- 2.3 Single tour page --------*/
-#Img_carousel .sp-selected-thumbnail {border-bottom: 2px solid #e04f67;}
+#Img_carousel .sp-selected-thumbnail {border-bottom: 2px solid #e14a3f;}
 
 .parallax-content-2{
 	position:absolute;
@@ -1319,7 +1319,7 @@ a#filters_col_bt .icon_set_1_icon-65{
 	width:50%;
 }
 .table.table_summary tr.total{
-	color:#e04f67;
+	color:#e14a3f;
 	font-size:20px;
 	font-weight:bold;
 	text-transform:uppercase;
@@ -1455,7 +1455,7 @@ a#filters_col_bt .icon_set_1_icon-65{
 .bs-wizard > .bs-wizard-step .bs-wizard-stepnum {font-size: 16px; margin-bottom: 5px;}
 .bs-wizard > .bs-wizard-step .bs-wizard-info {color: #999; font-size: 14px;}
 .bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 30px; display: block; background: #fbe8aa; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;} 
-.bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: #e04f67; border-radius: 50px; position: absolute; top: 8px; left: 8px; } 
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: #e14a3f; border-radius: 50px; position: absolute; top: 8px; left: 8px; } 
 .bs-wizard > .bs-wizard-step > .progress {position: relative; border-radius: 0px; height: 8px; box-shadow: none; margin: 23px 0;}
 .bs-wizard > .bs-wizard-step > .progress > .progress-bar {width:0px; box-shadow: none; background: #fbe8aa;}
 .bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {width:100%;}
@@ -1474,7 +1474,7 @@ a#filters_col_bt .icon_set_1_icon-65{
 	margin-bottom:10px;
 }
 .form_title h3 strong{
-	background-color:#e04f67;
+	background-color:#e14a3f;
 	text-align:center;
 	width:40px;
 	height:40px;
@@ -1637,7 +1637,7 @@ input.qty2 {position: relative; width:35px; height:33px; border-radius:none; tex
     position: relative;
     padding: 11% 100px 10% 100px;
     height: 400px;
-    background-color: #e04f67;
+    background-color: #e14a3f;
 	color:#fff;
 	font-size:14px;
 }
@@ -1687,7 +1687,7 @@ input.qty2 {position: relative; width:35px; height:33px; border-radius:none; tex
 
 /*-------- 2.6 Contact us --------*/
 #map_contact {width:100%; height:450px;}
-#directions { background-color:#e04f67; padding:22px 0; }
+#directions { background-color:#e14a3f; padding:22px 0; }
 ul#contact-info {
 	list-style:none;
 	margin:0 0 0 0;
@@ -2122,7 +2122,7 @@ ul.list_ok li:before {
   font-family: "icon_set_1";
   font-size:14px;
   content: "\6c";
-  color:#e04f67;
+  color:#e14a3f;
   position:absolute;
   left:0;
   top:0;
@@ -2141,7 +2141,7 @@ ul.list_order li {
 	margin-bottom:10px;
 }
 ul.list_order li span {
-	background-color:#e04f67;
+	background-color:#e14a3f;
 	color:#fff;
   position:absolute;
   left:0;
@@ -2612,7 +2612,7 @@ ul.list_order li span {
 	transition: transform 0.3s;
 }
 .tooltip-back {
-	background: #e04f67;
+	background: #e14a3f;
 	font-size: 12px;
 	line-height:14px;
 	padding-top:25px;
@@ -2735,7 +2735,7 @@ ul.list_order li span {
 	font-size:32px;
 	margin:0;
 	padding:0;
-	color:#e04f67;
+	color:#e14a3f;
 	font-family: 'Gochi Hand', cursive;
 }
 .banner h4 span{
@@ -2747,7 +2747,7 @@ ul.list_order li span {
 	padding:0;
 }
 .banner.colored{
-	background:#e04f67 url(../img/banner_bg_colored.png) no-repeat center bottom;
+	background:#e14a3f url(../img/banner_bg_colored.png) no-repeat center bottom;
 	color:#fff;
 }
 .banner.colored h4{

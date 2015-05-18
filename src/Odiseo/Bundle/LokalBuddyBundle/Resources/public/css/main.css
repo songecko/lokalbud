@@ -43,12 +43,12 @@ body > section#product {
 }
 
 .dropdown-access .dropdown-menu.user a.btn_full {
-	background: #e04f67;	
+	background: #e14a3f;	
 }
 
 .dropdown-access .dropdown-menu.user a.btn_full_outline {
-	border: 2px solid #e04f67;
-	color: #e04f67 !important;
+	border: 2px solid #e14a3f;
+	color: #e14a3f !important;
 }
 
 .map-search {
@@ -173,7 +173,7 @@ form ul.images li > a {
 form ul.images li > a.add_image_link {
 	float: none;
 	font-size: 12px;
-	background: #e04f67;
+	background: #e14a3f;
 	color: #FFFFFF;
 	margin-top: 10px;
 }
