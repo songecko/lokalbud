@@ -11,9 +11,9 @@
 			<hr>
 			<ul class="nav nav-tabs">
 				<li class="active"><a href="#info" data-toggle="tab">Info</a></li>
-				<li><a href="#buyer-profile" data-toggle="tab">Buyer profile</a></li>
-				<li><a href="#vendor-profile" data-toggle="tab">Vendor profile</a></li>
-				<li><a href="#medias" data-toggle="tab">Your medias</a></li>
+				<li><a href="#buyer-profile" data-toggle="tab">Profile</a></li>
+				<li><a href="#vendor-profile" data-toggle="tab">Host profile</a></li>
+				<li><a href="#medias" data-toggle="tab">Your experiences</a></li>
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane active" id="info">
@@ -22,14 +22,14 @@
 					<p>Email: {{ user.email }}</p>
 				</div>
 				<div class="tab-pane" id="buyer-profile">
-					<h3 style="margin: 0 0 40px 0;">Your buyer information</h3>
+					<h3 style="margin: 0 0 40px 0;">Your information</h3>
 				</div>
 				<div class="tab-pane" id="vendor-profile">
-					<h3 style="margin: 0 0 40px 0;">Your vendor information</h3>
+					<h3 style="margin: 0 0 40px 0;">Your host information</h3>
 				</div>
 				<div class="tab-pane" id="medias">
-					<h3 style="margin: 0 0 40px 0;">Your medias</h3>
-					<a href="{{ path('odiseo_product_new') }}" class="btn_1">Add new media</a>
+					<h3 style="margin: 0 0 40px 0;">Your experiences</h3>
+					<a href="{{ path('odiseo_product_new') }}" class="btn_1">Add new experience</a>
 				</div>
 			</div>
 		</div>

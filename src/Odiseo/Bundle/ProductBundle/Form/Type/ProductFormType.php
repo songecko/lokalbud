@@ -52,7 +52,7 @@ class ProductFormType extends AbstractType
         ->add('type', 'entity', array(
 			'class' => 'OdiseoProductBundle:ProductType',
 			'property' => 'description',
-        	'label'    => 'Media type'
+        	'label'    => 'Type'
 		))
 		->add('assets', 'collection', array(
 			'type' => new ProductAssetType(),

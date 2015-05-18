@@ -46,8 +46,8 @@ class LoadProductData extends DataFixture
 		    	$product->setType($this->getReference($types[array_rand($types)]));
 		    	$product->setVendor($this->getReference('user1'));
 				$product->setTown($this->getReference($town));
-				$product->setLatitud(-34.604191 + $i*0.002 );
-				$product->setLongitud(-58.381558 + $i*0.002);
+				$product->setLatitud(18.1987192 + $i*0.002 );
+				$product->setLongitud(-66.3526747 + $i*0.002);
 				$product->setAddress("Avenida Callao 648");
 				//Load assets
 				$this->loadAssetsForProduct($manager, $product);

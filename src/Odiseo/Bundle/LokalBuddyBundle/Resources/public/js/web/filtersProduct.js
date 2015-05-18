@@ -153,7 +153,7 @@ Hydra.module.register('map-module', function(Bus, Module, ErrorHandler, Api){
 			this.moduleCssContainerSelector = data.moduleCssContainerSelector;
 			this.oContainer = Api.dom.byCssSelector(data.moduleCssContainerSelector);
 			this.markers = [];
-			this.mapOptions = {zoom: 12, center: new google.maps.LatLng(-34.604191, -58.381558),  disableDefaultUI: true  };
+			this.mapOptions = {zoom: 7, center: new google.maps.LatLng(18.1987192, -66.3526747),  disableDefaultUI: true  };
 		    this.map = new google.maps.Map(document.getElementById(this.oContainer.attr('id')),   this.mapOptions);
 		    this._addInitialsMarkers();
 		   
