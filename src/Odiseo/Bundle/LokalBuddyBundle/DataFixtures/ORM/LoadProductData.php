@@ -1,6 +1,6 @@
 <?php
 
-namespace Odiseo\Bundle\AdsCandyBundle\DataFixtures\ORM;
+namespace Odiseo\Bundle\LokalBuddyBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Finder\Finder;
@@ -10,7 +10,7 @@ use Odiseo\Bundle\ProductBundle\Entity\ProductAsset;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 /**
  * Para cargar los datos:
- * php app/console doctrine:fixtures:load --fixtures=src/Odiseo/Bundle/ProductBundle/DataFixtures/ORM
+ * php app/console doctrine:fixtures:load --fixtures=src/Odiseo/Bundle/LokalBuddyBundle/DataFixtures/ORM
  * @author Leandro
  *
  */
@@ -25,7 +25,7 @@ class LoadProductData extends DataFixture
     	
     	$states = array('state1', 'state2', 'state3');
     	
-    	$types = array('revista', 'diario', 'television', 'internet', 'cine', 'movil', 'evento', 'social');
+    	$types = array('comida', 'tour', 'actividad');
     	
     	$pIndex = 0;
     	foreach ($towns as $town)

@@ -1,6 +1,6 @@
 <?php
 
-namespace Odiseo\Bundle\AdsCandyBundle\DataFixtures\ORM;
+namespace Odiseo\Bundle\LokalBuddyBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Finder\Finder;
@@ -10,7 +10,7 @@ use Odiseo\Bundle\EcommerceBundle\Entity\Region;
 
 /**
  * Para cargar los datos:
- * php app/console doctrine:fixtures:load --fixtures=src/Odiseo/Bundle/EcommerceBundle/DataFixtures/ORM
+ * php app/console doctrine:fixtures:load --fixtures=src/Odiseo/Bundle/LokalBuddyBundle/DataFixtures/ORM
  * @author Leandro
  */
 class LoadRegionData extends DataFixture

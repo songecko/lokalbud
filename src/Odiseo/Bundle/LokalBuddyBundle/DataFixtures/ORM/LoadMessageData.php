@@ -5,7 +5,7 @@ namespace Odiseo\Bundle\LokalBuddyBundle\DataFixtures\ORM;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Finder\Finder;
 use Odiseo\Bundle\ProjectBundle\DataFixtures\ORM\DataFixture;
-use Odiseo\Bundle\LokalBuddyBundle\Entity\Message;
+use Odiseo\Bundle\EcommerceBundle\Entity\Message;
 
 /**
  * Para cargar los datos:

@@ -1,6 +1,6 @@
 <?php
 
-namespace Odiseo\Bundle\AdsCandyBundle\DataFixtures\ORM;
+namespace Odiseo\Bundle\LokalBuddyBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Finder\Finder;
@@ -10,7 +10,7 @@ use Odiseo\Bundle\UserBundle\Entity\UserProfileType;
 
 /**
  * Para cargar los datos:
- * php app/console doctrine:fixtures:load --fixtures=src/Odiseo/Bundle/UserBundle/DataFixtures/ORM
+ * php app/console doctrine:fixtures:load --fixtures=src/Odiseo/Bundle/LokalBuddyBundle/DataFixtures/ORM
  * @author Leandro
  */
 class LoadUserProfileData extends DataFixture
@@ -24,7 +24,6 @@ class LoadUserProfileData extends DataFixture
     	$userProfile->setLastName("Paredes");
     	$userProfile->setPhone("123-123123");
     	$userProfile->setUser($this->getReference('user1'));
-    	$userProfile->setType($this->getReference('vendorProfile'));
     	$this->addReference('profile1', $userProfile);
     	$manager->persist($userProfile);
     	
@@ -34,7 +33,6 @@ class LoadUserProfileData extends DataFixture
     	$userProfile->setLastName("Garcia");
     	$userProfile->setPhone("123-123123123");
     	$userProfile->setUser($this->getReference('user2'));
-    	$userProfile->setType($this->getReference('buyerProfile'));
     	$this->addReference('profile2', $userProfile);
     	$manager->persist($userProfile);
 

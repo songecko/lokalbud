@@ -1,6 +1,6 @@
 <?php
 
-namespace Odiseo\Bundle\AdsCandyBundle\DataFixtures\ORM;
+namespace Odiseo\Bundle\LokalBuddyBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Finder\Finder;
@@ -9,7 +9,7 @@ use Odiseo\Bundle\UserBundle\Entity\User;
 
 /**
  * Para cargar los datos:
- * php app/console doctrine:fixtures:load --fixtures=src/Odiseo/Bundle/UserBundle/DataFixtures/ORM --append
+ * php app/console doctrine:fixtures:load --fixtures=src/Odiseo/Bundle/LokalBuddyBundle/DataFixtures/ORM --append
  * @author Leandro
  */
 class LoadUserData extends DataFixture
