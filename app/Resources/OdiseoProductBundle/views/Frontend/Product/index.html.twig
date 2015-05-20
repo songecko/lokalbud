@@ -1,0 +1,145 @@
+{% extends 'OdiseoProductBundle:Frontend:layout.html.twig' %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<!-- Check and radio inputs -->
+	<script src="{{ asset('bundles/odiseolokalbuddy/js/icheck.js') }}"></script>
+	<!-- Map -->
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false&libraries=places"></script>
+	<script src="{{ asset('bundles/odiseolokalbuddy/js/infobox.js') }}"></script>
+	<script src="{{ asset('bundles/odiseolokalbuddy/js/vendor/bootstrap-slider.js') }}"></script>
+	<script src="{{ asset('bundles/odiseolokalbuddy/js/app/Hydra.js') }}"></script>
+	<script src="{{ asset('bundles/odiseolokalbuddy/js/app/DOM.js') }}"></script>
+	<script src="{{ asset('bundles/odiseolokalbuddy/js/app/Ajax.js') }}"></script>
+	<script src="{{ asset('bundles/odiseolokalbuddy/js/app/Events.js') }}"></script>
+	<script src="{{ asset('bundles/odiseolokalbuddy/js/web/filtersProduct.js') }}"></script>
+<script type="text/javascript">
+$(function()
+{
+	$('input').iCheck({
+		checkboxClass: 'icheckbox_square-grey',
+		radioClass: 'iradio_square-grey'
+	});
+	
+	$('.filter .price-slider').slider().on('slide', function(e)
+	{
+		$('.priceValues .min').text('$'+e.value[0]);
+		$('.priceValues .max').text('$'+e.value[1]);		
+	});
+});
+</script>	
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link href="{{ asset('bundles/odiseolokalbuddy/css/bootstrap-slider.css') }}" rel="stylesheet">
+<link href="{{ asset('bundles/odiseolokalbuddy/css/skins/square/grey.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section id="product">	
+</section>
+    
+<div class="map-search">  
+	<div class="row">
+		<aside class="col-md-7">
+			<form name="filterProductsForm"action="{{ path('odiseo_product_index') }}" method="GET">
+				<div class="row filters">
+					<div class="col-xs-12">
+						{{ include('OdiseoProductBundle:Frontend/Product/Partial:mapFilters.html.twig', { 'productTypes': productTypes  , 'towns' : towns}) }}
+					</div>
+				</div>
+				<div class="row sort">
+					<div class="col-xs-12">
+						{{ include('OdiseoProductBundle:Frontend/Product/Partial:mapSort.html.twig', { }) }}
+					</div>
+				</div>
+			</form>
+			
+			<div class="row product-list">
+				<div class="col-xs-12">					
+					<!--Init strip -->
+		    		<div data-template-for="list-product-module"  style="display:none;"> 
+						<div class="col-md-6 col-sm-6  " data-wow-delay="0.1s">
+							<div class="hotel_container">
+								<div class="img_container">
+									<a  data-module-field="link-detail" href="single_hotel.html">
+										<img data-module-field='image_item' src="{{ asset('bundles/odiseolokalbuddy/img/hotel_1.jpg')}}" width="800" height="533" class="img-responsive" alt="">
+										<div class="ribbon top_rated"></div>
+										<div id="score"><span>7.5</span>Good</div>
+										<div class="short_info hotel">
+											<span class="price"><sup>$</sup><span data-module-field='price'>59</span></span>
+										</div>
+									</a>
+								</div>
+								<div class="hotel_title">
+									<h3 data-module-field='title'></h3>
+									<div class="rating">
+										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
+									</div><!-- end rating -->
+									<div class="wishlist">
+										<a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+									</div><!-- End wish list-->
+								</div>
+							</div><!-- End box tour -->
+						</div><!-- End col-md-6 -->
+					</div>
+					<!--End strip -->
+						
+					<!--  INIT LIST PRODUCT CONTAINER -->
+					<div data-container-for="list-product-module"  data-filters="{{ filters }}" data-detail-url="{{ path('odiseo_product_show' , { 'id': '1' })}}">
+						{% for row in pager.currentPageResults|batch(2) %}
+						<!--  ITEM PRODUCT CONTAINER -->
+						<div class="row">
+						{% for product in row %}					
+							<div class="col-md-6 col-sm-6" data-wow-delay="0.1s">
+								<div class="hotel_container" data-latitud="{{ product.latitud }}" data-longitud="{{product.longitud }}">
+									<div class="img_container">
+										<a href="{{ path('odiseo_product_show', { 'id': product.id }) }}">
+											{% if product.mainAsset %}
+											<img src="{{ asset('media/images/product/'~product.mainAsset.path)|imagine_filter('product_list') }}" class="img-responsive" alt="">
+											{% endif %}
+											{#<div class="ribbon top_rated"></div>#}
+											{#<div id="score"><span>7.5</span>Good</div>#}
+											<div class="short_info hotel">
+												{#From/Per night#}<span class="price"><sup>$</sup>{{ product.price }}</span>
+											</div>
+										</a>
+									</div>
+									<div class="hotel_title">
+										<h3>{{ product.title }}</h3>
+										<div class="rating">
+										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
+										</div><!-- end rating -->
+										<div class="wishlist">
+											<a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+										</div><!-- End wish list-->
+									</div>
+								</div><!-- End box tour -->
+							</div><!-- End col-md-6 -->
+						{% endfor %}
+						</div>
+						<!--  END ITEM PRODUCT CONTAINER -->
+						{% endfor %}				
+		                
+		                <hr>
+					</div>
+				    <!--  END LIST PRODUCT CONTAINER -->
+					<!--  INIT PAGINATOR CONTAINER -->
+				 	<div class="text-center" data-container-for='pagination-module'>
+	                	{{ include('OdiseoProductBundle:Frontend/Product/Partial:pagination.html.twig', { 'pager': pager }) }}
+	                </div>
+	               <!--  END PAGINATOR CONTAINER -->
+				</div>
+			</div>
+		</aside>
+		
+		<div class="col-md-5 mapContainer">
+			<div id="map" data-container-for='map-module' class="map"></div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

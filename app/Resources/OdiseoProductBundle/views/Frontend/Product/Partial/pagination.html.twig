@@ -1,0 +1,10 @@
+   {% if pager.haveToPaginate() %}
+
+		<ul class="pagination">
+			<li><a data-page="{{pager.hasPreviousPage?pager.previousPage:1}}" href="{{ path('odiseo_product_index')~'?page='~(pager.hasPreviousPage?pager.previousPage:1) }}">Prev</a></li>
+		{% for i in 1..pager.nbPages %}
+		<li class="{{ i==pager.currentPage?'active':'' }}"><a data-page="{{ i }}" href="{{ path('odiseo_product_index')~'?page='~i }}">{{ i }}</a></li>
+		{% endfor %}
+		<li><a data-page="{{pager.hasNextPage?pager.nextPage:pager.nbPages}}" href="{{ path('odiseo_product_index')~'?page='~(pager.hasNextPage?pager.nextPage:pager.nbPages) }}">Next</a></li>
+		</ul>
+{% endif %}
