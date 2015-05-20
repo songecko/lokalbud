@@ -97,6 +97,6 @@ class LoadMessageData extends DataFixture
     
     public function getOrder()
     {
-    	return 4;
+    	return 40;
     }
 }

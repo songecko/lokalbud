@@ -1,4 +1,0 @@
-Odiseo\Bundle\ProductBundle\Entity\ProductAsset:
-    file:
-        mapping:           product_images
-        filename_property: path
