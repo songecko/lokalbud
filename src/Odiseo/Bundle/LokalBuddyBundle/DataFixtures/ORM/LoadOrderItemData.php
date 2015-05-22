@@ -5,7 +5,7 @@ namespace Odiseo\Bundle\LokalBuddyBundle\DataFixtures\ORM;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Finder\Finder;
 use Odiseo\Bundle\ProjectBundle\DataFixtures\ORM\DataFixture;
-use Odiseo\Bundle\OrderBundle\Entity\OrderItem;
+use Odiseo\Bundle\LokalBuddyBundle\Entity\OrderItem;
 
 /**
  * Para cargar los datos:
@@ -23,7 +23,7 @@ class LoadOrderItemData extends DataFixture
     	$manager->persist($data);
     	 
    	    $data = new OrderItem();
-    	$data->setProduct($this->getReference('product1'));
+    	$data->setProduct($this->getReference('product2'));
     	$data->setOrder($this->getReference('order2'));
     	$data->setDescription("Segunda orden");
     	$manager->persist($data);

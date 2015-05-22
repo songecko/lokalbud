@@ -1,0 +1,11 @@
+Odiseo\Bundle\LokalBuddyBundle\Entity\OrderItem:
+    type: entity
+    table: order_item
+    repositoryClass: Odiseo\Bundle\LokalBuddyBundle\Repository\OrderItemRepository
+    manyToOne:
+        product:
+            targetEntity: \Odiseo\Bundle\ProductBundle\Entity\Product
+            joinColumn:
+                name: product_id
+                referencedColumnName: id
+                onUpdate: 'CASCADE'
