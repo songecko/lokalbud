@@ -6,7 +6,7 @@ $contact = $_POST['contact'];
 $email = $contact['email'];
 
 //Envio de email
-$to = "songecko@gmail.com";
+$to = "guarient@tresepic.com";
 $subject = "[LokalBuddy] nueva subscripción";
 $body = ' 
 <html> 
