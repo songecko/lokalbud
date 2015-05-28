@@ -1,4 +1,0 @@
-odiseo_lokalbuddy_frontend_test_add_to_wishlist:
-    path:     /wish/add/{idWish}
-    defaults: { _controller: "OdiseoLokalBuddyBundle:Frontend/Buyer:addToWishlist" }
-    
