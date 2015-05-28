@@ -6,15 +6,15 @@ $contact = $_POST['contact'];
 $email = $contact['email'];
 
 //Envio de email
-$to = "alant@tresepic.com";
-$subject = "[BofARG] nuevo suscripto al newsletter";
+$to = "songecko@gmail.com";
+$subject = "[LokalBuddy] nueva subscripción";
 $body = ' 
 <html> 
 	<head> 
-		<title>BofARG - nuevo suscripto al newsletter</title> 
+		<title>LokalBuddy - nueva subscripción</title> 
 	</head> 
 	<body>  
-		<h3>Nuevo suscripto al newsletter</h3>
+		<h3>Nueva subscripción</h3>
 		<p><b>Email: </b> '.$email.'</p> 
 	</body> 
 </html>
