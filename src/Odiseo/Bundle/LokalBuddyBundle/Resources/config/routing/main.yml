@@ -1,5 +1,5 @@
 odiseo_lokalbuddy_frontend_home:
-    path:     /home
+    path:     /
     defaults: { _controller: "OdiseoLokalBuddyBundle:Frontend/Home:index" }
     
 odiseo_lokalbuddy_frontend_product:
