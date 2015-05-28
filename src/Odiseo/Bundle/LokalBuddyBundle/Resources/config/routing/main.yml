@@ -1,7 +1,7 @@
 odiseo_lokalbuddy_frontend_home:
-    path:     /
+    path:     /home
     defaults: { _controller: "OdiseoLokalBuddyBundle:Frontend/Home:index" }
-
+    
 odiseo_lokalbuddy_frontend_product:
     resource: "@OdiseoProductBundle/Resources/config/routing/frontend/product.yml"
     prefix:   /experience
@@ -14,7 +14,11 @@ odiseo_lokalbuddy_frontend_user:
 odiseo_user_profile:
     resource: "@OdiseoUserBundle/Resources/config/routing/frontend/profile.yml"
     prefix:   /profile
-    
+
+odiseo_user_wishlist:
+    resource: "@OdiseoUserBundle/Resources/config/routing/frontend/wishlist.yml"
+    prefix:   /wishlist
+        
 odiseo_security_frontend:
     resource: "@OdiseoUserBundle/Resources/config/routing/frontend/security.yml"
     prefix:   /

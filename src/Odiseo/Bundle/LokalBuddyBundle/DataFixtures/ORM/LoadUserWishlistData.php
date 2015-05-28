@@ -18,17 +18,17 @@ class LoadUserWishlistData extends DataFixture
     public function load(ObjectManager $manager)
     {
     	$wish = new UserWishlist();
-    	$wish->setOwnerId($this->getReference('user1')->getId());
+    	$wish->setUser($this->getReference('user1'));
     	$wish->setWished($this->getReference('product5'));
    		$manager->persist($wish);	
     	
       	$wish = new UserWishlist();
-    	$wish->setOwnerId($this->getReference('user1')->getId());
+    	$wish->setUser($this->getReference('user1'));
     	$wish->setWished($this->getReference('product6'));
     	$manager->persist($wish);	
     	
     	$wish = new UserWishlist();
-    	$wish->setOwnerId($this->getReference('user1')->getId());
+    	$wish->setUser($this->getReference('user1'));
     	$wish->setWished($this->getReference('product7'));
     	$manager->persist($wish);	
     	

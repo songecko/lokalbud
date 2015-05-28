@@ -363,12 +363,12 @@ nav{ margin-top:20px}
 .sticky #logo{ margin-top:0; margin-bottom:10px;}
 
 ul#top_tools{flist-style:none; padding:0; position:absolute; right:15px; top:0; z-index:999;}
-ul#top_tools a{ color:#fff;}
-.sticky ul#top_tools a{ color:#333; }
+ul#top_tools a{ color:#e14a3f;}
+.sticky ul#top_tools a{ color:#e14a3f; }
 ul#top_tools li{display:inline-block; padding:0 10px;}
 
 #top_line{
-	color:#fff;
+	color:#e14a3f;
 	height:28px;
 	font-size:12px;
 	border-bottom:1px solid rgba(255,255,255,0.2);
@@ -418,7 +418,7 @@ ul#top_links li:first-child{
 	padding-left:0;
 }
 ul#top_links a{
-	color:#fff;
+	color:#e14a3f;
 }
 
 /* Header  plain*/

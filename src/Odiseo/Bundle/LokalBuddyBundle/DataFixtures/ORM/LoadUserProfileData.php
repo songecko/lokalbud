@@ -20,7 +20,7 @@ class LoadUserProfileData extends DataFixture
     	$userProfile = new UserProfile();
     	
     	$userProfile->setAddress('Rondeau 1121');
-    	$userProfile->setName("Pepe");
+    	$userProfile->setFirstName("Pepe");
     	$userProfile->setLastName("Paredes");
     	$userProfile->setPhone("123-123123");
     	$userProfile->setUser($this->getReference('user1'));
@@ -29,7 +29,7 @@ class LoadUserProfileData extends DataFixture
     	
     	$userProfile = new UserProfile();
     	$userProfile->setAddress('Helguera 1121');
-    	$userProfile->setName("Carlos");
+    	$userProfile->setFirstName("Carlos");
     	$userProfile->setLastName("Garcia");
     	$userProfile->setPhone("123-123123123");
     	$userProfile->setUser($this->getReference('user2'));

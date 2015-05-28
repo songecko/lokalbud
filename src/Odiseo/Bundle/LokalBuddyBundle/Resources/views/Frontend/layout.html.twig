@@ -40,18 +40,7 @@
       <script src="{{ asset('bundles/odiseolokalbuddy/js/respond.min.js') }}"></script>
     <![endif]-->
 </head>
-<body>
-	<div id="preloader">
-        <div class="sk-spinner sk-spinner-wave">
-            <div class="sk-rect1"></div>
-            <div class="sk-rect2"></div>
-            <div class="sk-rect3"></div>
-            <div class="sk-rect4"></div>
-            <div class="sk-rect5"></div>
-        </div>
-    </div>
-    <!-- End Preload -->
-    
+<body>    
 	<div class="layer"></div>
     <!-- Mobile menu overlay mask -->
 	
@@ -73,7 +62,7 @@
                             <li>
 								{{ render(controller('OdiseoUserBundle:Frontend/Security:loginModal')) }}
 							</li>
-							<li><a href="#" id="wishlist_link">Wishlist</a></li>
+							<li><a href="{{ path('odiseo_user_wishlist_index') }}" id="wishlist_link">Wishlist</a></li>
 						</ul>
 					</div>
 				</div><!-- End row -->
@@ -228,6 +217,7 @@
 		'bundles/odiseolokalbuddy/js/revolution_func.js'
 		'bundles/odiseolokalbuddy/js/jquery-ui.js'
 		'bundles/odiseolokalbuddy/js/jquery.form.js'
+		'bundles/odiseouser/js/wishlist.js'
 	%}
 	<script type="text/javascript" src="{{ asset_url }}"></script>
 	{% endjavascripts %}

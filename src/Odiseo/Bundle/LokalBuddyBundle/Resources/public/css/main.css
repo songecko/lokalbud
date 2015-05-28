@@ -12,11 +12,11 @@ body > section {
 }
 
 body > section#general {
-	background: #A3A7B8;
+	background: #FFFFFF;
 }
 
 body > section#product {
-	background: #A3A7B8;
+	background: #FFFFFF;
 }
 	
 .tp-static-layers {
@@ -42,13 +42,14 @@ body > section#product {
 	width: 100%;
 }
 
-.dropdown-access .dropdown-menu.user a.btn_full {
+ul#top_links .dropdown-access .dropdown-menu.user a.btn_full {
 	background: #e14a3f;	
+	color: #FFFFFF;
 }
 
-.dropdown-access .dropdown-menu.user a.btn_full_outline {
+ul#top_links .dropdown-access .dropdown-menu.user a.btn_full_outline {
 	border: 2px solid #e14a3f;
-	color: #e14a3f !important;
+	color: #d91e5c !important;
 }
 
 .map-search {
@@ -148,7 +149,7 @@ body > section#product {
   
 .basicFilters .row.filter .towns {
    height: 10em;
-   overflow-y: overlay;
+   overflow-y: scroll;
 }
 
 form ul.images {

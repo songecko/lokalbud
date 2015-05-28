@@ -18,17 +18,19 @@ class LoadOrderItemData extends DataFixture
     {
     	$data = new OrderItem();
     	$data->setProduct($this->getReference('product1'));
-    	$data->setOrder($this->getReference('order1'));
     	$data->setDescription("Primer orden");
+    	$data->setOrder($this->getReference('order1'));
+    	$this->addReference('orderItem1', $data);
     	$manager->persist($data);
     	 
    	    $data = new OrderItem();
     	$data->setProduct($this->getReference('product2'));
-    	$data->setOrder($this->getReference('order2'));
     	$data->setDescription("Segunda orden");
+    	$data->setOrder($this->getReference('order2'));
+		$this->addReference('orderItem2', $data);
     	$manager->persist($data);
-    	$manager->flush();
     	
+    	$manager->flush();    	
     }
     
     public function getOrder()

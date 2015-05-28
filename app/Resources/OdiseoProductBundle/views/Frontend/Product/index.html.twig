@@ -42,20 +42,26 @@ $(function()
     
 <div class="map-search">  
 	<div class="row">
-		<aside class="col-md-7">
+		<aside class="col-md-4">
 			<form name="filterProductsForm"action="{{ path('odiseo_product_index') }}" method="GET">
 				<div class="row filters">
 					<div class="col-xs-12">
 						{{ include('OdiseoProductBundle:Frontend/Product/Partial:mapFilters.html.twig', { 'productTypes': productTypes  , 'towns' : towns}) }}
 					</div>
-				</div>
-				<div class="row sort">
-					<div class="col-xs-12">
-						{{ include('OdiseoProductBundle:Frontend/Product/Partial:mapSort.html.twig', { }) }}
-					</div>
-				</div>
+				</div>				
 			</form>
 			
+			<div class="mapContainer">
+				<div id="map" data-container-for='map-module' class="map"></div>
+			</div>			
+		</aside>
+		
+		<div class="col-md-8">
+			<div class="row sort">
+				<div class="col-xs-12">
+					{{ include('OdiseoProductBundle:Frontend/Product/Partial:mapSort.html.twig', { }) }}
+				</div>
+			</div>
 			<div class="row product-list">
 				<div class="col-xs-12">					
 					<!--Init strip -->
@@ -132,10 +138,6 @@ $(function()
 	               <!--  END PAGINATOR CONTAINER -->
 				</div>
 			</div>
-		</aside>
-		
-		<div class="col-md-5 mapContainer">
-			<div id="map" data-container-for='map-module' class="map"></div>
 		</div>
 	</div>
 </div>
