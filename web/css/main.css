@@ -1,0 +1,205 @@
+* { margin:0;padding:0 }
+html,body{ height:100%; width: 100%; margin: 0; padding: 0; font-size: 15px; }
+
+/* new clearfix */
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+* html .clearfix { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+h2 {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+	font-size: 2em;
+}
+h2 a {
+	color: #FFFFFF;
+	background-color: #FABE49;
+}
+.container {
+	margin: 0;
+	height: 100%;
+	background: url(../images/coming-soon.jpg) no-repeat center center;
+	background-size: cover;
+}
+.container .logo {
+	position: absolute;
+	top: 5%;
+	left: 50%;
+	height: 35%;
+	max-width: 100%;
+	transform: translateX(-50%);
+}
+
+.container .contact {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 80%;
+	text-align: center;
+	padding: 15px;
+	transform: translateX(-50%);
+}
+.container .contact > h2 {
+	text-transform: uppercase;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.container .contact form{
+	width: 100%;
+}
+.container .contact .subscribeText {
+	font-size: 1.8em;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-transform: uppercase;
+}
+.container .contact form {
+	width: 40%;
+	margin: 2% auto 0 auto;
+}
+.container .contact form input {
+	width: 60%;
+	background-color: #FFFFFF;
+	color: #000000;
+	text-transform: uppercase;
+	font-weight: bold;
+	float: left;
+	height: 25px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.5em;
+	outline: 0;
+	border: 0;
+	padding: 5px;
+}
+.container .contact form button {
+	height: 35px;
+	background: none;
+	border: 4px solid #FFFFFF;
+	padding: 5px 10px;
+	font-size: 16px;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	font-weight: bold;
+	width: 30%;
+	float: right;
+	cursor: pointer;
+}
+.container .contact form input.error {
+	border: 1px solid #cd2027;
+}
+.container .contact .registerLink {
+	width: 40%;
+	margin: 15px auto 0 auto;
+}
+.container .contact .registerLink a {
+	float: right;
+	text-decoration: none;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 12px;
+}
+.container footer {
+	position: fixed;
+	bottom:3%;
+	width: 100%;
+	height: 50px;
+}
+.container footer h2 {
+	color: #FFFFFF;
+	font-weight: 300;
+}
+.container footer .brandsUrl {
+	float: left;
+	line-height: 50px;
+	margin-left: 30px;
+}
+.container footer .siguenos {
+	float: right;
+	margin-right: 30px;
+}
+
+.container footer .siguenos h2 {
+	float: left;
+	line-height: 50px;
+	margin-right: 10px;
+}
+
+.container footer ul.social {
+	list-style: none;
+	text-align: center;
+}
+.container footer ul.social li {
+	margin-right: 12px;
+	padding: 5px;
+	display: inline-block;
+}
+.container footer ul.social li:last-child {
+	margin-right: 0;
+}
+.container .contact .transbox {
+	background: rgb(255, 255, 255);
+	background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+}
+
+.container .contact .transbox h2 {
+	font-size: 2em;
+}
+
+.container .contact .transbox h2 a {
+	font-size: 0.8em;
+	padding: 2px;
+	text-decoration: none;
+}
+
+
+/* INPUT PLACEHOLDER */
+
+.container .contact input::-webkit-input-placeholder {
+   color: #000000;
+}
+
+.container .contact input::-moz-placeholder {  /* Firefox 19+ */
+   color: #000000;  
+}
+
+.container .contact input:-ms-input-placeholder {  
+   color: #000000;  
+}
+
+/* media querys */
+
+@media screen and (max-width: 971px) 
+{
+	html,body {
+		font-size: 10px;
+	}
+	
+}
+
+@media screen and (max-width: 730px) 
+{	
+	.container .contact > h2 {
+		font-size: 1.5em;
+	}
+	
+	.container .contact form {
+		width: 100%;
+	}
+	
+	.container .contact .registerLink {
+		width: 100%;
+	}
+}
+
+@media screen and (max-height: 480px)  
+{	
+
+	html, body {
+		font-size: 9px;
+	}
+	.container .contact .transbox h2 {
+		font-size: 1.9em;
+	}
+}
