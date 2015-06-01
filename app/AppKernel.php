@@ -17,7 +17,7 @@ class AppKernel extends Kernel
         	new Odiseo\Bundle\UserBundle\OdiseoUserBundle(),
         	new Odiseo\Bundle\ProductBundle\OdiseoProductBundle(),
         	new Odiseo\Bundle\OrderBundle\OdiseoOrderBundle(),
-        	//new Odiseo\Bundle\LokalBuddyBundle\OdiseoLokalBuddyBundle()
+        	new Odiseo\Bundle\LokalBuddyBundle\OdiseoLokalBuddyBundle()
 		);
 
         if (in_array($this->environment, array('dev', 'test'))) {
