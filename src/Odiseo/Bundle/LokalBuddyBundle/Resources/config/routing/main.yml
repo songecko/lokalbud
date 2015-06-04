@@ -1,15 +1,15 @@
 odiseo_lokalbuddy_frontend_home:
     path:     /
-    defaults: { _controller: "OdiseoLokalBuddyBundle:Frontend/Home:index" }
+    defaults: { _controller: "OdiseoLokalBuddyBundle:Frontend/Homepage:main" }
     
 odiseo_lokalbuddy_frontend_product:
     resource: "@OdiseoProductBundle/Resources/config/routing/frontend/product.yml"
     prefix:   /experience
 
 #User Security - Profile - Register
-odiseo_lokalbuddy_frontend_user:
-    resource: "@OdiseoUserBundle/Resources/config/routing/frontend/user.yml"
-    prefix:   /
+#odiseo_lokalbuddy_frontend_user:
+#    resource: "@OdiseoUserBundle/Resources/config/routing/frontend/user.yml"
+#    prefix:   /
 
 odiseo_user_profile:
     resource: "@OdiseoUserBundle/Resources/config/routing/frontend/profile.yml"
@@ -18,15 +18,27 @@ odiseo_user_profile:
 odiseo_user_wishlist:
     resource: "@OdiseoUserBundle/Resources/config/routing/frontend/wishlist.yml"
     prefix:   /wishlist
-        
-odiseo_security_frontend:
-    resource: "@OdiseoUserBundle/Resources/config/routing/frontend/security.yml"
+    
+#SYLIUS
+odiseo_lokalbuddy_backend:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/main.yml
+    prefix: /admin
+    
+odiseo_lokalbuddy_frontend:
+    resource: "@SyliusWebBundle/Resources/config/routing/frontend/main.yml"
     prefix:   /
     
-fos_user_register_frontend:
-    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
-    prefix: /register
 
-#Imagine    
+sylius_province_choice_form:
+    path: /province/choice-form
+    defaults:
+        _controller: sylius.controller.province:choiceFormAction
+        _sylius:
+            template: SyliusAddressingBundle:Province:_provinceChoiceForm.html.twig
+
+sylius_partial:
+    resource: @SyliusWebBundle/Resources/config/routing/partial/main.yml
+    prefix: /_partial
+
 _liip_imagine:
     resource: "@LiipImagineBundle/Resources/config/routing.xml"

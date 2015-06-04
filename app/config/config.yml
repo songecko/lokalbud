@@ -34,8 +34,7 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: false
-    #bundles:        [ 'SyliusWebBundle', 'CmfCreateBundle', 'SyliusResourceBundle', 'OdiseoLokalBuddyBundle', 'OdiseoBackendBundle', 'EasyAdminBundle' ]
-    bundles:        [ 'SyliusWebBundle', 'CmfCreateBundle', 'SyliusResourceBundle', 'OdiseoBackendBundle', 'EasyAdminBundle' ]
+    bundles:        [ 'SyliusWebBundle', 'CmfCreateBundle', 'SyliusResourceBundle', 'OdiseoLokalBuddyBundle', 'OdiseoBackendBundle', 'EasyAdminBundle' ]
     filters:
         cssrewrite: ~
 
@@ -98,7 +97,14 @@ sylius_core:
     classes:
         user:
             model: Odiseo\Bundle\UserBundle\Entity\User
-            
+
+sylius_order:
+    driver: doctrine/orm
+    classes:
+        order:
+            model: Odiseo\Bundle\OrderBundle\Entity\Order
+            repository: Odiseo\Bundle\OrderBundle\Repository\OrderRepository
+                        
 knp_gaufrette:
     stream_wrapper: ~
                         

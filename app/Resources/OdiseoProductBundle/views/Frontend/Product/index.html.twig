@@ -102,18 +102,16 @@ $(function()
 								<div class="hotel_container" data-latitud="{{ product.latitud }}" data-longitud="{{product.longitud }}">
 									<div class="img_container">
 										<a href="{{ path('odiseo_product_show', { 'id': product.id }) }}">
-											{% if product.mainAsset %}
-											<img src="{{ asset('media/images/product/'~product.mainAsset.path)|imagine_filter('product_list') }}" class="img-responsive" alt="">
-											{% endif %}
+											<img src="{{ product.image ? product.image.path|imagine_filter('product_list') : 'http://placehold.it/200x200' }}" class="img-responsive" alt="">
 											{#<div class="ribbon top_rated"></div>#}
 											{#<div id="score"><span>7.5</span>Good</div>#}
 											<div class="short_info hotel">
-												{#From/Per night#}<span class="price"><sup>$</sup>{{ product.price }}</span>
+												{#From/Per night#}<span class="price"><sup>$</sup>{{ sylius_calculate_price(product.masterVariant) }}</span>
 											</div>
 										</a>
 									</div>
 									<div class="hotel_title">
-										<h3>{{ product.title }}</h3>
+										<h3>{{ product.name }}</h3>
 										<div class="rating">
 										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
 										</div><!-- end rating -->

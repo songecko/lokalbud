@@ -19,17 +19,17 @@ class LoadUserWishlistData extends DataFixture
     {
     	$wish = new UserWishlist();
     	$wish->setUser($this->getReference('user1'));
-    	$wish->setWished($this->getReference('product5'));
+    	$wish->setWished($this->getReference('Sylius.Product.1'));
    		$manager->persist($wish);	
     	
       	$wish = new UserWishlist();
     	$wish->setUser($this->getReference('user1'));
-    	$wish->setWished($this->getReference('product6'));
+    	$wish->setWished($this->getReference('Sylius.Product.2'));
     	$manager->persist($wish);	
     	
     	$wish = new UserWishlist();
     	$wish->setUser($this->getReference('user1'));
-    	$wish->setWished($this->getReference('product7'));
+    	$wish->setWished($this->getReference('Sylius.Product.3'));
     	$manager->persist($wish);	
     	
     	$manager->flush();

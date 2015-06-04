@@ -28,7 +28,7 @@ class LoadMessageData extends DataFixture
 				$msg->setSender($this->getReference("user2"));
 				$msg->setReceiver($this->getReference("user1"));
 			}
-			$msg->setProduct($this->getReference("product1"));
+			$msg->setProduct($this->getReference('Sylius.Product.1'));
 			$msg->setIsReaded(false);
 			$msg->setIsSent(true);
 			$msg->setIsDeleted(false);
@@ -47,7 +47,7 @@ class LoadMessageData extends DataFixture
 				$msg->setSender($this->getReference("user2"));
 				$msg->setReceiver($this->getReference("user1"));
 			}
-			$msg->setProduct($this->getReference("product2"));
+			$msg->setProduct($this->getReference('Sylius.Product.2'));
 			$msg->setIsReaded(true);
 			$msg->setIsSent(true);
 			$msg->setIsDeleted(false);
@@ -67,7 +67,7 @@ class LoadMessageData extends DataFixture
 				$msg->setReceiver($this->getReference("user1"));
 			}
 			$msg->setIsReaded(false);
-			$msg->setProduct($this->getReference("product3"));
+			$msg->setProduct($this->getReference('Sylius.Product.3'));
 			$msg->setIsSent(false);
 			$msg->setIsDeleted(false);
 			$manager->persist($msg);
@@ -85,7 +85,7 @@ class LoadMessageData extends DataFixture
 				$msg->setSender($this->getReference("user2"));
 				$msg->setReceiver($this->getReference("user1"));
 			}
-			$msg->setProduct($this->getReference("product4"));
+			$msg->setProduct($this->getReference('Sylius.Product.4'));
 			$msg->setIsReaded(false);
 			$msg->setIsSent(false);
 			$msg->setIsDeleted(true);

@@ -19,19 +19,19 @@ class LoadProductTypeFieldValueData extends DataFixture
     {
     	for ($i = 1 ; $i <= 10; $i++){
     		$fieldValue= new ProductTypeFieldValue();
-    		$fieldValue->setIdProduct($this->getReference('product'.$i)->getId());
+    		$fieldValue->setIdProduct($this->getReference('Sylius.Product.'.$i)->getId());
     		$fieldValue->setIdProductField($this->getReference('tipo_comida')->getId());
     		$fieldValue->setValue('argentina');
     		$manager->persist($fieldValue);
     		
     		$fieldValue= new ProductTypeFieldValue();
-    		$fieldValue->setIdProduct($this->getReference('product'.$i)->getId());
+    		$fieldValue->setIdProduct($this->getReference('Sylius.Product.'.$i)->getId());
     		$fieldValue->setIdProductField($this->getReference('tipo_tour')->getId());
     		$fieldValue->setValue('educacional');
     		$manager->persist($fieldValue);
     		
     		$fieldValue= new ProductTypeFieldValue();
-    		$fieldValue->setIdProduct($this->getReference('product'.$i)->getId());
+    		$fieldValue->setIdProduct($this->getReference('Sylius.Product.'.$i)->getId());
     		$fieldValue->setIdProductField($this->getReference('tipo_actividad')->getId());
     		$fieldValue->setValue('paseo');
     		$manager->persist($fieldValue);

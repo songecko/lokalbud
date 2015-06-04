@@ -18,29 +18,26 @@ class LoadProductTypeData extends DataFixture
 {
     public function load(ObjectManager $manager)
     {
-    	$product = new ProductType();
-    	$product->setDescription("Comida");
-    	$manager->persist($product);
-    	$this->addReference('comida', $product);
-    	$manager->persist($product);
+    	$productType = new ProductType();
+    	$productType->setDescription("Foods");
+    	$manager->persist($productType);
+    	$this->addReference('foods', $productType);
 
-    	$product = new ProductType();
-    	$product->setDescription("Tour");
-    	$manager->persist($product);
-    	$this->addReference('tour', $product);
-    	$manager->persist($product);
+    	$productType = new ProductType();
+    	$productType->setDescription("Tours");
+    	$manager->persist($productType);
+    	$this->addReference('tours', $productType);
     	
-    	$product = new ProductType();
-    	$product->setDescription("Actividad");
-    	$manager->persist($product);
-    	$this->addReference('actividad', $product);
-    	$manager->persist($product);
+    	$productType = new ProductType();
+    	$productType->setDescription("Activities");
+    	$manager->persist($productType);
+    	$this->addReference('activities', $productType);
     	
     	$manager->flush();
     }
     
     public function getOrder()
     {
-    	return 10;
+    	return 5;
     }
 }

@@ -18,19 +18,19 @@ class LoadProductTypeFieldData extends DataFixture
     {
     	$productField = new ProductTypeField();
     	$productField->setName("Tipo comida");
-    	$productField->setProductType($this->getReference("comida"));
+    	$productField->setProductType($this->getReference("foods"));
 	    $this->addReference("tipo_comida", $productField);
     	$manager->persist($productField);
     	
     	$productField = new ProductTypeField();
     	$productField->setName("Tipo tour");
-    	$productField->setProductType($this->getReference("tour"));
+    	$productField->setProductType($this->getReference("tours"));
     	$this->addReference("tipo_tour", $productField);
     	$manager->persist($productField);
     	
     	$productField = new ProductTypeField();
     	$productField->setName("Tipo actividad");
-    	$productField->setProductType($this->getReference("actividad"));
+    	$productField->setProductType($this->getReference("activities"));
     	$this->addReference("tipo_actividad", $productField);
     	$manager->persist($productField);
     	    	
