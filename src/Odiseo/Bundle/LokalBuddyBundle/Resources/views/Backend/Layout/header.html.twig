@@ -1,0 +1,29 @@
+<!-- Main Header -->
+<header class="main-header">
+	<!-- Logo -->
+	<a href="{{ path('sylius_backend_dashboard') }}" class="logo">{{ easyadmin_config('site_name')|raw }}</a>
+
+	<!-- Header Navbar -->
+	<nav class="navbar navbar-static-top" role="navigation">
+		<!-- Sidebar toggle button-->
+		<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+			<span class="sr-only">Toggle navigation</span>
+		</a>
+		<!-- Navbar Right Menu -->
+		<div class="navbar-custom-menu">
+			<ul class="nav navbar-nav">
+				<!-- Messages: style can be found in dropdown.less-->
+				{#{ include('OdiseoBackendBundle:Layout/Header:messagesMenu.html.twig') }#}
+				
+				<!-- Notifications: style can be found in dropdown.less -->
+				{#{ include('OdiseoBackendBundle:Layout/Header:notificationsMenu.html.twig') }#}
+				
+				<!-- Tasks: style can be found in dropdown.less -->
+				{#{ include('OdiseoBackendBundle:Layout/Header:tasksMenu.html.twig') }#}
+                        
+				<!-- User Account: style can be found in dropdown.less -->
+				{{ include('OdiseoLokalBuddyBundle:Backend/Layout/Header:userAccount.html.twig') }}
+			</ul>
+		</div>
+	</nav>
+</header>

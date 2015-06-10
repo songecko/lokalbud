@@ -1,2 +1,4 @@
-services:
-    
+parameters:
+    sylius.menu_builder.backend.class: Odiseo\Bundle\LokalBuddyBundle\Menu\BackendMenuBuilder
+
+services:    

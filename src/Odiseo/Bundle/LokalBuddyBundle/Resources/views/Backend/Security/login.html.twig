@@ -1,0 +1,52 @@
+{% extends 'OdiseoBackendBundle::outsideLayout.html.twig' %}
+
+{% block title %}{{ 'sylius.meta.backend_title'|trans }}{% endblock %}
+
+{% block content %}      
+<div class="login-box">
+	<div class="login-logo">{{ 'sylius.meta.backend_title'|trans }}</div><!-- /.login-logo -->
+
+	<div class="login-box-body">
+		<p class="login-box-msg">Iniciar sesión</p>
+		{% if error %}
+		<div class="alert alert-danger">
+			{{ error|trans({}, 'FOSUserBundle') }}
+		</div>
+		{% endif %}
+        <form action="{{ path('sylius_backend_security_login_check') }}" method="post">
+			<div class="form-group has-feedback">
+				<input type="text" class="form-control" name="_username" placeholder="{{ 'sylius.email'|trans }}"/>
+				<span class="glyphicon glyphicon-user form-control-feedback"></span>
+			</div>
+			<div class="form-group has-feedback">
+				<input type="password" class="form-control" name="_password" placeholder="{{ 'sylius.password'|trans }}"/>
+				<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+			</div>
+			<div class="row">
+				<div class="col-xs-8">    
+					<!--<div class="checkbox icheck">
+						<label>
+							<input type="checkbox"> Remember Me
+						</label>
+					</div>-->                        
+				</div><!-- /.col -->
+				<div class="col-xs-4">
+					<button type="submit" class="btn btn-primary btn-block btn-flat">{{ 'sylius.login'|trans }}</button>
+				</div><!-- /.col -->
+			</div>
+		</form>
+
+		<!--
+		<div class="social-auth-links text-center">
+			<p>- OR -</p>
+			<a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using Facebook</a>
+			<a href="#" class="btn btn-block btn-social btn-google-plus btn-flat"><i class="fa fa-google-plus"></i> Sign in using Google+</a>
+		</div><!-- /.social-auth-links -->
+
+		<!--
+		<a href="#">I forgot my password</a><br>
+		<a href="register.html" class="text-center">Register a new membership</a>-->
+
+	</div><!-- /.login-box-body -->
+</div><!-- /.login-box -->
+{% endblock %}

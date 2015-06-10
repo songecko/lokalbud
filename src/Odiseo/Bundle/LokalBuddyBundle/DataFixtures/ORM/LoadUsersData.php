@@ -39,6 +39,8 @@ class LoadUsersData extends DataFixture
             true,
             array('ROLE_SYLIUS_ADMIN')
         );
+        $user->setFirstname('LokalBuddy');
+        $user->setLastname('Administrator');
         $user->addAuthorizationRole($this->get('sylius.repository.role')->findOneBy(array('code' => 'administrator')));
 
         $user->setUsername('admin');

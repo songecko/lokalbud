@@ -7,7 +7,7 @@ use Sylius\Bundle\WebBundle\Controller\Frontend\HomepageController as BaseHomepa
 
 class HomepageController extends BaseHomepageController
 {
-    public function mainAction(Request $request)
+    public function mainAction()
     {    	
     	$productService = $this->get('odiseo.product.service');
 		$productTypes = $productService->findAllTypes();
