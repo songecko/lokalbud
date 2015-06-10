@@ -1,7 +1,7 @@
 function changeToSended()
 {
 	$('form input, form button').hide();		
-	$('.subscribeText').html('Te has suscrito al newsletter correctamente.');
+	$('.subscribeText').html('You have subscribed successfully to our newsletter');
 }
 
 $(document).ready(function()
