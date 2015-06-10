@@ -61,7 +61,6 @@ h2 a {
 	width: 60%;
 	background-color: #FFFFFF;
 	color: #000000;
-	text-transform: uppercase;
 	font-weight: bold;
 	float: left;
 	height: 25px;
@@ -190,6 +189,10 @@ h2 a {
 	
 	.container .contact .registerLink {
 		width: 100%;
+	}
+	
+	.container .contact form button {
+		font-size: 9px;
 	}
 }
 
