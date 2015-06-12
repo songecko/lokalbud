@@ -108,9 +108,9 @@ class LoadProductsData extends DataFixture
         $product->setLatitud(18.1987192 + $i*0.002 );
         $product->setLongitud(-66.3526747 + $i*0.002);
         $product->setAddress("Avenida Callao 648");
-        
+
+        $this->setTaxons($product, array('Foods'));
         /**TODO VER en el futuro si usamos esta caracteristicas**/
-        //$this->setTaxons($product, array('T-Shirts', 'SuperTees'));
         //$product->setArchetype($this->getReference('Sylius.Archetype.t_shirt'));
         
         //$randomBrand = $this->faker->randomElement(array('Nike', 'Adidas', 'Puma', 'Potato'));

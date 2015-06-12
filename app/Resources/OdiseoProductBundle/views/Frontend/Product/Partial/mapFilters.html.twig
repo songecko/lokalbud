@@ -24,7 +24,7 @@
 		<div class="col-md-10 filter-value types">
 			<ul class="clearfix">
 			{% for productType in productTypes %}
-				<li><label><input name="filter[type][]" id="{{'type_'~productType.id  }}"  value="{{ productType.id }}" type="checkbox"> {{ productType.description }}</label></li>
+				<li><label><input name="filter[type][]" id="{{'type_'~productType.id  }}"  value="{{ productType.id }}" type="checkbox"> {{ productType.name }}</label></li>
 			{% endfor %}
 			</ul>
 		</div>

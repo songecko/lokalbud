@@ -79,7 +79,7 @@
 	                            <select title="Media type" class="searchSelect" id="searchDropdownBox" name="filter[type][]" >
 	                                <option value="-1">All Types</option>
 	                                	{% for productType in productTypes %}
-	                                	 <option value="{{ productType.id }}" title="Museums">{{ productType.description }}</option>
+	                                	 <option value="{{ productType.id }}" title="Museums">{{ productType.name }}</option>
 										{% endfor %}
 	                            </select>
                             </span>
