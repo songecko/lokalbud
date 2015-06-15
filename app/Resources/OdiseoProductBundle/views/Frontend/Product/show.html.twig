@@ -50,14 +50,14 @@ $(function()
 {% endblock %}
 
 {% block content %}
-{% if product.mainAsset %}
-<section class="parallax-window" data-parallax="scroll" data-image-src="{{ asset('media/images/product/'~product.mainAsset.path)|imagine_filter('product_show_header') }}" data-natural-width="1400" data-natural-height="470">
+{% if product.image %}
+<section class="parallax-window" data-parallax="scroll" data-image-src="{{ product.image.path|imagine_filter('product_show_header') }}" data-natural-width="1400" data-natural-height="470">
 	<div class="parallax-content-2">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-sm-8">
 					<span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i></span>
-					<h1>{{ product.title }}</h1>
+					<h1>{{ product.name }}</h1>
 					<span>{{ product.address }}</span>
                 </div>
                 <div class="col-md-4 col-sm-4">
@@ -92,23 +92,23 @@ $(function()
                 </ul>
             </div>
             <p class="visible-sm visible-xs"><a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap">View on map</a></p><!-- Map button for tablets/mobiles -->
-            {% if product.assets|length > 0 %}
+            {% if product.images|length > 0 %}
             <div id="Img_carousel" class="slider-pro">
                 <div class="sp-slides">
-                	{% for asset in product.assets %}
+                	{% for image in product.images %}
                     <div class="sp-slide">
-                        <img alt="" class="sp-image" src="{{ asset('media/images/product/'~asset.path)|imagine_filter('product_gallery_medium') }}" 
-                        data-src="{{ asset('media/images/product/'~asset.path)|imagine_filter('product_gallery_medium') }}" 
-                        data-small="{{ asset('media/images/product/'~asset.path)|imagine_filter('product_gallery_small') }}" 
-                        data-medium="{{ asset('media/images/product/'~asset.path)|imagine_filter('product_gallery_medium') }}" 
-                        data-large="{{ asset('media/images/product/'~asset.path)|imagine_filter('product_gallery_large') }}" 
-                        data-retina="{{ asset('media/images/product/'~asset.path)|imagine_filter('product_gallery_large') }}">
+                        <img alt="" class="sp-image" src="{{ image.path|imagine_filter('product_gallery_medium') }}" 
+                        data-src="{{ image.path|imagine_filter('product_gallery_medium') }}" 
+                        data-small="{{ image.path|imagine_filter('product_gallery_small') }}" 
+                        data-medium="{{ image.path|imagine_filter('product_gallery_medium') }}" 
+                        data-large="{{ image.path|imagine_filter('product_gallery_large') }}" 
+                        data-retina="{{ image.path|imagine_filter('product_gallery_large') }}">
                     </div>
                     {% endfor %}
                 </div>
                 <div class="sp-thumbnails">
-                	{% for asset in product.assets %}
-                    <img alt="" class="sp-thumbnail" src="{{ asset('media/images/product/'~asset.path)|imagine_filter('product_gallery_medium') }}">
+                	{% for image in product.images %}
+                    <img alt="" class="sp-thumbnail" src="{{ image.path|imagine_filter('product_gallery_medium') }}">
                     {% endfor %}
                 </div>
             </div>

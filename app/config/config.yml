@@ -143,3 +143,10 @@ liip_imagine:
         product_gallery_large:
             filters:
                 thumbnail: { size: [2000, 1333], mode: outbound }
+
+fos_user:
+    firewall_name: main
+    registration:
+        form:
+            type: fos_user_registration
+            validation_groups: [RegistrationOdiseoUser]

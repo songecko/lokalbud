@@ -49,7 +49,7 @@
 	<div class="layer"></div>
     <!-- Mobile menu overlay mask -->
 	
-	{% block flashes %}
+	{#% block flashes %}
 		{% for type in ['success', 'error', 'fos_user_success', 'notice'] %}
 			{% for flash in app.session.flashbag.get(type) %}
 				<div class="alert alert-{{ type == 'fos_user_success' ? 'success' : type == 'error' ? 'danger' : type == 'notice' ? 'warning' : type }}">
@@ -58,7 +58,7 @@
 				</div>
 			{% endfor %}
 		{% endfor %}
-	{% endblock %}
+	{% endblock %#}
         
 	<!--  INIT HEADER -->
 	{% block header %}
