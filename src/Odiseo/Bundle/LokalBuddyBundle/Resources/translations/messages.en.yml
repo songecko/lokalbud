@@ -1,3 +1,4 @@
 sylius:
     meta:
         backend_title: LokalBuddy - Administration
+    email: Email
