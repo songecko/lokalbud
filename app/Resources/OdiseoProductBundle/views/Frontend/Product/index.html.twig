@@ -2,8 +2,6 @@
 
 {% block javascripts %}
 	{{ parent() }}
-	<!-- Check and radio inputs -->
-	<script src="{{ asset('bundles/odiseolokalbuddy/js/icheck.js') }}"></script>
 	<!-- Map -->
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false&libraries=places"></script>
 	<script src="{{ asset('bundles/odiseolokalbuddy/js/infobox.js') }}"></script>
@@ -15,12 +13,7 @@
 	<script src="{{ asset('bundles/odiseolokalbuddy/js/web/filtersProduct.js') }}"></script>
 <script type="text/javascript">
 $(function()
-{
-	$('input').iCheck({
-		checkboxClass: 'icheckbox_square-grey',
-		radioClass: 'iradio_square-grey'
-	});
-	
+{	
 	$('.filter .price-slider').slider().on('slide', function(e)
 	{
 		$('.priceValues .min').text('$'+e.value[0]);
@@ -33,7 +26,6 @@ $(function()
 {% block stylesheets %}
 {{ parent() }}
 <link href="{{ asset('bundles/odiseolokalbuddy/css/bootstrap-slider.css') }}" rel="stylesheet">
-<link href="{{ asset('bundles/odiseolokalbuddy/css/skins/square/grey.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -42,8 +34,8 @@ $(function()
     
 <div class="map-search">  
 	<div class="row">
-		<aside class="col-md-4">
-			<form name="filterProductsForm"action="{{ path('odiseo_product_index') }}" method="GET">
+		<aside class="col-md-5">
+			<form name="filterProductsForm" action="{{ path('odiseo_product_index') }}" method="GET">
 				<div class="row filters">
 					<div class="col-xs-12">
 						{{ include('OdiseoProductBundle:Frontend/Product/Partial:mapFilters.html.twig', { 'productTypes': productTypes  , 'towns' : towns}) }}
@@ -56,7 +48,7 @@ $(function()
 			</div>			
 		</aside>
 		
-		<div class="col-md-8">
+		<div class="col-md-7">
 			<div class="row sort">
 				<div class="col-xs-12">
 					{{ include('OdiseoProductBundle:Frontend/Product/Partial:mapSort.html.twig', { }) }}

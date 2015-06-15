@@ -72,17 +72,16 @@
 				<div id="search_bar_container">
                 	<div class="container">
                 		<form action="{{ path('odiseo_product_index') }}" method="GET">
+                		<div class="search_bar filterType">
+                			<ul>
+                				{% for productType in productTypes %}
+                				<li>
+                					<label><input type="checkbox" id="filter_type_{{ productType.id }}" name="filter[type][]" value="{{ productType.id }}"><span>{{ productType.name }}</span></label>
+                				</li>
+                				{% endfor %}
+                			</ul>
+                		</div>
 						<div class="search_bar">
-							<span class="nav-facade-active" id="nav-search-in">
-	                            <span id="nav-search-in-content" style="">All Types</span>
-	                            <span class="nav-down-arrow nav-sprite"></span>
-	                            <select title="Media type" class="searchSelect" id="searchDropdownBox" name="filter[type][]" >
-	                                <option value="-1">All Types</option>
-	                                	{% for productType in productTypes %}
-	                                	 <option value="{{ productType.id }}" title="Museums">{{ productType.name }}</option>
-										{% endfor %}
-	                            </select>
-                            </span>
                             <input style="display:none;" id="townInput" name="filter[town][]"></input>
                             <div class="nav-searchfield-outer" data-autocomplete-options="{{towns}}">
                                 <input type="text" autocomplete="off"  placeholder="Where you want share experiences?" id="twotabsearchtextbox">
@@ -106,53 +105,92 @@
 {% block content %}
 <div class="container margin_60">    
 	<div class="main_title">
-		<h2>Some <span>good</span> reasons</h2>
-		<p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+		<h2>Staff pick of the week</h2>
 	</div>    
-	<div class="row">    
-		<div class="col-md-4 wow zoomIn animated" data-wow-delay="0.2s" style="visibility: visible; -webkit-animation-delay: 0.2s;">
-			<div class="feature_home">
-				<i class="icon_set_1_icon-41"></i>
-				<h3><span>+120</span> Premium tours</h3>
-				<p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.</p>
-				<a href="#" class="btn_1 outline">Read more</a>
-			</div>
+	<div class="row pickOfWeek">    
+		<div class="col-md-4 wow zoomIn animated eat" data-wow-delay="0.2s" style="visibility: visible; -webkit-animation-delay: 0.2s;">
+			<h2 class="powTitle">Eat with lokal buddy</h2>
+			<p class="powSubtitle">Lorem ipsum sit amet is simply dummy text of the printing</p>
+			<div class="hotel_container">
+				<div class="img_container">
+					<a href="#">
+						<img src="http://placehold.it/360x202" class="img-responsive" alt="">
+						<div class="short_info hotel">
+							{#From/Per night#}<span class="price"><sup>$</sup>45</span>
+						</div>
+					</a>
+				</div>
+				<div class="hotel_title">
+					<h3>asdasdasd</h3>
+					<div class="rating">
+						<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
+					</div><!-- end rating -->
+					<div class="wishlist">
+						<a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+					</div><!-- End wish list-->
+				</div>
+			</div><!-- End box tour -->
 		</div>
 		
-		<div class="col-md-4 wow zoomIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
-			<div class="feature_home">
-				<i class="icon_set_1_icon-30"></i>
-				<h3><span>+1000</span> Customers</h3>
-				<p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.</p>
-				<a href="#" class="btn_1 outline">Read more</a>
-			</div>
+		<div class="col-md-4 wow zoomIn animated tours" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+			<h2 class="powTitle">Tours with lokal buddy</h2>
+			<p class="powSubtitle">Lorem ipsum sit amet is simply dummy text of the printing</p>
+			<div class="hotel_container">
+				<div class="img_container">
+					<a href="#">
+						<img src="http://placehold.it/360x202" class="img-responsive" alt="">
+						<div class="short_info hotel">
+							{#From/Per night#}<span class="price"><sup>$</sup>45</span>
+						</div>
+					</a>
+				</div>
+				<div class="hotel_title">
+					<h3>asdasdasd</h3>
+					<div class="rating">
+						<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
+					</div><!-- end rating -->
+					<div class="wishlist">
+						<a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+					</div><!-- End wish list-->
+				</div>
+			</div><!-- End box tour -->
 		</div>
             
-		<div class="col-md-4 wow zoomIn animated" data-wow-delay="0.6s" style="visibility: visible; -webkit-animation-delay: 0.6s;">
-			<div class="feature_home">
-				<i class="icon_set_1_icon-57"></i>
-				<h3><span>H24 </span> Support</h3>
-				<p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.</p>
-				<a href="#" class="btn_1 outline">Read more</a>
-			</div>
+		<div class="col-md-4 wow zoomIn animated activities" data-wow-delay="0.6s" style="visibility: visible; -webkit-animation-delay: 0.6s;">
+			<h2 class="powTitle">Activities with lokal buddy</h2>
+			<p class="powSubtitle">Lorem ipsum sit amet is simply dummy text of the printing</p>
+			<div class="hotel_container">
+				<div class="img_container">
+					<a href="#">
+						<img src="http://placehold.it/360x202" class="img-responsive" alt="">
+						<div class="short_info hotel">
+							{#From/Per night#}<span class="price"><sup>$</sup>45</span>
+						</div>
+					</a>
+				</div>
+				<div class="hotel_title">
+					<h3>asdasdasd</h3>
+					<div class="rating">
+						<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
+					</div><!-- end rating -->
+					<div class="wishlist">
+						<a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+					</div><!-- End wish list-->
+				</div>
+			</div><!-- End box tour -->
 		</div>
 	</div><!--End row -->
-        
-	<hr>
-        
+</div>
+<div class="whyLokals">        
 	<div class="row">
-		<div class="col-md-8 col-sm-6 hidden-xs">
-			<img src="{{ asset('bundles/odiseolokalbuddy/img/laptop.png')}}"" alt="Laptop" class="img-responsive laptop">
+		<div class="col-md-6 col-sm-6 hidden-xs">
+			<h3><span>Join our comunnity</span></h3>
 		</div>
-		<div class="col-md-4 col-sm-6">
-			<h3><span>Get started</span> with CityTours</h3>
-			<p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.</p>
-			<ul class="list_order">
-				<li><span>1</span>Select your preferred tours</li>
-				<li><span>2</span>Purchase tickets and options</li>
-				<li><span>3</span>Pick them directly from your office</li>
-			</ul>
-			<a href="all_tour_list.html" class="btn_1">Start now</a>
+		<div class="col-md-6 col-sm-6">
+			<h3><span>Why lokal buddy?</span></h3>
+			<p><strong>Activities with lokal buddy</strong></p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius tellus augue, rutrum pulvinar ipsum euismod at. Sed eget aliquet orci, vel semper felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam condimentum ligula at pharetra cursus. Duis id dui posuere, molestie odio eu, molestie elit. Vestibulum commodo volutpat dapibus. Nulla vel dolor quis justo molestie faucibus. Duis tristique quam mauris, eu eleifend augue sodales vitae. Phasellus vitae dui at enim scelerisque blandit euismod quis nibh. Vestibulum blandit sapien ex, id malesuada lectus fermentum a. Vestibulum sodales malesuada metus sed congue.</p>
+			<p><a href="#" class="btn_1">Read more</a></p>
 		</div>
 	</div><!-- End row -->
 </div>

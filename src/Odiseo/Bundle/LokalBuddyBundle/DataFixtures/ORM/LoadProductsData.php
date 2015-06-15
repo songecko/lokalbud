@@ -46,7 +46,7 @@ class LoadProductsData extends DataFixture
     		)
     	);
     	
-    	$types = array('foods', 'tours', 'activities');
+    	$types = array('Foods', 'Tours', 'Activities');
     	
     	$pIndex = 0;
     	foreach ($regionTowns as $regionName => $towns)

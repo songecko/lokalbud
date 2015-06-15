@@ -29,14 +29,15 @@
 		'bundles/odiseolokalbuddy/css/base.css'
 		'bundles/odiseolokalbuddy/rs-plugin/css/settings.css'
 		'bundles/odiseolokalbuddy/css/extralayers.css'
-		'bundles/odiseolokalbuddy/css/main.css'
 		'bundles/odiseolokalbuddy/css/jquery-ui.css'
+		'bundles/odiseolokalbuddy/css/skins/square/grey.css'
+		'bundles/odiseolokalbuddy/css/main.css'
 	%}
 	<link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
 	{% endstylesheets %}
-	{% if is_granted('ROLE_SYLIUS_ADMIN') %}
+	{#% if is_granted('ROLE_SYLIUS_ADMIN') %}
 		{% include "CmfCreateBundle::includecssfiles.html.twig" %}
-	{% endif %}
+	{% endif %#}
 	{% endblock %}
 	
 	<!--[if lt IE 9]>
@@ -87,7 +88,7 @@
             <div class="row">
                 <div class="col-md-3 col-sm-3 col-xs-3">
                     <div id="logo">
-                        <a href="{{ path('sylius_homepage') }}"><img src="{{ asset('bundles/odiseolokalbuddy/img/logo.png') }}" width="160" height="34" alt="Lokal Buddy" data-retina="true" class="logo_normal"></a>
+                        <a href="{{ path('sylius_homepage') }}"><img src="{{ asset('bundles/odiseolokalbuddy/img/logo_2x.png') }}" width="320" height="68" alt="Lokal Buddy" data-retina="true" class="logo_normal"></a>
                         <a href="{{ path('sylius_homepage') }}"><img src="{{ asset('bundles/odiseolokalbuddy/img/logo_sticky.png') }}" width="160" height="34" alt="Lokal Buddy" data-retina="true" class="logo_sticky"></a>
                     </div>
                 </div>
@@ -150,7 +151,24 @@
 	<!-- INIT FOOTER -->
 	{% block footer %}
 	<footer>
+		<div class="redBar"></div>
 		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="social_footer">
+						<ul>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-google"></i></a></li>
+							<li><a href="#"><i class="icon-instagram"></i></a></li>
+							<li><a href="#"><i class="icon-pinterest"></i></a></li>
+							<li><a href="#"><i class="icon-vimeo"></i></a></li>
+							<li><a href="#"><i class="icon-youtube-play"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+						</ul>						
+					</div>
+				</div>
+			</div><!-- End row -->
 			<div class="row">
 				<div class="col-md-4 col-sm-3">
 					<h3>Need help?</h3>
@@ -198,21 +216,9 @@
 			</div><!-- End row -->
 			<div class="row">
 				<div class="col-md-12">
-					<div id="social_footer">
-						<ul>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-google"></i></a></li>
-							<li><a href="#"><i class="icon-instagram"></i></a></li>
-							<li><a href="#"><i class="icon-pinterest"></i></a></li>
-							<li><a href="#"><i class="icon-vimeo"></i></a></li>
-							<li><a href="#"><i class="icon-youtube-play"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-						</ul>
-						<p>© LokalBuddy 2015</p>
-					</div>
+					<img src="{{ asset('bundles/odiseolokalbuddy/img/logo_footer.png') }}" class="logoFooter img-responsive">
 				</div>
-			</div><!-- End row -->
+			</div>		
 		</div><!-- End container -->
 	</footer><!-- End footer -->
 	{% endblock %}
@@ -232,16 +238,18 @@
 		'bundles/odiseolokalbuddy/js/revolution_func.js'
 		'bundles/odiseolokalbuddy/js/jquery-ui.js'
 		'bundles/odiseolokalbuddy/js/jquery.form.js'
+		'bundles/odiseolokalbuddy/js/icheck.js'
 		'bundles/odiseouser/js/wishlist.js'
+		'bundles/odiseolokalbuddy/js/main.js'
 	%}
 	<script type="text/javascript" src="{{ asset_url }}"></script>
 	{% endjavascripts %}
-	{% if is_granted('ROLE_SYLIUS_ADMIN') %}
+	{#% if is_granted('ROLE_SYLIUS_ADMIN') %}
 		{% render(controller(
 			"cmf_create.jsloader.controller:includeJSFilesAction",
 			{'_locale': app.request.locale, 'editor': 'hallo'}
 		)) %}
-	{% endif %}
+	{% endif %#}
 	{% endblock %}
 	{% if settings.tracking_code %}
         {{ settings.tracking_code|raw }}

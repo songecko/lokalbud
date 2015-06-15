@@ -1,6 +1,6 @@
 body > section {
   position: relative;
-  height: 100px;
+  height: 130px;
   background: #black;
   color: #fff;
   width: 100%;
@@ -18,7 +18,15 @@ body > section#general {
 body > section#product {
 	background: #FFFFFF;
 }
-	
+
+#top_line {
+	border-bottom: 1px solid #e14a3f;	
+}
+
+ul#top_links li {
+	border-left: 1px solid #e14a3f;
+}
+
 .tp-static-layers {
 	width: 100%;
 	height: 100%;
@@ -54,7 +62,7 @@ ul#top_links .dropdown-access .dropdown-menu.user a.btn_full_outline {
 
 .map-search {
 	position: absolute;
-	top: 100px;
+	top: 130px;
 	left: 0;
 	bottom: 0;
 	width: 100%;
@@ -69,8 +77,15 @@ ul#top_links .dropdown-access .dropdown-menu.user a.btn_full_outline {
 .map-search aside {
 	padding: 0;
 	height: 100%;
-	overflow-x: hidden;
-	overflow-y: scroll;
+}
+
+.map-search aside > form {
+	height: 30%;
+}
+
+.map-search aside > .mapContainer {
+	padding: 0;
+	height: 70%;
 }
 
 .map-search .filters .filter {
@@ -120,13 +135,13 @@ ul#top_links .dropdown-access .dropdown-menu.user a.btn_full_outline {
 	margin: 0;	
 }
 
+.map-search > .row > div:last-child {
+	overflow-y: scroll;
+	height: 100%;
+}
+	
 .map-search .product-list {
 	padding: 15px;
-}
-
-.map-search .mapContainer {
-	padding: 0;
-	height: 100%;
 }
 
 .map-search #map {
@@ -148,8 +163,6 @@ ul#top_links .dropdown-access .dropdown-menu.user a.btn_full_outline {
 }
   
 .basicFilters .row.filter .towns {
-   height: 10em;
-   overflow-y: scroll;
 }
 
 form ul.images {
@@ -220,4 +233,98 @@ a.create-ui-toggle {
 }
 [contenteditable="true"].inEditMode {
     outline: 3px solid #1abb9c !important;
+}
+.search_bar.filterType ul li {
+	display: inline-block;
+	width: 33.3%;
+}
+.search_bar.filterType ul li:nth-child(1) {
+	text-align: left;
+}
+.search_bar.filterType ul li:nth-child(2) {
+	text-align: center;
+}
+.search_bar.filterType ul li:nth-child(3) {
+	text-align: right;
+}
+.search_bar.filterType ul li label {
+	display: inline-block;
+	color: #FFFFFF;
+}
+.search_bar.filterType ul li:nth-child(1) .icheckbox_square-grey, .iradio_square-grey {
+	background-image: url(../css/skins/square/foods.png);
+}
+.search_bar.filterType ul li:nth-child(2) .icheckbox_square-grey, .iradio_square-grey {
+	background-image: url(../css/skins/square/tours.png);
+}
+.search_bar.filterType ul li:nth-child(3) .icheckbox_square-grey, .iradio_square-grey {
+	background-image: url(../css/skins/square/activities.png);
+}
+.search_bar.filterType ul li label span {
+	padding: 0 15px 0 0;
+  	font-size: 14px;
+}
+.search_bar.filterTown {
+	margin: 15px auto 0 auto;
+	font-size: 14px;
+}
+.search_bar.filterTown a {
+	color: #e14a3f;
+}
+#twotabsearchtextbox {
+	  padding: 3px 0 0 0;
+}
+.pickOfWeek .powTitle {
+	font-size: 25px;
+  	text-align: center;
+}
+.pickOfWeek .powSubtitle {
+	font-size: 18px;
+	text-align: center;
+}
+.pickOfWeek .eat .powTitle {
+	color: #ee37c3;
+}
+.pickOfWeek .tours .powTitle {
+	color: #1f65ae;
+}
+.pickOfWeek .activities .powTitle {
+	color: #d5e657;
+}
+.whyLokals {
+	background: url(../img/why_lokal_background.png) no-repeat;
+	height: 440px;
+	background-size: cover;
+}
+.whyLokals h3 {
+	text-align: center;
+	margin: 40px;
+	font-size: 37px;
+}
+.whyLokals p {
+  color: #ffffff;
+  padding: 0 50px;
+  font-size: 15px;
+}
+.whyLokals .btn_1 {
+	background: #e14a3f;
+}
+
+footer {
+	padding: 0px 0 10px 0;
+	background: #e14a3f;
+}
+footer .redBar {
+	height: 32px;
+	background: #61201b;
+	-webkit-box-shadow: 0px 10px 30px -8px rgba(0,0,0,0.47);
+	-moz-box-shadow: 0px 10px 30px -8px rgba(0,0,0,0.47);
+	box-shadow: 0px 10px 30px -8px rgba(0,0,0,0.47);
+}
+#social_footer {
+	border: none;
+	margin-top: 0;
+}
+footer .logoFooter {
+	margin: 0 auto;
 }
