@@ -225,6 +225,10 @@ h2 a {
 	.container .contact > h2 {
 		font-size: 1.2em;
 	}
+	
+	.hidden-xs {
+		display:none;
+	}	
 }
 
 @media screen and (max-height: 480px)  
