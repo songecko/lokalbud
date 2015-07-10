@@ -39,7 +39,7 @@ h2 a {
 	left: 10%;
 	width: 80%;
 	text-align: center;
-	padding: 15px;
+	padding: 0;
 }
 .container .contact > h2 {
 	text-transform: uppercase;
@@ -213,6 +213,7 @@ h2 a {
 	}
 	
 	.container .contact {
+		left: 5%;
 		width: 90%;
 	}
 }
