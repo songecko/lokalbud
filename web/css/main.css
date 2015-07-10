@@ -20,6 +20,7 @@ h2 a {
 	margin: 0;
 	height: 100%;
 	width: 100%;
+	min-width: 100%;
 	background: url(../images/coming-soon.jpg) no-repeat center center;
 	background-size: cover;
 	position: relative;
