@@ -193,6 +193,10 @@ h2 a {
 
 @media screen and (max-width: 730px) 
 {	
+	.hidden-xs {
+		display:none;
+	}
+	
 	.container .contact > h2 {
 		font-size: 1.5em;
 	}
