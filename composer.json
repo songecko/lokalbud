@@ -23,8 +23,9 @@
 		"doctrine/migrations" : "~1.0@dev",
 		"friendsofsymfony/user-bundle" : "2.0.*@dev",
 		"sensio/generator-bundle" : "~2.3",
-		
-		"vich/uploader-bundle" : "0.14.*"
+		"vich/uploader-bundle" : "0.14.*",
+		"stfalcon/tinymce-bundle" : "dev-master",
+		"friendsofsymfony/message-bundle" : "1.2.*"
 	},
 	"require-dev" : {
 		"behat/behat" : "~3.0",

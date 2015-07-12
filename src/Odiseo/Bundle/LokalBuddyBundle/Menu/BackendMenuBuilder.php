@@ -37,7 +37,7 @@ class BackendMenuBuilder extends BaseBackendMenuBuilder
 
         $this->addAssortmentMenu($menu, $childOptions, 'sidebar');
         $this->addSalesMenu($menu, $childOptions, 'sidebar');
-        //$this->addMarketingMenu($menu, $childOptions, 'sidebar');
+        $this->addMarketingMenu($menu, $childOptions, 'sidebar');
         $this->addCustomersMenu($menu, $childOptions, 'sidebar');
         //$this->addSupportMenu($menu, $childOptions, 'sidebar');
         //$this->addContentMenu($menu, $childOptions, 'sidebar');
@@ -136,6 +136,37 @@ class BackendMenuBuilder extends BaseBackendMenuBuilder
     	}
     }
     
+    protected function addMarketingMenu(ItemInterface $menu, array $childOptions, $section)
+    {
+    	$child = $menu
+    	->addChild('marketing', $childOptions)
+    	->setLabel($this->translate(sprintf('sylius.backend.menu.%s.marketing', $section)))
+    	;
+    
+    	/*if ($this->authorizationChecker->isGranted('sylius.promotion.index')) {
+    		$child->addChild('promotions', array(
+    				'route' => 'sylius_backend_promotion_index',
+    				'labelAttributes' => array('icon' => 'glyphicon glyphicon-bullhorn'),
+    		))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.promotions', $section)));
+    	}
+    	if ($this->authorizationChecker->isGranted('sylius.promotion.create')) {
+    		$child->addChild('new_promotion', array(
+    				'route' => 'sylius_backend_promotion_create',
+    				'labelAttributes' => array('icon' => 'glyphicon glyphicon-plus-sign'),
+    		))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.new_promotion', $section)));
+    	}*/
+    	if ($this->authorizationChecker->isGranted('sylius.promotion.index')) {
+    		$child->addChild('emails', array(
+    				'route' => 'sylius_backend_email_index',
+    				'labelAttributes' => array('icon' => 'glyphicon glyphicon-envelope'),
+    		))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.emails', $section)));
+    	}
+    
+    	if (!$child->hasChildren()) {
+    		$menu->removeChild('marketing');
+    	}
+    }
+    
     protected function addConfigurationMenu(ItemInterface $menu, array $childOptions, $section)
     {
     	$child = $menu
@@ -169,7 +200,7 @@ class BackendMenuBuilder extends BaseBackendMenuBuilder
     				'route' => 'sylius_backend_payment_method_index',
     				'labelAttributes' => array('icon' => 'glyphicon glyphicon-credit-card'),
     		))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.payment_methods', $section)));
-    	}
+    	}*/
     
     	if ($this->authorizationChecker->isGranted('sylius.currency.index')) {
     		$child->addChild('currencies', array(
@@ -178,7 +209,7 @@ class BackendMenuBuilder extends BaseBackendMenuBuilder
     		))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.currencies', $section)));
     	}
     
-    	if ($this->authorizationChecker->isGranted('sylius.settings.taxation')) {
+    	/*if ($this->authorizationChecker->isGranted('sylius.settings.taxation')) {
     		$child->addChild('taxation_settings', array(
     				'route'           => 'sylius_backend_taxation_settings',
     				'labelAttributes' => array('icon' => 'glyphicon glyphicon-cog'),
@@ -211,7 +242,7 @@ class BackendMenuBuilder extends BaseBackendMenuBuilder
     				'route' => 'sylius_backend_shipping_method_index',
     				'labelAttributes' => array('icon' => 'glyphicon glyphicon-cog'),
     		))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.shipping_methods', $section)));
-    	}
+    	}*/
     
     	if ($this->authorizationChecker->isGranted('sylius.country.index')) {
     		$child->addChild('countries', array(
@@ -220,7 +251,7 @@ class BackendMenuBuilder extends BaseBackendMenuBuilder
     		))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.countries', $section)));
     	}
     
-    	if ($this->authorizationChecker->isGranted('sylius.zone.index')) {
+    	/*if ($this->authorizationChecker->isGranted('sylius.zone.index')) {
     		$child->addChild('zones', array(
     				'route' => 'sylius_backend_zone_index',
     				'labelAttributes' => array('icon' => 'glyphicon glyphicon-globe'),

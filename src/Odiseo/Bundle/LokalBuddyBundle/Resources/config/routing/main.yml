@@ -2,18 +2,21 @@ odiseo_lokalbuddy_frontend_home:
     path:     /
     defaults: { _controller: "OdiseoLokalBuddyBundle:Frontend/Homepage:main" }
     
-odiseo_lokalbuddy_frontend_product:
+odiseo_product_product:
     resource: "@OdiseoProductBundle/Resources/config/routing/frontend/product.yml"
     prefix:   /experience
 
-#User Security - Profile - Register
-#odiseo_lokalbuddy_frontend_user:
-#    resource: "@OdiseoUserBundle/Resources/config/routing/frontend/user.yml"
-#    prefix:   /
+odiseo_product_review:
+    resource: "@OdiseoProductBundle/Resources/config/routing/frontend/review.yml"
+    prefix:   /review
 
-odiseo_user_profile:
-    resource: "@OdiseoUserBundle/Resources/config/routing/frontend/profile.yml"
-    prefix:   /profile
+odiseo_ecommerce:
+    resource: "@OdiseoEcommerceBundle/Resources/config/routing/main.yml"
+    prefix:   /
+
+odiseo_user_account:
+    resource: "@OdiseoUserBundle/Resources/config/routing/frontend/account.yml"
+    prefix:   /account
 
 odiseo_user_wishlist:
     resource: "@OdiseoUserBundle/Resources/config/routing/frontend/wishlist.yml"
@@ -27,7 +30,6 @@ odiseo_lokalbuddy_backend:
 odiseo_lokalbuddy_frontend:
     resource: "@SyliusWebBundle/Resources/config/routing/frontend/main.yml"
     prefix:   /
-    
 
 sylius_province_choice_form:
     path: /province/choice-form
@@ -37,7 +39,7 @@ sylius_province_choice_form:
             template: SyliusAddressingBundle:Province:_provinceChoiceForm.html.twig
 
 sylius_partial:
-    resource: @SyliusWebBundle/Resources/config/routing/partial/main.yml
+    resource: "@SyliusWebBundle/Resources/config/routing/partial/main.yml"
     prefix: /_partial
 
 _liip_imagine:

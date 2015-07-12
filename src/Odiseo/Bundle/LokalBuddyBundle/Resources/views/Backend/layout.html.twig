@@ -104,19 +104,19 @@
         {% javascripts output='js/backend.min.js'
             '//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'
             '//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'
-            '@OdiseoBackendBundle/Resources/assets/js/AdminLTE/app.min.js'
+			'bundles/syliusreport/js/chart.js'
+			'bundles/syliusweb/js/jquery.blueimp-gallery.min.js'
+			'bundles/syliusweb/js/confirm-modal.js'
+			'bundles/syliusweb/js/form-collection.js'
+			'bundles/syliusweb/js/form-spinner.js'
+			'bundles/syliusweb/js/select2.js'
+			'bundles/syliusweb/js/bootstrap-datepicker.js'
+			'bundles/syliusweb/js/backend.js'
+			'bundles/syliusresource/js/form-collection.js'
+			'@OdiseoBackendBundle/Resources/assets/js/AdminLTE/app.min.js'
             'bundles/easyadmin/javascript/admin.js'
             '@OdiseoBackendBundle/Resources/assets/js/backend.js'
         %}
-        {#bundles/syliusreport/js/chart.js'
-                'bundles/syliusweb/js/jquery.blueimp-gallery.min.js'
-                'bundles/syliusweb/js/confirm-modal.js'
-                'bundles/syliusweb/js/form-collection.js'
-                'bundles/syliusweb/js/form-spinner.js'
-                'bundles/syliusweb/js/select2.js'
-                'bundles/syliusweb/js/bootstrap-datepicker.js'
-                'bundles/syliusweb/js/backend.js'
-                'bundles/syliusresource/js/form-collection.js'#}
             <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
         <!-- jQuery UI 1.11.2 -->

@@ -1,0 +1,31 @@
+{% extends 'OdiseoUserBundle:Frontend:layout.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block content %}
+<section id="hero" class="login">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+				<div id="login">
+					<div class="text-center err"><img src="{{ asset('bundles/odiseoadscandy/img/logo_sticky.png') }}" alt="" data-retina="true" ></div>
+					<hr>
+					{% if invalid_username is defined %}
+            		<div class="text-center error">{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}</div>
+            		<hr>
+        			{% endif %}
+					<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+						<div class="form-group">
+							<label for="username">{{ 'resetting.request.username'|trans }}</label>
+        					<input type="text" class="form-control" id="username" name="username" required="required" />
+						</div>
+						
+						<input type="submit" value="{{ 'resetting.request.submit'|trans }}" class="btn_full" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+						

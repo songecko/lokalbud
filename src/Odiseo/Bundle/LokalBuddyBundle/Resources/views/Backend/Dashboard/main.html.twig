@@ -3,13 +3,15 @@
 {% from 'SyliusWebBundle:Backend/Order:macros.html.twig' import simple_list as list_orders %}
 {% from 'SyliusWebBundle:Backend/User:macros.html.twig' import simple_list as list_users %}
 
-{% block content %}
-<div class="page-header">
-    <h1><i class="glyphicon glyphicon-dashboard"></i> {{ 'sylius.backend.dashboard.header'|trans }} <small>{{ 'sylius.backend.dashboard.subheader'|trans }}</small></h1>
-</div>
+{% block content_title %}
+<h1><i class="glyphicon glyphicon-dashboard"></i> {{ 'sylius.backend.dashboard.header'|trans }} <small>{{ 'sylius.backend.dashboard.subheader'|trans }}</small></h1>
+{% endblock %}
 
+{% block content %}
 <div class="row">
     <div class="col-md-6">
+	<div class="box box-success">
+	<div class="box-body">
         <ul class="nav nav-pills nav-justified">
             <li><a href="{{ path('sylius_backend_order_index') }}"><i class="glyphicon glyphicon-shopping-cart"></i> {{ 'sylius.backend.quick_links.orders'|trans }}</a></li>
             <li><a href="{{ path('sylius_backend_user_index') }}"><i class="glyphicon glyphicon-user"></i> {{ 'sylius.backend.quick_links.users'|trans }}</a></li>
@@ -21,8 +23,14 @@
         </ul>
         <br>
     </div>
+    </div>
+    </div>
     <div class="col-md-6">
+	<div class="box box-warning">
+		<div class="box-body">
         {{ render(controller('sylius.controller.report:embeddAction', {'report': 'ReportCode'})) }}
+		</div>
+	</div>
     </div>
 </div>
 

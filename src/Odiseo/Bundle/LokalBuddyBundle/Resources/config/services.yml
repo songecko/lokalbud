@@ -1,4 +1,8 @@
 parameters:
     sylius.menu_builder.backend.class: Odiseo\Bundle\LokalBuddyBundle\Menu\BackendMenuBuilder
+    sylius.listener.cart.class: Odiseo\Bundle\EcommerceBundle\EventListener\CartListener
+    sylius.checkout_scenario.class: Odiseo\Bundle\EcommerceBundle\Checkout\CheckoutProcessScenario
+    sylius.checkout_form.payment.class: Odiseo\Bundle\LokalBuddyBundle\Form\Type\Checkout\PaymentStepType
+    sylius.checkout_form.addressing.class: Odiseo\Bundle\EcommerceBundle\Form\Type\Checkout\AddressingStepType
 
 services:    

@@ -22,7 +22,6 @@ Hydra.module.register('town-filter-module', function(Bus, Module, ErrorHandler, 
 			            		Bus.publish('products', 'products:ready', {  products: products , otherData : otherData });
 							}};
 							var form = Api.dom.byCssSelector("form[name='filterProductsForm']");
-							var url = form.attr('action');
 							form.ajaxSubmit(options);
 				});
 				
@@ -73,9 +72,9 @@ Hydra.module.register('list-product-module', function(Bus, Module, ErrorHandler,
 				i++;
 			}
 		}, _refreshTemplateData : function(template, product, dataTemplate){
-			 Api.dom.byCssSelector("h3[data-module-field='title']", template).html(product.title);
+			 Api.dom.byCssSelector("h3[data-module-field='title']", template).html(product.name);
 			 Api.dom.byCssSelector("span[data-module-field='price']", template).html(product.price);
-			 Api.dom.byCssSelector("img[data-module-field='image_item']", template).attr('src', dataTemplate.imagesDirectoryPath +  product.mainAsset.path);
+			 Api.dom.byCssSelector("img[data-module-field='image_item']", template).attr('src', dataTemplate.imagesDirectoryPath +  product.imagePath);
 			 Api.dom.byCssSelector("a[data-module-field='link-detail']", template).attr('href', this.detailUrl + product.id);
 			 Api.dom.byCssSelector("a[data-module-field='link-wishlist']", template).attr('href', this.wishlistUrl + product.id);
 			 
@@ -123,12 +122,24 @@ Hydra.module.register('map-module', function(Bus, Module, ErrorHandler, Api){
 			}
 		},
 		 _localizarProduct : function(product) {
-			 var that = this ;
-	         var marker = new google.maps.Marker({
+	         var marker = this._buildMarker( new google.maps.LatLng(product.latitud, product.longitud) , product.price);
+	         this.markers.push( marker);
+		},
+		_buildMarker : function(position , price){
+			that = this;
+			  var div = document.createElement('DIV');
+				div.innerHTML ='<div class="tooltip top" role="tooltip" style="opacity:1;">' +
+				   '<div class="tooltip-arrow"></div>'  +
+					'<div class="tooltip-inner"> $'  + price +
+ 					'</div>'  +
+				'</div>';
+			return new RichMarker({
 	        	map: that.map, 
-	        	position: new google.maps.LatLng(product.latitud, product.longitud)
+	        	position: position,
+	        	flat: true,
+	            anchor: RichMarkerPosition.MIDDLE,
+	            content: div
 	         });
-	        this.markers.push(marker);
 		},
 		_cleanMapMarkers : function(){
 			var marker;
@@ -140,23 +151,28 @@ Hydra.module.register('map-module', function(Bus, Module, ErrorHandler, Api){
 		_addInitialsMarkers : function(){
 				var that = this ;
 				$('.hotel_container').each(function(index, value){
+					var latitud = null, price = null, longitud = null,  marker = null;
 					value = $(value);
-					var latitud = value.data('latitud');
-					var longitud = value.data('longitud');
+					latitud = value.data('latitud');
+					longitud = value.data('longitud');
+					price = value.data('price');
 					if ( latitud != undefined && longitud != undefined){
-						var marker = new google.maps.Marker({
-				        	map: that.map, 
-				        	position: new google.maps.LatLng(latitud,longitud)
-				         });
+						marker = that._buildMarker( new google.maps.LatLng(latitud, longitud) , price);
 						that.markers.push(marker);
 					}
-			});
+				});
 		},
 		init : function(data) {
 			this.moduleCssContainerSelector = data.moduleCssContainerSelector;
 			this.oContainer = Api.dom.byCssSelector(data.moduleCssContainerSelector);
 			this.markers = [];
-			this.mapOptions = {zoom: 7, center: new google.maps.LatLng(18.1987192, -66.3526747),  disableDefaultUI: true  };
+			this.mapOptions = {zoom: 10, center: new google.maps.LatLng(18.1987192, -66.3526747), mapTypeControl: true , mapTypeControlOptions: {
+			      style: google.maps.MapTypeControlStyle.DEFAULT,
+			      mapTypeIds: [
+			        google.maps.MapTypeId.ROADMAP,
+			        google.maps.MapTypeId.TERRAIN
+			      ]
+			    }};
 		    this.map = new google.maps.Map(document.getElementById(this.oContainer.attr('id')),   this.mapOptions);
 		    this._addInitialsMarkers();
 		   
@@ -195,6 +211,38 @@ Hydra.module.register('filter-price-bar-module', function( Bus, Module, ErrorHan
 							form.ajaxSubmit(options);
 				});
 	            
+	        },
+	        onDestroy: function () {
+	            this.oContainer.innerHTML = 'Destroyed content' + "_" + this.oContainer.id;
+	        }
+	    };
+});	
+
+Hydra.module.register('sort-module', function( Bus, Module, ErrorHandler, Api ){
+	  return {
+			moduleCssContainerSelector : '',
+			oContainer : null,
+			priceButton : null,
+	        events:{
+	        },
+	        init: function (data) {
+	        	this.moduleCssContainerSelector = data.moduleCssContainerSelector;
+	        	this.filterItemCssSelector = data.filterItemCssSelector;
+				this.oContainer = Api.dom.byCssSelector(data.moduleCssContainerSelector);
+				this.filterItems =   Api.dom.byCssSelector(data.filterItemCssSelector);
+				Api.dom.each(this.filterItems ,  function( i , item){
+					Api.events.bind('change',item, 
+							function(e){
+						var options = {	success:  function(data){
+									var products = JSON.parse(data.products);
+									var otherData = data.extraData;
+				            		Bus.publish('products', 'products:ready', {  products: products , otherData : otherData });
+								}};
+								var form = Api.dom.byCssSelector("form[name='filterProductsForm']");
+								var url = form.attr('action');
+								form.ajaxSubmit(options);
+					});
+				});
 	        },
 	        onDestroy: function () {
 	            this.oContainer.innerHTML = 'Destroyed content' + "_" + this.oContainer.id;
@@ -265,14 +313,15 @@ $(function(){
 	}
 	
 	Hydra.module.start(
-	        ['town-filter-module' , 'town-filter-module' , 'list-product-module', 'map-module', 'filter-price-bar-module', 'pagination-module'],    // Modules id
-	['town-filter-module1', 'town-filter-module2' , 'list-product-module1', 'map-module1', 'filter-price-bar-module1', 'pagination-module1'], // Instances id
+	        ['town-filter-module' , 'town-filter-module' , 'list-product-module', 'map-module', 'filter-price-bar-module', 'pagination-module', 'sort-module'],    // Modules id
+	['town-filter-module1', 'town-filter-module2' , 'list-product-module1', 'map-module1', 'filter-price-bar-module1', 'pagination-module1', 'sort-module'], // Instances id
 	[  	{ moduleCssContainerSelector : "div[data-container-for='town-filter-module']" , filterItemCssSelector : "ul li  input" },
 	    { moduleCssContainerSelector : "div[data-container-for='type-filter-module']" , filterItemCssSelector : "ul li  input" },
 	   	{ moduleCssContainerSelector : "div[data-container-for='list-product-module']" , productItemTemplateCssSelector : "div[data-template-for='list-product-module']"},
 		{ moduleCssContainerSelector : "div[data-container-for='map-module']" },
 		{ moduleCssContainerSelector : "div[data-container-for='filter-price-bar-module']", inputCssSelector : "input.price-slider"  },
-		{ moduleCssContainerSelector : "div[data-container-for='pagination-module']", pageCssSelector : "ul.pagination li a"  }
+		{ moduleCssContainerSelector : "div[data-container-for='pagination-module']", pageCssSelector : "ul.pagination li a"  },
+		{ moduleCssContainerSelector : "div[data-container-for='sort-module']" , filterItemCssSelector : ".styled-select-filters select" },
 	]);
 	
 

@@ -34,6 +34,8 @@ class LoadProductsData extends DataFixture
      * @var integer
      */
     private $totalVariants = 0;
+    
+    private $taxons = array('Foods', 'Tours', 'Activities');
 
     /**
      * {@inheritdoc}
@@ -46,8 +48,6 @@ class LoadProductsData extends DataFixture
     		)
     	);
     	
-    	$types = array('Foods', 'Tours', 'Activities');
-    	
     	$pIndex = 0;
     	foreach ($regionTowns as $regionName => $towns)
     	{
@@ -56,7 +56,7 @@ class LoadProductsData extends DataFixture
     			for ($i = 0 ; $i < 10; $i++)
     			{
     				$pIndex++;
-    				$product = $this->createProduct($pIndex, $town, $types[array_rand($types)]);
+    				$product = $this->createProduct($pIndex, $town, $this->taxons[array_rand($this->taxons)]);
     				$this->loadImagesForProduct($manager, $product);
 					$manager->persist($product);
             	}
@@ -109,7 +109,7 @@ class LoadProductsData extends DataFixture
         $product->setLongitud(-66.3526747 + $i*0.002);
         $product->setAddress("Avenida Callao 648");
 
-        $this->setTaxons($product, array('Foods'));
+        $this->setTaxons($product,  array($type));
         /**TODO VER en el futuro si usamos esta caracteristicas**/
         //$product->setArchetype($this->getReference('Sylius.Archetype.t_shirt'));
         

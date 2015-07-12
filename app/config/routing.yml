@@ -64,7 +64,3 @@ facebook_login:
 
 google_login:
     path: /login/check-google
-
-#odiseo_bundle_lokalbuddy:
-#    resource: "@OdiseoLokalBuddyBundle/Resources/config/routing/main.yml"
-#    prefix:   /

@@ -14,10 +14,12 @@ class AppKernel extends Kernel
         	new Odiseo\Bundle\BackendBundle\OdiseoBackendBundle(),
 			new Odiseo\Bundle\ProjectBundle\OdiseoProjectBundle(),
         	new Odiseo\Bundle\EcommerceBundle\OdiseoEcommerceBundle(),
+        	new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
         	new Odiseo\Bundle\UserBundle\OdiseoUserBundle(),
         	new Odiseo\Bundle\ProductBundle\OdiseoProductBundle(),
         	new Odiseo\Bundle\OrderBundle\OdiseoOrderBundle(),
-        	new Odiseo\Bundle\LokalBuddyBundle\OdiseoLokalBuddyBundle()
+        	new Odiseo\Bundle\LokalBuddyBundle\OdiseoLokalBuddyBundle(),
+        	new FOS\MessageBundle\FOSMessageBundle()
 		);
 
         if (in_array($this->environment, array('dev', 'test'))) {

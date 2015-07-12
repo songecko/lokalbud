@@ -113,24 +113,6 @@
 							</div>
 						</li>
 						#}
-						<li>
-							<div class="dropdown dropdown-cart">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-basket-1"></i>Cart (0) </a>
-                                <ul class="dropdown-menu" id="cart_items">
-                                    <li>
-                                        <div class="image"><img src="{{ asset('bundles/odiseolokalbuddy/img/thumb_cart_1.jpg') }}" alt=""></div>
-                                        <strong>
-										<a href="#">Louvre museum</a>1x $36.00 </strong>
-                                        <a href="#" class="action"><i class="icon-trash"></i></a>
-                                    </li>
-                                    <li>
-                                        <div>Total: <span>$120.00</span></div>
-                                        <a href="#" class="button_drop">Go to cart</a>
-                                        <a href="#" class="button_drop outline">Check out</a>
-                                    </li>
-                                </ul>
-                            </div><!-- End dropdown-cart-->
-						</li>
 					</ul>
 				</nav>
 			</div>
@@ -205,12 +187,7 @@
 						</select>
 					</div>
 					<div class="styled-select">
-						<select class="form-control" name="currency" id="currency">
-							<option value="USD" selected>USD</option>
-							<option value="EUR">EUR</option>
-							<option value="GBP">GBP</option>
-							<option value="RUB">RUB</option>
-						</select>
+						{{ render(controller('OdiseoEcommerceBundle:Component:selectCurrency')) }}						
 					</div>
 				</div>
 			</div><!-- End row -->

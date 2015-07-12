@@ -4,6 +4,10 @@
 {% from 'SyliusWebBundle:Backend/Macros:misc.html.twig' import pagination %}
 {% from 'SyliusWebBundle:Backend/Product:macros.html.twig' import list %}
 
+{% block content_title %}
+<h1><i class="glyphicon glyphicon-th-list"></i> {{ 'sylius.product.index_header'|trans|raw }}</h1>
+{% endblock %}
+
 {% block topbar %}
 <ol class="breadcrumb">
     <li>{{ 'sylius.breadcrumb.assortment'|trans }}</li>
@@ -23,7 +27,6 @@
             <a href="{{ path('sylius_backend_product_index', {'deleted': true}) }}" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> {{ 'sylius.show_deleted'|trans }}</a>
         {% endif %}
     </div>
-    <h1><i class="glyphicon glyphicon-th-list"></i> {{ 'sylius.product.index_header'|trans|raw }}</h1>
 </div>
 
 {% render(controller('sylius.controller.backend.form:filterAction', {'type': 'sylius_product_filter', 'template': 'SyliusWebBundle:Backend/Product:filterForm.html.twig'})) %}

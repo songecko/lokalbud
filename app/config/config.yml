@@ -34,7 +34,7 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: false
-    bundles:        [ 'SyliusWebBundle', 'CmfCreateBundle', 'SyliusResourceBundle', 'OdiseoLokalBuddyBundle', 'OdiseoBackendBundle', 'EasyAdminBundle' ]
+    bundles:        [ 'SyliusWebBundle', 'CmfCreateBundle', 'SyliusResourceBundle', 'OdiseoLokalBuddyBundle', 'OdiseoBackendBundle', 'EasyAdminBundle', 'OdiseoProductBundle', 'OdiseoUserBundle'  ]
     filters:
         cssrewrite: ~
 
@@ -104,6 +104,36 @@ sylius_order:
         order:
             model: Odiseo\Bundle\OrderBundle\Entity\Order
             repository: Odiseo\Bundle\OrderBundle\Repository\OrderRepository
+            
+sylius_resource:
+    resources:
+        odiseo.review:
+            driver: doctrine/orm
+            object_manager: default
+            templates: 	OdiseoProductBundle:Frontend/Review
+            classes:
+                model: Odiseo\Bundle\ProductBundle\Entity\ProductReview
+                controller: Odiseo\Bundle\ProductBundle\Controller\Frontend\ReviewController
+                repository: Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository
+
+sylius_rbac:
+     permissions:
+        odiseo.manage.review: Manage Review
+        odiseo.review.index: Show Review
+        odiseo.review.show: List Review
+        odiseo.review.list: Create Review
+        odiseo.review.update: Edit Review
+        odiseo.review.delete: Delete Review
+        odiseo.review.create: Delete Review
+     permissions_hierarchy:
+        odiseo.manage.review: [odiseo.review.show, odiseo.review.index, odiseo.review.create, odiseo.review.update, odiseo.review.delete]
+     roles:
+        administrator:
+            name: Administrator
+            description: Administrator user
+            permissions: [odiseo.manage.review]
+            security_roles: [ROLE_ADMINISTRATION_ACCESS]
+        
                         
 knp_gaufrette:
     stream_wrapper: ~
@@ -115,6 +145,13 @@ vich_uploader:
     mappings:
         product_images:
             uri_prefix:         /images/product
+            upload_destination: %sylius.uploader.filesystem%
+            namer:              vich_uploader.namer_uniqid
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
+        user_images:
+            uri_prefix:         /images/user
             upload_destination: %sylius.uploader.filesystem%
             namer:              vich_uploader.namer_uniqid
             inject_on_load:     false
@@ -143,10 +180,26 @@ liip_imagine:
         product_gallery_large:
             filters:
                 thumbnail: { size: [2000, 1333], mode: outbound }
+        product_wishlist:
+            filters:
+                thumbnail: { size: [1080, 440], mode: outbound }
+        user_picture:
+            filters:
+                thumbnail: { size: [500, 500], mode: outbound }
 
+stfalcon_tinymce:
+    include_jquery: false
+    tinymce_jquery: true
+        
 fos_user:
     firewall_name: main
     registration:
         form:
             type: fos_user_registration
             validation_groups: [RegistrationOdiseoUser]
+            
+fos_message:
+    db_driver: orm
+    thread_class: Odiseo\Bundle\EcommerceBundle\Entity\Thread
+    message_class: Odiseo\Bundle\EcommerceBundle\Entity\Message
+    

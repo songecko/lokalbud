@@ -1,5 +1,7 @@
 {% extends 'OdiseoLokalBuddyBundle:Frontend:layout.html.twig' %}
 
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
 {% block content %}
 <section id="hero" class="login">
 	<div class="container">
@@ -8,6 +10,7 @@
 				<div id="login">
 					<div class="text-center"><img src="{{ asset('bundles/odiseolokalbuddy/img/logo_sticky.png') }}" alt="" data-retina="true" ></div>
 					<hr>
+					{{ form_errors(form) }}
 					<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
 						<div class="form-group">
 							{{ form_label(form.username) }}

@@ -15,6 +15,9 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Sylius\Bundle\FixturesBundle\DataFixtures\DataFixture;
 use Sylius\Component\Core\Model\UserInterface;
 use Odiseo\Bundle\UserBundle\Entity\User;
+use Symfony\Component\Finder\Finder;
+use Odiseo\Bundle\UserBundle\Entity\UserProfile;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * User fixtures.
@@ -71,37 +74,30 @@ class LoadUsersData extends DataFixture
             $this->setReference('Sylius.User-'.$i, $user);
         }
 
-        //Old
-        $user1 = new User();
-        $user1->setUsername('user1');
-        $user1->setUsernameCanonical('user1');
-        $user1->setEmail('usuarioA@example.com');
-        $user1->setEmailCanonical('usuarioA@example.com');
-        $user1->setPlainPassword('123456');
-        $user1->setEnabled(true);
-        $this->addReference('user1', $user1);
-        $manager->persist($user1);
+        //Others users
+        $othersUsers = array(
+        	array(
+        		'username' => 'user1',
+        		'email' => 'usuarioA@example.com'        		
+        	),
+        	array(
+        		'username' => 'user2',
+        		'email' => 'usuarioB@example.com'
+        	)
+        );
         
-        $user2 = new User();
-        $user2->setUsername('user2');
-        $user2->setUsernameCanonical('user2');
-        $user2->setEmail('usuarioB@example.com');
-        $user2->setEmailCanonical('usuarioB@example.com');
-        $user2->setPlainPassword('123456');
-        $user2->setEnabled(true);
-        $this->addReference('user2', $user2);
-        $manager->persist($user2);
-         
-        $user3 = new User();
-        $user3->setUsername('buyer3');
-        $user3->setUsernameCanonical('buyer3');
-        $user3->setEmail('buyer3@example.com');
-        $user3->setEmailCanonical('buyer3@example.com');
-        $user3->setPlainPassword('123456');
-        $user3->setEnabled(true);
-        $this->addReference('buyer3', $user3);
-        $manager->persist($user3);
-         
+        foreach ($othersUsers as $userData)
+        {
+        	$user = $this->createUser(
+        		$userData['email'],
+        		'123456',
+        		true
+        	);
+        	$user->setUsername($userData['username']);
+        	$this->addReference($userData['username'], $user);
+        	$manager->persist($user);
+        }
+        
         $manager->flush();
     }
 
@@ -139,6 +135,23 @@ class LoadUsersData extends DataFixture
         $user->setRoles($roles);
         $user->setCurrency($currency);
         $user->setEnabled($enabled);
+        
+        //User profile
+        $profile = new UserProfile();
+        $profile->setPhone($this->faker->phoneNumber);
+        
+        //Profile picture
+        $imageFinder = new Finder();        
+        $imagesPath = __DIR__.'/../../Resources/fixtures/user';
+        $pictures = iterator_to_array($imageFinder->files()->in($imagesPath), false);
+
+        if($pictures && count($pictures) > 0)
+        {
+        	$img = $pictures[0];        	
+        	$profile->setPictureFile(new UploadedFile($img->getRealPath(), $img->getFilename()));
+        }
+        
+        $user->setMainProfile($profile);
 
         return $user;
     }

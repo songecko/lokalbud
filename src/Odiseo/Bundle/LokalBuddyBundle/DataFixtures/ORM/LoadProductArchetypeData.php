@@ -28,7 +28,7 @@ class LoadProductArchetypeData extends DataFixture
      */
     public function load(ObjectManager $manager)
     {
-        $archetype = $this->createArchetype('t_shirt', array($this->defaultLocale => 'T-Shirt', 'es' => 'Camiseta'), array('T-Shirt size', 'T-Shirt color'), array('T-Shirt brand', 'T-Shirt collection', 'T-Shirt material'));
+     /*   $archetype = $this->createArchetype('t_shirt', array($this->defaultLocale => 'T-Shirt', 'es' => 'Camiseta'), array('T-Shirt size', 'T-Shirt color'), array('T-Shirt brand', 'T-Shirt collection', 'T-Shirt material'));
         $manager->persist($archetype);
 
         $archetype = $this->createArchetype('sticker', array($this->defaultLocale => 'Sticker', 'es' => 'Pegatina'), array('Sticker size'), array('Sticker resolution', 'Sticker paper'));
@@ -41,6 +41,7 @@ class LoadProductArchetypeData extends DataFixture
         $manager->persist($archetype);
 
         $manager->flush();
+     */
     }
 
     /**

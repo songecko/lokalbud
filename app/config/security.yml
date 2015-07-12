@@ -51,8 +51,8 @@ security:
                     amazon:   "/login/check-amazon"
                     facebook: "/login/check-facebook"
                     google:   "/login/check-google"
-                login_path:   /connect
-                failure_path: /connect
+                login_path:   /login
+                failure_path: /login
                 oauth_user_provider:
                     service: sylius.oauth.user_provider
             logout: true
@@ -71,6 +71,7 @@ security:
         
         - { path: ^/wishlist.*, role: ROLE_USER }
         - { path: "/account.*", role: ROLE_USER }
+        - { path: ^/review.*, role: ROLE_USER }
         
         - { path: ^/admin/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/login-check, role: IS_AUTHENTICATED_ANONYMOUSLY }

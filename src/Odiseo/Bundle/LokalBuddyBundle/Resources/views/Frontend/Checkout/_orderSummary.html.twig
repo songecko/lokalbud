@@ -1,0 +1,84 @@
+{% set taxAdjustment = constant('Sylius\\Component\\Core\\Model\\AdjustmentInterface::TAX_ADJUSTMENT') %}
+{% set promotionAdjustment = constant('Sylius\\Component\\Core\\Model\\AdjustmentInterface::PROMOTION_ADJUSTMENT') %}
+
+{% set product = order.mainItem.product %}
+<div class="box_style_1">
+	<h3 class="inner">- Order Summary -</h3>
+	<table class="table table_summary">
+	<tbody>
+			<tr>
+			<td>Name</td>
+			<td class="text-right">{{ order.mainItem.product.name }}</td>
+		</tr>
+		{% set productType = product.mainTaxonType %}
+		{% if productType is defined %}
+		<tr>
+			<td>Type</td>
+			<td class="text-right">{{ productType.name }}</td>
+		</tr>
+		{% endif %}
+		{% set productTown = product.town %}
+		{% if productTown is defined %}
+		<tr>
+			<td>Town</td>
+			<td class="text-right">{{ productTown.name }}</td>
+		</tr>
+		<tr>
+			<td>Base price</td>
+			<td class="text-right">{{ order.itemsTotal|sylius_price }}</td>
+		</tr>
+		{% endif %}
+		<tr>
+			<td>
+				<strong>{{ 'sylius.checkout.finalize.order.taxes'|trans }}</strong>
+				<ul style="list-style-type: none;">
+					{% for taxAdjustment in order.adjustments(taxAdjustment) %}
+					<li>{{ taxAdjustment.description }}</li>
+					{% else %}
+					<li><span class="label label-info">{{ 'sylius.checkout.finalize.order.no_taxes'|trans }}</span></li>
+					{% endfor %}
+				</ul>
+			</td>
+			<td class="text-right">
+				<strong>{{ order.adjustmentsTotal(taxAdjustment)|sylius_price }}</strong>
+				<ul style="list-style-type: none;">
+					{% for taxAdjustment in order.adjustments(taxAdjustment) %}
+					<li>{{ taxAdjustment.amount|sylius_price }} </li>
+					{% else %}
+					{% endfor %}
+				</ul>
+			</td>
+		</tr>
+		{% if not order.adjustments(promotionAdjustment).isEmpty() %}
+		<tr>
+			<td>
+				<strong>{{ 'sylius.checkout.finalize.order.promotion_discount'|trans }}</strong>
+				<ul style="list-style-type: none;">
+					{% for adjustment in order.adjustments(promotionAdjustment) %}
+                    <li>{{ adjustment.description }}</li>
+                	{% endfor %}
+				</ul>
+			</td>
+			<td class="text-right">
+				<strong>-{{ (-1 * order.adjustmentsTotal(promotionAdjustment))|sylius_price }}</strong>
+				<ul style="list-style-type: none;">
+					{% for adjustment in order.adjustments(promotionAdjustment) %}
+                    <li>{{ adjustment.amount|sylius_price }} </li>
+                	{% endfor %}
+				</ul>
+			</td>
+		</tr>
+        {% endif %}
+		<tr class="total">
+			<td>Total cost</td>
+			<td class="text-right">{{ order.total|sylius_price }}</td>
+		</tr>
+	</tbody>
+	</table>
+</div>
+<div class="box_style_4">
+	<i class="icon_set_1_icon-57"></i>
+	<h4>Need <span>Help?</span></h4>
+	<a href="tel://004542344599" class="phone">+45 423 445 99</a>
+	<small>Monday to Friday 9.00am - 7.30pm</small>
+</div>

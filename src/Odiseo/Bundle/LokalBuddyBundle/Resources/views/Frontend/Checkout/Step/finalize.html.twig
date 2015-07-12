@@ -1,0 +1,69 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% block javascripts %}
+{{ parent() }}
+<!-- Check and radio inputs -->
+<script src="{{ asset('bundles/odiseoadscandy/js/icheck.js') }}"></script>
+<script type="text/javascript">
+$(function()
+{
+	$('input').iCheck({
+		checkboxClass: 'icheckbox_square-grey',
+		radioClass: 'iradio_square-grey'
+	});
+});
+</script>	
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link href="{{ asset('bundles/odiseoadscandy/css/skins/square/grey.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+{% include 'SyliusWebBundle:Frontend/Checkout:_progressBar.html.twig' %}
+
+<div class="container margin_30">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Finish!</h2>
+			<p>Check your information.</p>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-md-8">
+			<div class="form_title">
+				<h3><strong><i class="icon-address-1"></i></strong>{{ 'sylius.checkout.finalize.order.billing_address'|trans }}</h3>
+			</div>
+			<div class="step">
+				<div class="row">
+					<div class="col-md-6">
+						{% include 'SyliusWebBundle:Common/Address:_show.html.twig' with { 'address': order.billingAddress } %}
+					</div>
+				</div>
+			</div>
+			<div class="form_title">
+				<h3><strong><i class="icon-credit-card"></i></strong>{{ 'sylius.checkout.payment.header'|trans|raw }}</h3>
+			</div>
+			<div class="step">
+				<div class="row">
+					<div class="col-md-6">
+						{{ order.lastPayment.method }}
+					</div>
+				</div>
+			</div>
+			<div id="policy">
+				<h4>Privacy policy</h4>
+				<div class="form-group">
+					<label><input type="checkbox" name="policy_terms" id="policy_terms"> I accept terms and conditions and general policy.</label>
+				</div>
+				<a href="{{ path(context.process.forwardRoute, {'stepName': context.currentStep.name}) }}" class="btn_1 green medium"><i class="icon-ok"></i> {{ 'sylius.checkout.finalize.place_order'|trans }}</a>
+			</div>
+		</div>
+		<aside class="col-md-4">
+			{% include 'OdiseoAdsCandyBundle:Frontend/Checkout:_orderSummary.html.twig' with {'order': order} %}
+		</aside>
+	</div>
+</div>
+{% endblock %}

@@ -1,6 +1,6 @@
 body > section {
   position: relative;
-  height: 130px;
+  height: 100px;
   background: #black;
   color: #fff;
   width: 100%;
@@ -8,7 +8,6 @@ body > section {
   display: table;
   z-index: 99;
   text-align: center;
-  text-transform: uppercase;
 }
 
 body > section#general {
@@ -17,6 +16,27 @@ body > section#general {
 
 body > section#product {
 	background: #FFFFFF;
+}
+
+	
+.user-picture {
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.file-overlay {
+	width: 200px;
+	position: absolute;
+}
+
+.file-overlay + input[type="file"] {
+	-moz-opacity: 0;
+	-khtml-opacity: 0;
+	-webkit-opacity: 0;
+	opacity: 0;
+	cursor: pointer;
+	width: 200px;
+	z-index: 100;
 }
 
 #top_line {
@@ -50,6 +70,29 @@ ul#top_links li {
 	width: 100%;
 }
 
+#top_line {
+	padding-bottom: 10px;
+	height: auto;
+	font-size: 14px;	
+}
+
+#top_line .user-picture {
+	height: 28px;
+	width: 28px;
+	display: inline-block;
+	position: absolute;
+	top: -4px;
+}
+
+#top_line .user-name {
+	margin: 0;
+	padding-left: 35px;
+}
+
+header.sticky #top_line {
+	display: none;
+}
+
 ul#top_links .dropdown-access .dropdown-menu.user a.btn_full {
 	background: #e14a3f;	
 	color: #FFFFFF;
@@ -60,9 +103,17 @@ ul#top_links .dropdown-access .dropdown-menu.user a.btn_full_outline {
 	color: #d91e5c !important;
 }
 
+.btn_full.blue {
+	background: #3CF;
+}
+
+.btn_full.pink {
+	background: #d91e5c;
+}
+
 .map-search {
 	position: absolute;
-	top: 130px;
+	top: 100px;
 	left: 0;
 	bottom: 0;
 	width: 100%;
@@ -163,6 +214,8 @@ ul#top_links .dropdown-access .dropdown-menu.user a.btn_full_outline {
 }
   
 .basicFilters .row.filter .towns {
+   height: 10em;
+   overflow-y: scroll;
 }
 
 form ul.images {

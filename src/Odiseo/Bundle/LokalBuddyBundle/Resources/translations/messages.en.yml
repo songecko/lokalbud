@@ -2,3 +2,7 @@ sylius:
     meta:
         backend_title: LokalBuddy - Administration
     email: Email
+
+email:
+    customer_welcome:
+        subject: "Welcome to Lokal Buddy!"

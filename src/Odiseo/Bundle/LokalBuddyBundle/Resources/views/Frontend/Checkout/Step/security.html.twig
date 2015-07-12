@@ -1,0 +1,41 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% form_theme registration_form 'bootstrap_3_layout.html.twig' %}
+
+{% block content %}
+{% include 'SyliusWebBundle:Frontend/Checkout:_progressBar.html.twig' %}
+
+<div class="container margin_30">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>{{ 'sylius.checkout.security.header'|trans|raw }}</h2>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-md-6">
+			<h3>{{ 'sylius.checkout.security.existing_customer'|trans }}</h3>
+			<form action="{{ path('fos_user_security_check') }}" method="post">
+				<div class="form-group">
+					<label for="username">{{ 'sylius.form.login.email'|trans }}:</label>
+					<input type="text" id="username" name="_username" class="form-control" />
+				</div>
+				<div class="form-group">
+					<label for="password">{{ 'sylius.form.login.password'|trans }}:</label>
+					<input type="password" id="password" name="_password" class="form-control" />
+				</div>
+				
+				<button type="submit" name="login" class="btn_1 green medium">{{ 'sylius.checkout.security.login'|trans }}</button>
+			</form>
+		</div>
+		<div class="col-md-6">
+			<h3>{{ 'sylius.checkout.security.new_customer'|trans }}</h3>
+			<form action="{{ path(context.process.forwardRoute, {'stepName': context.currentStep.name}) }}" method="post" novalidate>
+				{{ form_widget(registration_form) }}
+				<br>
+				<button type="submit" class="btn_1 green medium">{{ 'sylius.checkout.security.register'|trans }}</button>
+			</form>
+		</div>
+	</div><!--End row -->
+</div><!--End container -->
+{% endblock %}

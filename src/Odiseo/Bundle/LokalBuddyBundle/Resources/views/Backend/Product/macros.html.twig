@@ -3,6 +3,8 @@
 {% import 'SyliusResourceBundle:Macros:buttons.html.twig' as buttons %}
 {% import 'SyliusWebBundle:Backend/Macros:alerts.html.twig' as alerts %}
 
+<div class="box">
+	<div class="box-body table-responsive no-padding">
 {% if products|length > 0 %}
 <table class="sylius-products-table table table-bordered">
     <thead>
@@ -100,5 +102,7 @@
 {% else %}
 {{ alerts.info('sylius.product.no_results'|trans) }}
 {% endif %}
+</div>
+</div>
 
 {% endmacro %}

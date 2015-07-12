@@ -1,0 +1,37 @@
+{% if context is not defined %}
+{% set step1Class = 'complete' %}
+{% set step2Class = 'complete' %}
+{% set step3Class = 'complete' %}
+{% set step1Url = '#' %}
+{% set step2Url = '#' %}
+{% else %}
+{% set step1Class = context.currentStep.name in ['addressing']?'active':(context.currentStep.name in ['security']?'disabled':'complete') %}
+{% set step2Class = context.currentStep.name in ['payment']?'active':(context.currentStep.name in ['finalize']?'complete':'disabled') %}
+{% set step3Class = context.currentStep.name in ['finalize']?'active':'disabled' %}
+{% set step1Url = path(context.process.displayRoute, {'stepName': 'addressing'}) %}
+{% set step2Url = path(context.process.displayRoute, {'stepName': 'payment'}) %}
+{% endif %}
+<section id="hero_2">
+	<div class="intro_title animated fadeInDown">
+		<h1>Place your order</h1>
+		<div class="bs-wizard">
+			<div class="col-xs-4 bs-wizard-step {{ step1Class }}">
+				<div class="text-center bs-wizard-stepnum">{{ 'sylius.checkout.finalize.order.billing_address'|trans }}</div>
+				<div class="progress"><div class="progress-bar"></div></div>
+				<a href="{{ step1Class=='complete'?step1Url:'#' }}" class="bs-wizard-dot"></a>
+			</div>
+            
+			<div class="col-xs-4 bs-wizard-step {{ step2Class }}">
+				<div class="text-center bs-wizard-stepnum">{{ 'sylius.checkout.payment.header'|trans|raw }}</div>
+				<div class="progress"><div class="progress-bar"></div></div>
+				<a href="{{ step2Class=='complete'?step2Url:'#' }}" class="bs-wizard-dot"></a>
+			</div>
+			
+			<div class="col-xs-4 bs-wizard-step {{ step3Class }}">
+				<div class="text-center bs-wizard-stepnum">Finish!</div>
+				<div class="progress"><div class="progress-bar"></div></div>
+				<a href="#" class="bs-wizard-dot"></a>
+			</div>
+		</div>  <!-- End bs-wizard --> 
+    </div>   <!-- End intro-title --> 
+</section><!-- End Section hero_2 -->
