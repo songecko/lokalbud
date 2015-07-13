@@ -4,6 +4,7 @@
 	{{ parent() }}
 	<!-- Map -->
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false&libraries=places"></script>
+	<script src="{{ asset('bundles/odiseoadscandy/js/vendor/richmarker.js') }}"></script>
 	<script src="{{ asset('bundles/odiseolokalbuddy/js/infobox.js') }}"></script>
 	<script src="{{ asset('bundles/odiseolokalbuddy/js/vendor/bootstrap-slider.js') }}"></script>
 	<script src="{{ asset('bundles/odiseolokalbuddy/js/app/Hydra.js') }}"></script>
@@ -61,12 +62,11 @@ $(function()
 						<div class="col-md-6 col-sm-6  " data-wow-delay="0.1s">
 							<div class="hotel_container">
 								<div class="img_container">
-									<a  data-module-field="link-detail" href="single_hotel.html">
+									<a data-module-field="link-detail" href="#">
 										<img data-module-field='image_item' src="{{ asset('bundles/odiseolokalbuddy/img/hotel_1.jpg')}}" width="800" height="533" class="img-responsive" alt="">
-										<div class="ribbon top_rated"></div>
 										<div id="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
-											<span class="price"><sup>$</sup><span data-module-field='price'>59</span></span>
+											<span class="price"><span data-module-field='price'>59</span></span>
 										</div>
 									</a>
 								</div>
@@ -76,7 +76,7 @@ $(function()
 										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
 									</div><!-- end rating -->
 									<div class="wishlist">
-										<a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+										<a class="tooltip_flip tooltip-effect-1" data-module-field="link-wishlist" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
 									</div><!-- End wish list-->
 								</div>
 							</div><!-- End box tour -->
@@ -85,20 +85,20 @@ $(function()
 					<!--End strip -->
 						
 					<!--  INIT LIST PRODUCT CONTAINER -->
-					<div data-container-for="list-product-module"  data-filters="{{ filters }}" data-detail-url="{{ path('odiseo_product_show' , { 'id': '1' })}}">
+					<div data-container-for="list-product-module"  data-filters="{{ filters }}" data-detail-url="{{ path('odiseo_product_show' , { 'id': '1' })}}" data-wishlist-url="{{ path('odiseo_user_wishlist_add' , { 'idWish': '1' })}}">
 						{% for row in pager.currentPageResults|batch(2) %}
 						<!--  ITEM PRODUCT CONTAINER -->
 						<div class="row">
 						{% for product in row %}					
 							<div class="col-md-6 col-sm-6" data-wow-delay="0.1s">
-								<div class="hotel_container" data-latitud="{{ product.latitud }}" data-longitud="{{product.longitud }}">
+								<div class="hotel_container" data-latitud="{{ product.latitud }}" data-longitud="{{product.longitud }}" data-price="{{ product.price }}">
 									<div class="img_container">
 										<a href="{{ path('odiseo_product_show', { 'id': product.id }) }}">
 											<img src="{{ product.image ? product.image.path|imagine_filter('product_list') : 'http://placehold.it/200x200' }}" class="img-responsive" alt="">
 											{#<div class="ribbon top_rated"></div>#}
 											{#<div id="score"><span>7.5</span>Good</div>#}
 											<div class="short_info hotel">
-												{#From/Per night#}<span class="price"><sup>$</sup>{{ sylius_calculate_price(product.masterVariant) }}</span>
+												{#From/Per night#}<span class="price">{{ sylius_calculate_price(product.masterVariant)|sylius_price }}</span>
 											</div>
 										</a>
 									</div>
@@ -108,7 +108,7 @@ $(function()
 										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
 										</div><!-- end rating -->
 										<div class="wishlist">
-											<a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+											<a class="tooltip_flip tooltip-effect-1" href="{{ path('odiseo_user_wishlist_add', {'idWish': product.id}) }}">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
 										</div><!-- End wish list-->
 									</div>
 								</div><!-- End box tour -->
