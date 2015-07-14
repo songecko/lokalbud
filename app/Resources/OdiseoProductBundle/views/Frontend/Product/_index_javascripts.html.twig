@@ -1,0 +1,20 @@
+<!-- Map -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false&libraries=places"></script>
+<script src="{{ asset('bundles/odiseolokalbuddy/js/vendor/richmarker.js') }}"></script>
+<script src="{{ asset('bundles/odiseolokalbuddy/js/infobox.js') }}"></script>
+<script src="{{ asset('bundles/odiseolokalbuddy/js/vendor/bootstrap-slider.js') }}"></script>
+<script src="{{ asset('bundles/odiseolokalbuddy/js/app/Hydra.js') }}"></script>
+<script src="{{ asset('bundles/odiseolokalbuddy/js/app/DOM.js') }}"></script>
+<script src="{{ asset('bundles/odiseolokalbuddy/js/app/Ajax.js') }}"></script>
+<script src="{{ asset('bundles/odiseolokalbuddy/js/app/Events.js') }}"></script>
+<script src="{{ asset('bundles/odiseolokalbuddy/js/web/filtersProduct.js') }}"></script>
+<script type="text/javascript">
+$(function()
+{	
+	$('.filter .price-slider').slider().on('slide', function(e)
+	{
+		$('.priceValues .min').text('$'+e.value[0]);
+		$('.priceValues .max').text('$'+e.value[1]);		
+	});
+});
+</script>	
