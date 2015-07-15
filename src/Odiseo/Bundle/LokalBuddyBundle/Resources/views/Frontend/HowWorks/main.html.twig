@@ -1,0 +1,92 @@
+{% extends 'OdiseoLokalBuddyBundle:Frontend:layout.html.twig' %}
+
+{% block javascripts %}
+	{{ parent() }}
+
+	<script type="text/javascript" src="{{ asset('bundles/odiseolokalbuddy/js/web/index.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container margin_60 howitworks">
+	<div class="row">        
+        <aside class="col-lg-3 col-md-4 col-sm-4">
+        </aside>
+        <div class="col-lg-9 col-md-8 col-sm-8">
+       		<div class="row">
+            	<div class="col-md-12">
+            		<h2><span>HOW IT WORKS</span></h2>
+            	</div>
+            </div><!-- Edn row -->                                 
+        </div><!-- End col-lg-9-->
+    </div>
+	<div class="row">        
+        <aside class="col-lg-3 col-md-4 col-sm-4">
+			<div class="row">
+				<div class="col-md-12">
+		           	<h4 class="sidebarTitle"><span>Info</span></h4>
+		           	<div class="box_style_cat">
+			       		<ul id="cat_nav">
+			            	<li>
+			            		<a id=dropdown data-toggle="collapse" href="#collapseHowWorks" aria-expanded="false" aria-controls="collapseHowWorks">How it Works</a>
+			            		<ul class="collapse" id="collapseHowWorks">
+					                <li><a href="#">For Host</a></li>
+					                <li><a href="#">For Travelers</a></li>
+			            		</ul>
+			            	</li>
+			            	<li>
+			            		<a id=dropdown data-toggle="collapse" href="#collapseFaq" aria-expanded="false" aria-controls="#collapseFaq">FAQ</a>
+			            		<ul class="collapse" id="collapseFaq">
+					                <li><a href="#">For Host</a></li>
+					                <li><a href="#">For Travelers</a></li>
+			            		</ul>
+			            	</li>
+			                <li><a href="#" id=dropdown>Terms & Conditions</a></li>
+			                <li><a href="#" id=dropdown>Contact</a></li>
+			            </ul>
+		            </div>
+				</div>
+ 			</div><!-- Edn row -->
+            
+			<div class="row">
+				<div class="col-md-12">
+		           	<h4 class="sidebarTitle"><span>About Lokal Buddy</span></h4>
+		          	<div class="box_style_cat">
+			       		<ul id="cat_nav">
+			                <li><a href="#" id=dropdown>What is Lokal Buddy</a></li>
+			                <li><a href="#" id=dropdown>Why</a></li>
+			                <li><a href="#" id=dropdown>Team</a></li>
+			            </ul>
+		            </div>
+				</div>
+			</div><!-- Edn row -->
+		            
+		    <div class="row">
+				<div class="col-md-12">
+		            <div class="box_style_2">
+		                 <i class="icon_set_1_icon-57"></i>
+		                 <h4>Need <span>Help?</span></h4>
+		                     <a href="tel://004542344599" class="phone">+45 423 445 99</a>
+		                 <small>Monday to Friday 9.00am - 7.30pm</small>     
+		            </div>  
+				</div>
+			</div><!-- Edn row -->
+        </aside>
+        
+        <div class="col-lg-9 col-md-8 col-sm-8">
+			<div class="row">
+				<div class="col-md-12">
+                <!-- Headings & Paragraph Copy -->         
+                  <h2>Paris <span>nice places</span></h2>
+                  <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                  <h2>Mel at vide soluta</h2>
+                  <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                  <h2>Don't forget</h2>
+                  <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                  <br>
+				</div>
+			</div><!-- Edn row -->
+                                 
+        </div><!-- End col-lg-9-->
+	</div>
+</div><!-- End container -->
+{% endblock %}

@@ -362,7 +362,28 @@ a.create-ui-toggle {
 .whyLokals .btn_1 {
 	background: #e14a3f;
 }
-
+/* How it works */
+.margin_60.howitworks {
+  padding-top: 140px;
+}
+#cat_nav li a#dropdown{
+	font-weight:bold;
+	
+}
+#cat_nav ul#collapseHowWorks li,ul#collapseFaq li{
+	border:none;
+}
+#cat_nav ul#collapseHowWorks li a:after,ul#collapseFaq li a:after{
+	content: none;
+}
+#cat_nav li a#dropdown:hover, #cat_nav li a#dropdown#active {
+  background: #e14a3f;
+  color: #FFFFFF;
+}
+.sidebarTitle{
+	padding-left: 15px;
+}
+/* */
 footer {
 	padding: 0px 0 10px 0;
 	background: #e14a3f;
