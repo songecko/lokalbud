@@ -10,10 +10,6 @@ body > section {
   text-align: center;
 }
 
-body > section#general {
-	background: #FFFFFF;
-}
-
 body > section#product {
 	background: #FFFFFF;
 }
