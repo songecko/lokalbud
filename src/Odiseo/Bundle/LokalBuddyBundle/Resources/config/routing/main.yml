@@ -6,6 +6,14 @@ odiseo_lokalbuddy_frontend_how_works:
     path:     /how-works
     defaults: { _controller: "OdiseoLokalBuddyBundle:Frontend/HowWorks:main" }
 
+odiseo_lokalbuddy_frontend_about_us:
+    path:     /about-us
+    defaults: { _controller: "OdiseoLokalBuddyBundle:Frontend/AboutUs:main" }
+
+odiseo_lokalbuddy_frontend_about_us_terms:
+    path:     /termsofuse
+    defaults: { _controller: "OdiseoLokalBuddyBundle:Frontend/AboutUs:terms" }
+    
 odiseo_product_product:
     resource: "@OdiseoProductBundle/Resources/config/routing/frontend/product.yml"
     prefix:   /experience
