@@ -51,10 +51,11 @@ security:
                     amazon:   "/login/check-amazon"
                     facebook: "/login/check-facebook"
                     google:   "/login/check-google"
+                    twitter:   "/login/check-twitter"
                 login_path:   /login
                 failure_path: /login
                 oauth_user_provider:
-                    service: sylius.oauth.user_provider
+                    service: odiseo.oauth.user_provider
             logout: true
             anonymous: true
 

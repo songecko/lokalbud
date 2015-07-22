@@ -17,11 +17,14 @@ body > section#general {
 body > section#product {
 	background: #FFFFFF;
 }
-
 	
 .user-picture {
 	border-radius: 50%;
 	overflow: hidden;
+}
+
+.user-picture img {
+	width: 100%;
 }
 
 .file-overlay {

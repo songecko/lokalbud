@@ -20,6 +20,8 @@ framework:
     session:         ~
 
 twig:
+    globals:
+        facebook_clientid: "%sylius.oauth.facebook.clientid%"
     form:
         resources:
             - SyliusWebBundle:Common:forms.html.twig
@@ -133,7 +135,19 @@ sylius_rbac:
             description: Administrator user
             permissions: [odiseo.manage.review]
             security_roles: [ROLE_ADMINISTRATION_ACCESS]
-        
+
+hwi_oauth:
+    resource_owners:
+        twitter:
+            type:          twitter
+            client_id:     '%odiseo.oauth.twitter.clientid%'
+            client_secret: '%odiseo.oauth.twitter.clientsecret%'
+        facebook:
+            type:          facebook
+            client_id:     %sylius.oauth.facebook.clientid%
+            client_secret: %sylius.oauth.facebook.clientsecret%
+            scope:         "email"
+            infos_url:     https://graph.facebook.com/me?fields=email,id,link,name,verified,picture.type(square)    
                         
 knp_gaufrette:
     stream_wrapper: ~
@@ -202,4 +216,3 @@ fos_message:
     db_driver: orm
     thread_class: Odiseo\Bundle\EcommerceBundle\Entity\Thread
     message_class: Odiseo\Bundle\EcommerceBundle\Entity\Message
-    

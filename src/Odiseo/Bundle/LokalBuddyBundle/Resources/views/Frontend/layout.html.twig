@@ -45,7 +45,24 @@
       <script src="{{ asset('bundles/odiseolokalbuddy/js/respond.min.js') }}"></script>
     <![endif]-->
 </head>
-<body>   
+<body>
+	<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '{{ facebook_clientid }}',
+			xfbml      : true,
+			version    : 'v2.4'
+		});
+	};
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
+
 	<div class="layer"></div>
     <!-- Mobile menu overlay mask -->
 	

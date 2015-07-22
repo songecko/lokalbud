@@ -55,6 +55,8 @@ parameters:
     sylius.oauth.facebook.clientsecret: EDITME
     sylius.oauth.google.clientid:       EDITME
     sylius.oauth.google.clientsecret:   EDITME
+    odiseo.oauth.twitter.clientid: EDITME
+    odiseo.oauth.twitter.clientsecret: EDITME
 
     sylius.inventory.backorders_enabled: true
     sylius.inventory.tracking_enabled: true
