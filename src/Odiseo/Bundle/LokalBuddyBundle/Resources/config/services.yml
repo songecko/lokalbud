@@ -4,5 +4,8 @@ parameters:
     sylius.checkout_scenario.class: Odiseo\Bundle\EcommerceBundle\Checkout\CheckoutProcessScenario
     sylius.checkout_form.payment.class: Odiseo\Bundle\LokalBuddyBundle\Form\Type\Checkout\PaymentStepType
     sylius.checkout_form.addressing.class: Odiseo\Bundle\EcommerceBundle\Form\Type\Checkout\AddressingStepType
+    odiseo.model.profile.class: Odiseo\Bundle\LokalBuddyBundle\Entity\UserProfile
+    odiseo.profile.form.type.class: Odiseo\Bundle\LokalBuddyBundle\Form\Type\ProfileFormType
+
 
 services:    

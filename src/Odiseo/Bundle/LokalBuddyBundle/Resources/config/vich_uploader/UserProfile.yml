@@ -1,0 +1,7 @@
+Odiseo\Bundle\LokalBuddyBundle\Entity\UserProfile:
+    passportFile:
+        mapping:           user_images
+        filename_property: passport_name
+    pictureFile:
+        mapping:           user_images
+        filename_property: picture_name

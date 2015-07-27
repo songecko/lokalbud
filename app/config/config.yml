@@ -51,6 +51,8 @@ doctrine:
         charset:  UTF8
     orm:
         auto_generate_proxy_classes: %kernel.debug%
+        resolve_target_entities:
+            Odiseo\Bundle\UserBundle\Entity\UserProfileInterface: Odiseo\Bundle\LokalBuddyBundle\Entity\UserProfile
         entity_managers:
             default:
                 auto_mapping: true

@@ -1,0 +1,14 @@
+Odiseo\Bundle\LokalBuddyBundle\Entity\UserProfile:
+    type: entity
+    table: odiseo_user_profile
+    fields: 
+        paypalId:
+            column: paypal_id
+            type: string
+            varchar: 255
+            nullable: true
+        passportName:
+            column: passport_name
+            type: string
+            varchar: 255
+            nullable: true

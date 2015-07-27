@@ -1,0 +1,44 @@
+{% extends 'OdiseoUserBundle:Frontend:layout.html.twig' %}
+
+{% block content %}
+<section id="general">	
+</section>
+
+<div class="container margin_30">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Edit Profile</h2>
+			<hr>
+			<form action="{{ path('odiseo_user_profile_update') }}" {{ form_enctype(form) }} method="POST" class="form-horizontal" class="fos_user_profile_edit">				
+				{{ form_errors(form) }}
+				<div class="row">
+					<div class="col-md-12">
+						{{ form_row(form._token) }}
+						<div class="form-group">
+							<div class="col-lg-10 col-lg-offset-2">
+								<div class="user-picture" style="max-width: 150px;max-height:150px;"><img src="{{ form.vars.value.mainProfile.pictureName is defined?form.vars.value.mainProfile.pictureName|imagine_filter('user_picture'):asset('bundles/odiseouser/images/avatar.gif') }}" class="img-responsive"></div>
+							</div>
+						</div>
+						{{ form_row(form.mainProfile.pictureFile) }}
+						{{ form_row(form.mainProfile.passportFile) }}
+						{{ form_row(form.mainProfile.paypalId) }}
+						{{ form_row(form.firstName) }}
+						{{ form_row(form.lastName) }}
+						{{ form_row(form.username) }}
+						{{ form_row(form.email) }}
+						{{ form_row(form.mainProfile.phone) }}
+						<br>
+						{{ form_row(form.current_password) }}
+					</div>
+				</div>						
+				<hr>
+				<div class="row">
+					<div class="col-md-12">
+						<input type="submit" class="btn_1 pull-right" value="{{ 'profile.edit.submit'|trans({}, 'fosuserbundle') }}" />
+					</div>
+				</div>				
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
