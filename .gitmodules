@@ -10,3 +10,9 @@
 [submodule "src/Odiseo/Bundle/UserBundle"]
 	path = src/Odiseo/Bundle/UserBundle
 	url = https://github.com/odiseoteam/OdiseoUserBundle.git
+[submodule "src/Odiseo/Bundle/NotificationBundle"]
+	path = src/Odiseo/Bundle/NotificationBundle
+	url = https://github.com/odiseoteam/OdiseoNotificationBundle.git
+[submodule "src/Odiseo/Bundle/RegionBundle"]
+	path = src/Odiseo/Bundle/RegionBundle
+	url = https://github.com/odiseoteam/OdiseoRegionBundle.git
