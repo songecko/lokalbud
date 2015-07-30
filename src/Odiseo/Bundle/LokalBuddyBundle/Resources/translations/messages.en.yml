@@ -1,8 +1,28 @@
-sylius:
-    meta:
-        backend_title: LokalBuddy - Administration
-    email: Email
-
 email:
     customer_welcome:
-        subject: "Welcome to Lokal Buddy!"
+        subject: 'Welcome to Lokal Buddy!'
+
+odiseo:
+    lokalbuddy:
+        about: About
+        about_us: 'About Us'
+        comunity_blog: 'Community blog'
+        discover: Discover
+        english: English
+        faqs: FAQ
+        french: French
+        gallery: Gallery
+        how_it_works: 'How It Works'
+        login: Login
+        need_help: 'Need help?'
+        register: Register
+        russian: Russian
+        settings: Settings
+        spanish: Spanish
+        terms: 'Terms and condition'
+        tour_guide: 'Tour guide'
+        what_is: 'What is LokalBuddy'
+        wishlist: Wishlist
+
+    user:
+        wishlist: Wishlist

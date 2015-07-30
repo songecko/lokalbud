@@ -1,4 +1,5 @@
 {% extends 'OdiseoLokalBuddyBundle:Frontend:layout.html.twig' %}
+{% trans_default_domain "aboutus" %}
 
 {% block javascripts %}
 	{{ parent() }}
@@ -14,38 +15,31 @@
 	<div class="row">
 		<div class="col-md-12">			
 			<div class="about">
-			<h3>About Us</h3>
+			<h3>{{ 'odiseo.lokalbuddy.about_us'|trans }}:</h3>
 			<p>
-			Lokalbuddy is a marketplace were we connect visitors from every part of
-			the world with locals in the Caribbean through unique traveling experiences.
-			If you want to share the experiences your passionate about or either book an unique experience,
-			sign up and have fun.
+			{{ 'odiseo.lokalbuddy.about_us_text'|trans }}
 			</p>
 			<hr>
-			<h3>Who we are?</h3>
+			<h3>{{ 'odiseo.lokalbuddy.who_we_are'|trans }}:</h3>
 			<p>
-			We are a group of people who love to live, travel and meet new people with different cultural
-			 backgrounds.  Our mission is to reconfigure the way we travel and visit other destinies by 
-			 connecting buddies with lokals through unique experiences in a sharing economy ecosystem. 
+			{{ 'odiseo.lokalbuddy.who_we_are_text'|trans }}
 			</p>
 			<hr>
-			<h3>Our Team:</h3>
+			<h3>{{ 'odiseo.lokalbuddy.our_team'|trans }}:</h3>
 			<p>
-			Jeannette García Alonzo, CEO and Founder:  Jeannette is the consummate host and 
-			creator of LokalBuddy.  Her passion for travel and meet new people is only matched by
-			 sharing unique lokal experiences with you.		
+			{{ 'odiseo.lokalbuddy.our_team1'|trans }}
 			</p>
 			<p>
-Guarien Taveras,  Product Manager:  Guarien is the product manager behind Lokalbuddy. If he is not thinking about the next thing to do with LokalBuddy, he is probably getting a suntan at Puerto Rico’s west coast beaches. 	
+			{{ 'odiseo.lokalbuddy.our_team2'|trans }} 	
 			</p>
 			<p>
-Alan Taveras, Community Developer:  Alan is the mastermind behind our social media accounts.  He is an adventurer waiting for a new experience to try.  When he is not zip lining, he is down in Argentina drinking wine. 	
+			{{ 'odiseo.lokalbuddy.our_team3'|trans }} 	
 			</p>
 			<p>
-Mauricio Bartolo, Dominican Republic Ambassador: Already living in Santo Domingo, Mauricio loves to share typical eating places and bars with strangers. So, why not joining lokalbuddy as part of the team?
+			{{ 'odiseo.lokalbuddy.our_team4'|trans }}
 			</p>
 			<p>
-Evaristo Angurria, Brand Manager: Angurria lives in the Dominican Republic, loves to eat beef and avocado. He shares his creativity by through lettering or illustrations with daily dominican life culture. 			</p>
+			{{ 'odiseo.lokalbuddy.our_team5'|trans }}
 			<hr>
 
 			</div>

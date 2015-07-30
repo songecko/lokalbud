@@ -2,7 +2,31 @@ sylius:
     meta:
         backend_title: LokalBuddy - Administración
     email: Email
-    
+
+odiseo:
+    lokalbuddy:
+        about: 'Acerca'
+        about_us: 'Acerca de'
+        comunity_blog: 'Blog de la comunidad'
+        discover: 'Descubre'
+        english: 'Ingles'
+        faqs: 'FAQ'
+        french: 'Frances'
+        gallery: 'Galeria'
+        how_it_works: 'Como funciona'
+        login: 'Iniciar sesion'
+        need_help: 'Necesita ayuda?'
+        register: 'Registrarse'
+        russian: 'Ruso'
+        settings: 'Ajustes'
+        spanish: 'Español'
+        terms: 'Terminos y condiciones'
+        tour_guide: 'Guia turística'
+        what_is: 'Que es LokalBuddy'
+        wishlist: 'Wishlist'
+
+    user:
+        wishlist: Wishlist
 email:
     customer_welcome:
         subject: "Bienvenido a Lokal Buddy!"

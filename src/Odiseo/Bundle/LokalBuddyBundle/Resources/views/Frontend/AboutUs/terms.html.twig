@@ -1,4 +1,5 @@
 {% extends 'OdiseoLokalBuddyBundle:Frontend:layout.html.twig' %}
+{% trans_default_domain "aboutus_terms" %}
 
 {% block javascripts %}
 	{{ parent() }}
@@ -13,69 +14,37 @@
 <div class="container margin_30">
 	<div class="row">
 		<div class="col-md-12">	
-			<h2>Terms of Use</h2>
+			<h2>{{ 'odiseo.lokalbuddy.terms_use'|trans }}</h2>
 			<hr>		
 			<div class="terms">
 <p align="justify">
-    e-Culture, LLC and its affiliates (“<strong>Company</strong>”, “<strong>we</strong>” or "<strong>us</strong>") welcome you to LokalBuddy, an online social
-platform available at <u><a href="http://www.lokalbuddy.com/" target="_blank">www.lokalbuddy.com</a></u> (hereinafter, “<strong>LokalBuddy</strong>” or "    <strong>Service</strong>"), which offers a community marketplace for hosts and guests to have experiences together. LokalBuddy connects locals who offer
-    their hosting skills, food, tours and activities to buddies from all over the world seeking to engage in such unique experiences. LokalBuddy’s users,
-    whether locals or buddy (“<strong>User</strong>” or “<strong>you</strong>”), is invited to use and enjoy LokalBuddy in accordance with the terms and
-    conditions hereunder. Please read this Terms of Use (“Agreement”) carefully, as it constitutes legally binding terms and conditions and applies to your use
-    of <u><a href="http://www.lokalbuddy.com/" target="_blank">www.lokalbuddy.com</a></u>.
+	{{ ('odiseo.lokalbuddy.initial_text'|trans) | raw }}
 </p>
 <ol>
     <li>
         <p align="justify">
-            <u>Acceptance of the terms</u>
-            : By logging to, connecting to, accessing or using LokalBuddy, you acknowledge that you have read and understood the following Terms of Use
-            including the Privacy Policy terms (collectively, the "Terms") and you agree to be bound by them and to comply with all applicable laws and
-regulations regarding your conduct on LokalBuddy.            <strong>IF YOU DO NOT AGREE TO ANY OF THE TERMS, DO NOT CONNECT TO, ACCESS OR USE LOKALBUDDY IN ANY MANNER</strong>. The Terms may be revised and
-            updated from time to time, with or without any notice. The Company shall make reasonable efforts to post a prominent notice in case the Terms shall
-            change substantially. The Company urges you to check the Last Revised date which appears at the top of the Terms and to review the Terms from time
-to time. You can review the most current version of the Terms at any time at:            <u><a href="{{ path('odiseo_lokalbuddy_frontend_about_us_terms') }}" target="_blank">http://www.lokalbuddy.com/termsofuse</a></u>. By connecting, using, surfing and/ or continuing to
-            use the LokalBuddy, you are indicating your acceptance to be legally and enforceable bound by the terms and conditions of this Agreement between
-            you and LokalBuddy. If you do not accept the terms and conditions stated here, LokalBuddy will not allow you to use LokalBuddy services and you
-            should immediately stop using LokalBuddy.
+        	{{ 'odiseo.lokalbuddy.item1'|trans | raw  }}
         </p>
     </li>
 </ol>
 <ol start="2">
     <li>
         <p align="justify">
-            <u>Services</u>
-            : LokalBuddy is an online social platform which offers a community marketplace for locals and buddies to have travel experiences together.
-            LokalBuddy is designed to enable Users to offer their hosting skills, food, tours and activities as locals ("<strong>Locals</strong>") and allowing
-            other Users to participate in unique experiences of such Locals as buddies ("<strong>Buddies</strong>"). LokalBuddy, take great measures to provide
-            you with the best experience you can have while using LokalBuddy; However, LokalBuddy has no control over the conduct of any Local, Buddy or any
-            other User and disclaims all liability in this regard. Locals and Buddies are recommended to carefully and thoroughly examine and check with their
-            respective Buddies and Locals all necessary details related to their Unique Experience and Reservation (as defined below) prior to any engagement
-            been made. Participating in such unique experiences such as home meals, personal tours services, outdoors activities, home facilities or other
-            User's activities as a result, directly or indirectly, from using LokalBuddy, is entirely at your own risk. LokalBuddy is not a party to any
-            agreement entered into between Locals and Buddies in any circumstances nor does it operate as a place of business for vending experiences of any
-            sort. User has the sole and ultimate responsibility regarding compliance with all laws, regulation, religious duties (if and as promised by Locals)
-            or any other duty relating to the Experience Event. We do not accept any liability for any loss, damage, cost or expense that you may suffer or
-            incur as a result of or in connection with your participation in any Experience Event conducted by a User or a third party. Certain Experience
-            Events may be subject to separate terms and conditions incurred by their respective Locals, organizers etc. and we recommend that you review such
-            terms and conditions, as they may be.
+        	{{ 'odiseo.lokalbuddy.item2'|trans | raw }}
         </p>
     </li>
 </ol>
 <ol start="3">
     <li>
         <p align="justify">
-            <u>Eligibility</u>
-            :<strong> </strong>You must be at least 18 years of age to register for this Service. If you are under 18 years of age you may not use the Service
-            on behalf of yourself or any other person or entity, and you must not provide LokalBuddy with any of your personal details. If you provide
-            information that is untrue, inaccurate, not current or incomplete, or LokalBuddy suspects that such information is untrue, inaccurate, not current
-            or incomplete, LokalBuddy has the right to suspend or terminate your registration and refuse any and all current or future use of the Services, in
-            their sole discretion, with or without notice to you, and without liability or obligation to you.
+        	{{ 'odiseo.lokalbuddy.item3'|trans | raw }}
         </p>
     </li>
 </ol>
 <ol start="4">
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item4'|trans | raw }}
             <u>User Registration</u>
             : To access and use certain content, features, or functionality of the Services, LokalBuddy you must join by using a third party account (e.g.,
             Facebook) and have a unique username and password combination (“User Credentials”). By registering to the Service with a third-party account (e.g.,
@@ -99,6 +68,7 @@ to time. You can review the most current version of the Terms at any time at:   
     </li>
 </ol>
 <p align="justify">
+    {{ 'odiseo.lokalbuddy.item4_text1'|trans | raw }}
     LokalBuddy take great measures to provide you with the best experience you can have while using LokalBuddy; However, LokalBuddy has no control over the
     conduct of any Local, Buddy or any other User and disclaims all liability in this regard. Locals and Buddies are recommended to carefully and thoroughly
     examine and check with their respective Buddies and Locals all necessary details related to their Experience and Reservation prior to any engagement been
@@ -107,12 +77,14 @@ to time. You can review the most current version of the Terms at any time at:   
     Internet users.
 </p>
 <p align="justify">
+	{{ 'odiseo.lokalbuddy.item4_text2'|trans | raw  }}
     LokalBuddy is required to collect under U.S. Internal Revenue Code and the regulations promulgated thereunder, IRS Form W-9 from any Host hosting in the
     United States. Locals hosting in the United States, are required upon registration on LokalBuddy to provide to LokalBuddy such properly filled in Form W-9.
 </p>
 <ol start="5">
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item5'|trans | raw  }}
             <u>Reservations</u>
 : As a registered User, each Buddy is welcome to make an online reservation with any Local offering his services on LokalBuddy ("            <strong>Reservation</strong>"). You, as a Buddy, may pay for your Reservation by using the PayPal service or any other payment gateway services
             available for you. As part of the Reservation process you will be asked to fill in some details with respect to your Reservation (such as food
@@ -129,6 +101,7 @@ allergies, if any, and any special condition or information you need to share in
 <ol start="6">
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item6'|trans | raw  }}
             <u>Fees and Payments</u>
             : In order to make an online Reservation on LokalBuddy, as a Buddy, you will be requested to provide the Company with additional personal
             information, such as home address, phone number, or any other information needed in order to complete the Reservation Process. Note that we will
@@ -169,6 +142,7 @@ allergies, if any, and any special condition or information you need to share in
 <ol start="7">
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item7'|trans | raw  }}
             <u>Cancellation of Reservation</u>
             : All Reservations are subject to LokalBuddy's cancellation policy, as stated below:
         </p>
@@ -177,6 +151,7 @@ allergies, if any, and any special condition or information you need to share in
 <ul>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item7_text1'|trans | raw  }}
             If a Reservation is cancelled by a Buddy at least 48 hours prior to the applicable Experience Event date, the Local shall not be paid any of the
             Reservation Amount and the Buddy shall be reimbursed the full Reservation Amount net any commissions and fees paid by LokalBuddy (e.g – PayPal fees
             or any other payment gateway fees).
@@ -184,18 +159,21 @@ allergies, if any, and any special condition or information you need to share in
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item7_text2'|trans | raw  }}
             If a Reservation is cancelled by a Buddy between 24 and 48 hours prior to the applicable Experience Event date, the Local shall be paid 50% of the
             Reservation Amount and the remainder shall be returned to the Buddy net any commissions and fees paid by LokalBuddy.
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item7_text3'|trans | raw  }}
             If a Reservation is cancelled by a Guest less than 24 hours before the applicable Experience Event, the Buddy shall not be entitled to any return,
             credit or reimbursement.
         </p>
     </li>
 </ul>
 <p align="justify">
+    {{ 'odiseo.lokalbuddy.item7_text4'|trans | raw  }}
     Your Reservation shall be deemed canceled only upon receipt of LokalBuddy confirmation of your cancellation. The Company reserves the right to cancel a
     Reservation at any time upon returning full refund of Reservation Amount to the Buddy.
     <br/>
@@ -212,6 +190,7 @@ allergies, if any, and any special condition or information you need to share in
 <ol start="8">
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item8'|trans | raw  }}
             <u>Privacy Policy</u>
             : We are committed to protect the information you share with LokalBuddy and we respect your privacy. For that reason, we understand the importance
             to know our practices regarding the information we collect from you, we invite you to take a look at our Privacy Policy. The Privacy Policy
@@ -222,6 +201,7 @@ allergies, if any, and any special condition or information you need to share in
 <ol start="9">
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9'|trans | raw  }}
             <u>Use Restriction</u>
             : There are certain conducts that are strictly prohibited on LokalBuddy. Please read the following restrictions carefully. Your failure to comply
             with the provisions set forth herein may result in the termination of your access to LokalBuddy and may also expose you to civil and/or criminal
@@ -232,11 +212,13 @@ allergies, if any, and any special condition or information you need to share in
 <ul>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text1'|trans | raw  }}
             Use LokalBuddy for any illegal, unlawful or unauthorized purposes;
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text2'|trans | raw  }}
             Engage in or encourage conduct that would violate any applicable law, rule, regulation, judicial or government order or give rise to civil
             liability or violate or infringe upon any intellectual property, proprietary, privacy, patent, trade secret, copyright, moral, publicity or other
             rights of any other person or entity;
@@ -244,6 +226,7 @@ allergies, if any, and any special condition or information you need to share in
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text3'|trans | raw  }}
             ffer, sell or distribute controlled substances (such as but not limited to steroids, narcotics, tobacco products, prescriptions drugs, marijuana),
             medical devices or products or services that present a risk to consumer safety, guns, ammunitions, firearms, knives, weapons or accessories
             regulated by law, stocks, bonds or other securities, real estate, insurance, banking or financial services.
@@ -251,22 +234,26 @@ allergies, if any, and any special condition or information you need to share in
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text4'|trans | raw  }}
             Use LokalBuddy in any form of spam, unsolicited mail or similar conduct.
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text5'|trans | raw  }}
             Allow access to your account to anyone other than yourself, including, without limitation, any persons who are under the age of 18. You accept full
             responsibility for any unauthorized use of the Service on your behalf, including by minors;
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text6'|trans | raw  }}
             Use LokalBuddy for non-personal or commercial purposes other than as a Local without Company’s express prior written consent;
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text7'|trans | raw  }}
             Interfere with or violate other Users' rights to privacy and other rights, or harvest or collect data and information about other Users without
             their express consent, whether manually or automatically with the use of any robot, spider, crawler, any search or retrieval application, or use
             other automatic device, process or method to access LokalBuddy and retrieve, index and/or data-mine any information;
@@ -274,12 +261,14 @@ allergies, if any, and any special condition or information you need to share in
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text8'|trans | raw  }}
             Interfere with or disrupt the operation of LokalBuddy or the servers or networks that host LokalBuddy, or disobey any laws or regulations or
             requirements, procedures, policies, or regulations of such servers or networks;
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text9'|trans | raw  }}
             Submit, post, publish, email, display, transmit or otherwise make available through LokalBuddy any material or take any action that is or is likely
             to be unlawful, harmful, threatening, abusive, tortious, defamatory, libelous, deceptive, fraudulent, false, misleading, inaccurate, invasive of
             another’s privacy or publicity rights, harassing, profane, obscene, vulgar or that contains explicit or graphic imagery, descriptions or accounts
@@ -289,17 +278,20 @@ allergies, if any, and any special condition or information you need to share in
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text10'|trans | raw  }}
             Impersonate any person or entity or provide false information on LokalBuddy, whether directly or indirectly;
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text11'|trans | raw  }}
             Falsely state or otherwise misrepresent your affiliation with any person or entity, or express or imply that the Company or any third party
             endorses you, your website, your business, or any statement you make, or present false or inaccurate information about LokalBuddy;
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text12'|trans | raw  }}
             As a Local, provide falsely or inaccurate information with respect to the service you offer through LokalBuddy for Buddies, including, but not
             limited to any representation you make with respect to your Experience Events, including the hosting place, the experience as a whole and/ or the
             food you offer on LokalBuddy.
@@ -307,45 +299,53 @@ allergies, if any, and any special condition or information you need to share in
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text13'|trans | raw  }}
             Transmit, distribute, display or otherwise make available through or in connection with LokalBuddy any content, including User Generated Content,
             which may infringe third party rights, including Intellectual Property rights and privacy rights, or which may contain any unlawful content;
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text14'|trans | raw  }}
             Take any action that imposes, or may impose, in our sole discretion, an unreasonable or disproportionately large load on our platform
             infrastructure;
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text15'|trans | raw  }}
             Bypass any measures we may use to prevent or restrict access to LokalBuddy;
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text16'|trans | raw  }}
             Copy, modify, alter, adapt, make available, translate, port, reverse engineer, decompile, or disassemble any portion of LokalBuddy in any way;
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text17'|trans | raw  }}
             Create a browser, frame, border environment or GUI around LokalBuddy;
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text18'|trans | raw  }}
             Link, including in-line linking, to elements on LokalBuddy, such as images and videos, independently from the web pages of LokalBuddy on which they
             originally appear;
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text19'|trans | raw  }}
             Bypass LokalBuddy by forwarding your personal and contact details (as emails, phone numbers or sites address) to other Users of LokalBuddy, whether
             you are a Buddy or a Local, to avoid paying Reservation Fee to us or for other purposes;
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item9_text20'|trans | raw  }}
             Engage in or encourage conduct that affects adversely or reflect negatively on LokalBuddy, its affiliates, or parent company, partners,
             collaborators, the Services, our goodwill, name or reputation or causes duress, distress or discomfort to us or anyone else, or discourage any
             person or entity from using all or any portion, features or functions of the Services, or from advertising or becoming a supplier to us in
@@ -356,6 +356,7 @@ allergies, if any, and any special condition or information you need to share in
 <ol start="10">
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item10'|trans | raw  }}
             <u>Intellectual Property Rights</u>
             : The Intellectual Property rights pertaining to LokalBuddy, including, but not limited to, inventions, patent, patent applications, trademarks,
             trade names, logos, copyrightable materials, graphics, text, images, specifications, designs, policies, methods, procedures, algorithms, data,
@@ -374,6 +375,7 @@ allergies, if any, and any special condition or information you need to share in
 <ol start="11">
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item11'|trans | raw  }}
             <u>User Generated Content</u>
             : LokalBuddy allows User to upload, post, publish and make available through it, your own copyrightable materials such as literary works, text,
             images, photos, videos, strips and any other proprietary materials, including without limitation Locals' posts on their pages and/or any part
@@ -384,12 +386,14 @@ allergies, if any, and any special condition or information you need to share in
 <ul>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item11_text1'|trans | raw  }}
             Users are solely responsible for their User Generated Content and the consequences of posting or publishing such material, on LokalBuddy, in any
             way.
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item11_text2'|trans | raw  }}
             User represent and warrant that is the rightful owner of the User Generated Content uploaded to LokalBuddy or that User have (and will continue to
             have) all the necessary licenses, rights, consents, and permissions from the rightful owners of such User Generated Content, which are required to
             use and to enable LokalBuddy to use the User Generated Content User upload to LokalBuddy and that such User Generated Content does not infringe any
@@ -399,6 +403,7 @@ allergies, if any, and any special condition or information you need to share in
     <li>
         <p align="justify">
             <em>
+        		{{ 'odiseo.lokalbuddy.item11_text3'|trans | raw  }}
                 By submitting their Content content (including user submissions and comments) on LokalBuddy, User hereby do and shall grant, and represent and
                 warrant that User have the right to grant, LokalBuddy a worldwide, non-exclusive, perpetual, irrevocable, royalty-free, fully paid,
                 sublicensable (including to other Site users) and transferable license (the “Content License”) to: (i) use, edit, modify, reproduce,
@@ -413,6 +418,7 @@ allergies, if any, and any special condition or information you need to share in
     <li>
         <p align="justify">
             <em>
+        		{{ 'odiseo.lokalbuddy.item11_text4'|trans | raw  }}
                 User agrees to irrevocably waive (and cause to be waived) any claims and assertions of moral rights or attribution with respect to your
                 content. For clarity, the foregoing license grant to LokalBuddy does not affect your other ownership or license rights in your content,
                 including the right to grant additional licenses to the material in your content, unless otherwise agreed in writing. You agree to pay all
@@ -423,6 +429,7 @@ allergies, if any, and any special condition or information you need to share in
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item11_text5'|trans | raw  }}
             User agrees that the Company may remove at any time any User Generated Content User has uploaded to LokalBuddy in its sole discretion with or
             without any reason.
         </p>
@@ -431,6 +438,7 @@ allergies, if any, and any special condition or information you need to share in
 <ol start="12">
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item12'|trans | raw  }}
             <u>Third Party Intellectual Property</u>
             : LokalBuddy may, in appropriate circumstances and at its discretion, terminate the accounts of users who infringe the intellectual property rights
             of others. LokalBuddy will remove infringing materials in accordance with the Digital Millennium Copyright Act if properly notified that content
@@ -443,37 +451,44 @@ allergies, if any, and any special condition or information you need to share in
 <ul>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item12_text1'|trans | raw  }}
             An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright interest;
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item12_text2'|trans | raw  }}
             A description of the copyrighted work that you claim has been infringed;
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item12_text3'|trans | raw  }}
             A description of where the material that you claim is infringing is located on the website, sufficient for The Company to locate the material;
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item12_text4'|trans | raw  }}
             Your address, telephone number, and email address;
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item12_text5'|trans | raw  }}
             A statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law; and
         </p>
     </li>
     <li>
         <p align="justify">
+        	{{ 'odiseo.lokalbuddy.item12_text6'|trans | raw  }}
             A statement by you that the above information in your notice is accurate and, under penalty of perjury, that you are the copyright owner or
             authorized to act on the copyright owner's behalf.
         </p>
     </li>
 </ul>
 <p align="justify">
+    {{ 'odiseo.lokalbuddy.item12_text7'|trans | raw  }}
     If you believe that your work has been removed or disabled by mistake or misidentification, please provide LokalBuddy team with a written
     counter-notification containing at least the following information (please confirm these requirements with your legal counsel or see Section 512(g)(3) of
     the U.S. Copyright Act, 17 U.S.C. §512(g)(3), for more information):
@@ -481,23 +496,27 @@ allergies, if any, and any special condition or information you need to share in
 <ul>
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item12_text8'|trans | raw  }}
             A physical or electronic signature of the User of LokalBuddy;
         </p>
     </li>
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item12_text9'|trans | raw  }}
             Identification of the material that has been removed or to which access has been disabled and the location at which the material appeared before it
             was removed or access to it was disabled;
         </p>
     </li>
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item12_text10'|trans | raw  }}
             A statement made under penalty of perjury that the subscriber has a good faith belief that the material was removed or disabled as a result of
             mistake or misidentification of the material to be removed or disabled; and
         </p>
     </li>
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item12_text11'|trans | raw  }}
             The subscriber's name, address, telephone number, and a statement that the subscriber consents to the jurisdiction of the Federal District Court
             for the judicial district in which the address is located, or if the subscriber's address is outside of the United States, for any judicial
             district in which the service provider may be found, and that the subscriber will accept service of process from the person who provided
@@ -507,23 +526,22 @@ allergies, if any, and any special condition or information you need to share in
 </ul>
 <p align="justify">
     <br/>
+    {{ 'odiseo.lokalbuddy.item12_text12'|trans | raw  }}
     You acknowledge that if you fail to comply with all of the aforementioned notice requirements, your notification or counter-notification may not be valid
     and that LokalBuddy may ignore such incomplete or inaccurate notices without liability of any kind. Under Section 512(f) of the Copyright Act, 17 U.S.C.
     §512(f), any person who knowingly materially misrepresents that material or activity is infringing or was removed or disabled by mistake or
     misidentification may be subject to liability. Our designated agent for notice of alleged copyright infringement is:
 </p>
 <p align="center">
-    LokalBuddy
-</p>
-<p align="center">
-    PO Box 10067
-</p>
-<p align="center">
+    {{ 'odiseo.lokalbuddy.item12_text11'|trans | raw  }}
+    LokalBuddy<br>
+    PO Box 10067<br>
     San Juan, P.R.00922-0067
 </p>
 <ol start="13">
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item13'|trans | raw  }}
             <u>Trademarks</u>
             : The trademarks, logos, and Service marks ("Marks") displayed on LokalBuddy website are registered trademarks of their respective owners, are the
             property of their respective owners, and/or are protected by U.S. and international trademark laws and/or common law. Their uses are restricted to
@@ -534,12 +552,10 @@ allergies, if any, and any special condition or information you need to share in
         </p>
     </li>
 </ol>
-<p align="justify">
-    <u> </u>
-</p>
 <ol start="14">
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item14'|trans | raw  }}
             <u>Advertisements</u>
             : The Company may integrate commercials, advertisements and/or sponsored links, whether within or beside LokalBuddy. By clicking the advertisements
             you may be transferred to a website of an advertiser or receive any other messages, information or offers from the advertiser and from others. All
@@ -554,6 +570,7 @@ allergies, if any, and any special condition or information you need to share in
 <ol start="15">
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item15'|trans | raw  }}
             <u>Availability:</u>
             LokalBuddy availability and functionality depends on various factors, such as communication networks, software, hardware and the Company's
             services' providers and contractors. The Company does not warrant or guarantee that LokalBuddy will operate at all times without disruption or
@@ -564,6 +581,7 @@ allergies, if any, and any special condition or information you need to share in
 <ol start="16">
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item16'|trans | raw  }}
             <u>Modifications:</u>
             <em> </em>
             The Company may change LokalBuddy’s layout and design from time to time, and the availability of the content and services included therein, without
@@ -576,6 +594,7 @@ allergies, if any, and any special condition or information you need to share in
 <ol start="17">
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item17'|trans | raw  }}
             <u>Refund, Disclaimer and Warranties</u>
             : IN THE EVENT OF MISLEADING REPRESENTATION OR MISCONDUCT ON LOKALBUDDY OR IN THE FRAMEWORK OF EXPERIENCE EVENTS HELD BY LOCALS THROUGH LOKALBUDDY,
             COMPANY MAY DECIDE, IN ITS SOLE DISCRETION, TO CREDIT YOU WITH A REFUND FOR THE RESERVATION AMOUNT PAID OR PART THEREOF AND CHARGE THE LOCAL WITH
@@ -604,6 +623,7 @@ NOTWITHSTANDING THE FOREGOING, LOKALBUDDY, INCLUDING WITHOUT LIMITATION ANY CONT
 <ol start="18">
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item18'|trans | raw  }}
             <u>Limitation of Liability</u>
             : <strong>THE USE OF LOKALBUDDY AND PARTICIPATION IN ANY EXPERIENCE EVENT IS SOLELY AT YOUR OWN RISK</strong>. EXCEPT AS PROVIDED HEREIN, IN NO
             EVENT SHALL THE COMPANY BE LIABLE FOR ANY DAMAGES WHATSOEVER INCLUDING, BUT NOT LIMITED TO, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES
@@ -617,6 +637,7 @@ NOTWITHSTANDING THE FOREGOING, LOKALBUDDY, INCLUDING WITHOUT LIMITATION ANY CONT
 <ol start="19">
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item19'|trans | raw  }}
             <u>Indemnification</u>
             : User shall defend, indemnify, and hold harmless The Company, its affiliates, and each of its and its affiliates’ employees, contractors,
             directors, suppliers, and representatives from all liabilities, claims, and expenses, including reasonable attorneys' fees, that arise from or
@@ -630,6 +651,7 @@ NOTWITHSTANDING THE FOREGOING, LOKALBUDDY, INCLUDING WITHOUT LIMITATION ANY CONT
 <ol start="20">
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item20'|trans | raw  }}
             <u>Notification</u>
             : When you visit LokalBuddy, use the Services or send emails to LokalBuddy, you are communicating with us electronically. You consent to receive
             communications from LokalBuddy electronically. LokalBuddy may communicate with you by email or by posting notices on the Services. You agree that
@@ -641,6 +663,7 @@ NOTWITHSTANDING THE FOREGOING, LOKALBUDDY, INCLUDING WITHOUT LIMITATION ANY CONT
 <ol start="21">
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item21'|trans | raw  }}
             <u>Jurisdiction and Governing Law:</u>
             We make no representations that the Services, Services Information, the Services or products offered through LokalBuddy are appropriate, available
             or legal in any particular location. Those who choose to access LokalBuddy, Services Information, or the Services and products offered through
@@ -654,6 +677,7 @@ NOTWITHSTANDING THE FOREGOING, LOKALBUDDY, INCLUDING WITHOUT LIMITATION ANY CONT
 <ol start="22">
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item22'|trans | raw  }}
             <u>Conflict With Other Agreements: </u>
             These Terms are in addition to, and do not nullify, any other agreement between User and LokalBuddy or any other applicable terms and conditions
             found on the Services. In the case of any direct conflict between these Terms and any other agreement between User and LokalBuddy, the provisions
@@ -666,8 +690,8 @@ NOTWITHSTANDING THE FOREGOING, LOKALBUDDY, INCLUDING WITHOUT LIMITATION ANY CONT
 <ol start="23">
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item23'|trans | raw  }}
             <u>Separability:</u>
-            <em> </em>
             In the event that one or more provisions of these Terms shall, for any reason, be held to be unenforceable, the remaining provisions will remain in
             full force and effect.
         </p>
@@ -676,8 +700,8 @@ NOTWITHSTANDING THE FOREGOING, LOKALBUDDY, INCLUDING WITHOUT LIMITATION ANY CONT
 <ol start="24">
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item24'|trans | raw  }}
             <u>Headings:</u>
-            <em> </em>
             The headings used throughout these Terms of Use are solely for the convenience of reference and are not to be used as an aid in the interpretation
             of these Terms of Use.
         </p>
@@ -686,8 +710,8 @@ NOTWITHSTANDING THE FOREGOING, LOKALBUDDY, INCLUDING WITHOUT LIMITATION ANY CONT
 <ol start="25">
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item25'|trans | raw  }}
             <u>No Waiver:</u>
-            <em> </em>
             Any delay or failure by User or LokalBuddy, at any time or times, to require performance of any provision of these Terms of Use shall in no manner
             affect User or LokalBuddy right at a later time to enforce such provision. No delay or failure of User or LokalBuddy in exercising any right
             hereunder shall constitute a waiver of such right or any other rights hereunder.
@@ -697,6 +721,7 @@ NOTWITHSTANDING THE FOREGOING, LOKALBUDDY, INCLUDING WITHOUT LIMITATION ANY CONT
 <ol start="26">
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item26'|trans | raw  }}
             <u>Entire Agreement:</u>
             These Terms make up the entire agreement between User and The Company regarding LokalBuddy and supersede any prior agreements.
         </p>
@@ -705,6 +730,7 @@ NOTWITHSTANDING THE FOREGOING, LOKALBUDDY, INCLUDING WITHOUT LIMITATION ANY CONT
 <ol start="27">
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item27'|trans | raw  }}
             <u>Assignment</u>
             : You may not assign your rights or delegate your responsibilities hereunder without express written permission of The Company. The Company may, at
             any time, assign its rights or delegate its obligations hereunder without notice to you.
@@ -714,9 +740,9 @@ NOTWITHSTANDING THE FOREGOING, LOKALBUDDY, INCLUDING WITHOUT LIMITATION ANY CONT
 <ol start="28">
     <li>
         <p align="justify">
+    		{{ 'odiseo.lokalbuddy.item28'|trans | raw  }}
             <u>Third Party Beneficiary</u>
-            <em>: </em>
-            No person not a party to these Terms of Use is intended to be a beneficiary of these Terms of Use, and no person not a party to these Terms of Use
+            : No person not a party to these Terms of Use is intended to be a beneficiary of these Terms of Use, and no person not a party to these Terms of Use
             shall have any right to enforce any term of these Terms of Use.
         </p>
     </li>

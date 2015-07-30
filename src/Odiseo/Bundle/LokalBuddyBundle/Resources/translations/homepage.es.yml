@@ -1,0 +1,13 @@
+odiseo:
+    lokalbuddy:
+        activities: 'Actividades con lokal buddy'
+        activities_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius tellus augue, rutrum pulvinar ipsum euismod at. Sed eget aliquet orci, vel semper felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam condimentum ligula at pharetra cursus. Duis id dui posuere, molestie odio eu, molestie elit. Vestibulum commodo volutpat dapibus. Nulla vel dolor quis justo molestie faucibus. Duis tristique quam mauris, eu eleifend augue sodales vitae. Phasellus vitae dui at enim scelerisque blandit euismod quis nibh. Vestibulum blandit sapien ex, id malesuada lectus fermentum a. Vestibulum sodales malesuada metus sed congue.'
+        add_wishlist: 'Agregar a wishlist'
+        become: 'CONVIERTETE EN ANFITRION'
+        join: 'UNETE A NUESTRA COMUNIDAD'
+        read_more: 'LEER MAS'
+        staff_pick: 'SELECCION DE LA SEMANA'
+        view_all: 'VER TODAS LAS EXPERIENCIAS'
+        we_offer: 'OFRECEMOS UNA PLATAFORMA PARA HACER EXPERIENCIAS LOCALES'
+        welcome: 'BIENVENIDO A LOKAL BUDDY'
+        why_lokal: 'Porque lokal buddy?'

@@ -1,0 +1,5 @@
+sylius:
+    backend:
+        menu:
+            main:
+                homepage: sylius.backend.menu.main.homepage

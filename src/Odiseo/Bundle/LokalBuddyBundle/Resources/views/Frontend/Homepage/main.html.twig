@@ -1,5 +1,5 @@
 {% extends 'OdiseoLokalBuddyBundle:Frontend:layout.html.twig' %}
-
+{% trans_default_domain "homepage" %}
 {% block javascripts %}
 	{{ parent() }}
 
@@ -37,7 +37,7 @@
 				data-elementdelay="0.05" data-endelementdelay="0.1"
 				style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;"
 			>
-					Welcome to LOKAL BUDDY
+					{{ 'odiseo.lokalbuddy.welcome'|trans }}
 			</div>
 			<!-- LAYER NR. 2 -->
 			<div class="tp-caption customin tp-resizeme rs-parallaxlevel-0 text-center tp-static-layer" 
@@ -49,7 +49,7 @@
 				style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;"
 			>
 				<div style="color:#ffffff; font-size:16px; text-transform:uppercase">
-					We offer a platform to make local experiences
+					{{ 'odiseo.lokalbuddy.we_offer'|trans }}
 				</div>
 			</div>
 			<!-- LAYER NR. 3 -->
@@ -61,8 +61,8 @@
 				data-elementdelay="0.1" data-endelementdelay="0.1" 
 				style="z-index: 12;"
 			>
-				<a href="{{ path('odiseo_product_index') }}" class="button_intro">View all experiences</a>
-				<a href="#" class=" button_intro outline">Become a Host</a>
+				<a href="{{ path('odiseo_product_index') }}" class="button_intro">{{ 'odiseo.lokalbuddy.view_all'|trans }}</a>
+				<a href="#" class=" button_intro outline">{{ 'odiseo.lokalbuddy.become'|trans }}</a>
 			</div>
 			<!-- LAYER NR. 4 -->
 			<div class="tp-caption tp-static-layer"
@@ -105,7 +105,7 @@
 {% block content %}
 <div class="container margin_60">    
 	<div class="main_title">
-		<h2>Staff pick of the week</h2>
+		<h2>{{ 'odiseo.lokalbuddy.staff_pick'|trans }}</h2>
 	</div>    
 	<div class="row pickOfWeek">    
 		<div class="col-md-4 wow zoomIn animated eat" data-wow-delay="0.2s" style="visibility: visible; -webkit-animation-delay: 0.2s;">
@@ -126,7 +126,7 @@
 						<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
 					</div><!-- end rating -->
 					<div class="wishlist">
-						<a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+						<a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">{{ 'odiseo.lokalbuddy.add_wishlist'|trans }}</span></span></a>
 					</div><!-- End wish list-->
 				</div>
 			</div><!-- End box tour -->
@@ -150,7 +150,7 @@
 						<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
 					</div><!-- end rating -->
 					<div class="wishlist">
-						<a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+						<a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">{{ 'odiseo.lokalbuddy.add_wishlist'|trans }}</span></span></a>
 					</div><!-- End wish list-->
 				</div>
 			</div><!-- End box tour -->
@@ -174,7 +174,7 @@
 						<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
 					</div><!-- end rating -->
 					<div class="wishlist">
-						<a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+						<a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">{{ 'odiseo.lokalbuddy.add_wishlist'|trans }}</span></span></a>
 					</div><!-- End wish list-->
 				</div>
 			</div><!-- End box tour -->
@@ -183,13 +183,13 @@
 </div>
 <div class="whyLokals">
 	<div class="col-md-6 col-sm-6 hidden-xs">
-		<h3><span>Join our comunnity</span></h3>
+		<h3><span>{{ 'odiseo.lokalbuddy.join'|trans }}</span></h3>
 	</div>
 	<div class="col-md-6 col-sm-6">
-		<h3><span>Why lokal buddy?</span></h3>
-		<p><strong>Activities with lokal buddy</strong></p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius tellus augue, rutrum pulvinar ipsum euismod at. Sed eget aliquet orci, vel semper felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam condimentum ligula at pharetra cursus. Duis id dui posuere, molestie odio eu, molestie elit. Vestibulum commodo volutpat dapibus. Nulla vel dolor quis justo molestie faucibus. Duis tristique quam mauris, eu eleifend augue sodales vitae. Phasellus vitae dui at enim scelerisque blandit euismod quis nibh. Vestibulum blandit sapien ex, id malesuada lectus fermentum a. Vestibulum sodales malesuada metus sed congue.</p>
-		<p><a href="#" class="btn_1">Read more</a></p>
+		<h3><span>{{ 'odiseo.lokalbuddy.why_lokal'|trans }}</span></h3>
+		<p><strong>{{ 'odiseo.lokalbuddy.activities'|trans }}</strong></p>
+		<p>{{ 'odiseo.lokalbuddy.activities_text'|trans }}</p>
+		<p><a href="#" class="btn_1">{{ 'odiseo.lokalbuddy.read_more'|trans }}</a></p>
 	</div>
 </div><!-- End row -->
 {% endblock %}

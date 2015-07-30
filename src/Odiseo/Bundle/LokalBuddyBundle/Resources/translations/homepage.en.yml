@@ -1,0 +1,13 @@
+odiseo:
+    lokalbuddy:
+        activities: 'Activities with lokal buddy'
+        activities_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer varius tellus augue, rutrum pulvinar ipsum euismod at. Sed eget aliquet orci, vel semper felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam condimentum ligula at pharetra cursus. Duis id dui posuere, molestie odio eu, molestie elit. Vestibulum commodo volutpat dapibus. Nulla vel dolor quis justo molestie faucibus. Duis tristique quam mauris, eu eleifend augue sodales vitae. Phasellus vitae dui at enim scelerisque blandit euismod quis nibh. Vestibulum blandit sapien ex, id malesuada lectus fermentum a. Vestibulum sodales malesuada metus sed congue.'
+        add_wishlist: 'Add to wishlist'
+        become: 'BECOME A HOST'
+        join: 'Join our comunnity'
+        read_more: 'READ MORE'
+        staff_pick: 'STAFF PICK OF THE WEEK'
+        view_all: 'VIEW ALL EXPERIENCES'
+        we_offer: 'WE OFFER A PLATFORM TO MAKE LOCAL EXPERIENCES'
+        welcome: 'WELCOME TO LOKAL BUDDY'
+        why_lokal: 'Why lokal buddy?'
