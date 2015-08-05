@@ -1,3 +1,3 @@
 parameters:
-    odiseo_project.model.user: Odiseo\Bundle\UserBundle\Entity\User
+    odiseo_project.model.user: Odiseo\Bundle\UserBundle\Model\User
     odiseo_project.repository.user: Odiseo\Bundle\UserBundle\Repository\UserRepository

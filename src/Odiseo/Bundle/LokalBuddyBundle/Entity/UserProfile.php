@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use DateTime;
 use Symfony\Component\HttpFoundation\File\File;
-use Odiseo\Bundle\UserBundle\Entity\UserProfile as BaseUserProfile;
+use Odiseo\Bundle\UserBundle\Model\UserProfile as BaseUserProfile;
 
 /**
  * UserProfile

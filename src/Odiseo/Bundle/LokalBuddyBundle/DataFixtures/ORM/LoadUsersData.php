@@ -14,9 +14,9 @@ namespace Odiseo\Bundle\LokalBuddyBundle\DataFixtures\ORM;
 use Doctrine\Common\Persistence\ObjectManager;
 use Sylius\Bundle\FixturesBundle\DataFixtures\DataFixture;
 use Sylius\Component\Core\Model\UserInterface;
-use Odiseo\Bundle\UserBundle\Entity\User;
+use Odiseo\Bundle\UserBundle\Model\User;
 use Symfony\Component\Finder\Finder;
-use Odiseo\Bundle\UserBundle\Entity\UserProfile;
+use Odiseo\Bundle\UserBundle\Model\UserProfile;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**

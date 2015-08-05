@@ -15,11 +15,11 @@ class ProfileFormType extends BaseProfileFormType
     	
         $builder
             ->add('paypalId', 'text', array(
-            		'label' => 'PayPal ID',
+            		'label' => 'odiseo.product.paypal',
             		'required' => true
             ))
             ->add('passportFile', 'file', array(
-            	'label' => 'Passport',
+            	'label' => 'odiseo.product.passport',
             	'required' => true
             ))
         ;
