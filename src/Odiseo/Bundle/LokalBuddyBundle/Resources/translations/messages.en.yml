@@ -33,6 +33,7 @@ odiseo:
         status: Status of Experience
         add_new: Add new experience
         request: Request Experience
+        sign_up: Sign up
 
     ecommerce:
         wishlist: Wishlist

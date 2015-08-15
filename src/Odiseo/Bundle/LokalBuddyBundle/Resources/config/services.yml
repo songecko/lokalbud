@@ -5,7 +5,7 @@ parameters:
     sylius.checkout_form.payment.class: Odiseo\Bundle\LokalBuddyBundle\Form\Type\Checkout\PaymentStepType
     sylius.checkout_form.addressing.class: Odiseo\Bundle\EcommerceBundle\Form\Type\Checkout\AddressingStepType
 #    odiseo_user.model.user_profile.class: Odiseo\Bundle\LokalBuddyBundle\Entity\UserProfile
-    odiseo_user.profile.form.type.class: Odiseo\Bundle\LokalBuddyBundle\Form\Type\ProfileFormType
+    odiseo_user.form.type.user_profile.class: Odiseo\Bundle\LokalBuddyBundle\Form\Type\ProfileFormType
     odiseo_product.form.type.product.class: Odiseo\Bundle\LokalBuddyBundle\Form\Type\ProductLokalFormType
 
 
