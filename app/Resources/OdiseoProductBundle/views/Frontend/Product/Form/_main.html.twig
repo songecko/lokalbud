@@ -1,0 +1,12 @@
+{% form_theme form 'SyliusWebBundle:Backend:forms.html.twig' %}
+
+<div class="tab-pane active" id="main">
+    {{ form_row(form.translations, {'attr': {'class': 'input-lg'}}) }}
+    {% for taxonomyForm in form.taxons %}
+    {{ form_row(taxonomyForm) }}
+	{% endfor %}
+	{{ form_row(form.maxQuantity) }}
+	{{ form_row(form.masterVariant.price) }}
+    {{ form_row(form.includes) }}
+    {{ form_row(form.restrictions) }}
+</div>

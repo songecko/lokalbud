@@ -1,0 +1,29 @@
+{% form_theme form 'SyliusWebBundle:Backend:forms.html.twig' %}
+        					
+{% macro imagePrototype() %}
+<div>
+	<label class="required">__name__</label>
+	<div id="odiseo_product_masterVariant_images___name__">
+		<div>
+			<label for="odiseo_product_masterVariant_images___name___file" class=" required">File</label>
+			<input type="file" id="odiseo_product_masterVariant_images___name___file" name="odiseo_product[masterVariant][images][__name__][file]" required="required" maxlength="255" />
+		</div>
+	</div>
+</div>
+{% endmacro %}
+
+<div class="tab-pane" id="images">
+	<ul class="images" data-prototype="{{ _self.imagePrototype()|e }}">
+		{% for imageForm in form.masterVariant.images %}
+		{% if imageForm.vars.value.path|length > 0 %}
+		<li class="clearfix">
+			<div>
+				<a href="{{ imageForm.vars.value.path|imagine_filter('sylius_large') }}" target="_blank">
+					<img class="img-rounded" src="{{ imageForm.vars.value.path|imagine_filter('sylius_small') }}" alt="" />
+				</a>
+			</div>
+		</li>
+		{% endif %}
+		{% endfor %}
+	</ul>
+</div>

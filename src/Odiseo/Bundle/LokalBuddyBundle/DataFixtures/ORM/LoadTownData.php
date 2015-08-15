@@ -5,12 +5,12 @@ namespace Odiseo\Bundle\LokalBuddyBundle\DataFixtures\ORM;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Finder\Finder;
 use Odiseo\Bundle\ProjectBundle\DataFixtures\ORM\DataFixture;
-use Odiseo\Bundle\OrderBundle\Entity\Order;
-use Odiseo\Bundle\EcommerceBundle\Entity\Town;
+use Odiseo\Bundle\OrderBundle\Model\Order;
+use Odiseo\Bundle\RegionBundle\Model\Town;
 
 /**
  * Para cargar los datos:
- * php app/console doctrine:fixtures:load --fixtures=src/Odiseo/Bundle/LokalBuddyBundle/DataFixtures/ORM
+ * php app/console doctrine:fixtures:load --fixtures=src/Odiseo/Bundle/AdsCandyBundle/DataFixtures/ORM
  * @author Leandro
  */
 class LoadTownData extends DataFixture
@@ -42,15 +42,20 @@ class LoadTownData extends DataFixture
     		)
     	);
     	
+    	$i = 0 ;
     	foreach ($regionTowns as $regionName => $towns) 
     	{
+    		
     		foreach ($towns as $townName)
     		{
     			$town = new Town();
     			$town->setName($townName);
     			$town->setRegion($this->getReference($regionName));
+    			$town->setLatitud(18.3154292 + $i/1000);
+    			$town->setLongitud(-65.9751463,17 + $i/1000);
     			$this->addReference('Odiseo.Town.'.$townName, $town);
     			$manager->persist($town);
+    			$i++;
     		}
     		
     		$manager->flush();

@@ -16,9 +16,3 @@
 [submodule "src/Odiseo/Bundle/RegionBundle"]
 	path = src/Odiseo/Bundle/RegionBundle
 	url = https://github.com/odiseoteam/OdiseoRegionBundle.git
-[submodule "src/Odiseo/Bundle/MessagingBundle"]
-	path = src/Odiseo/Bundle/MessagingBundle
-	url = https://github.com/odiseoteam/OdiseoMessagingBundle.git
-[submodule "src/Odiseo/Bundle/CoreBundle"]
-	path = src/Odiseo/Bundle/CoreBundle
-	url = https://github.com/odiseoteam/OdiseoCoreBundle.git

@@ -23,6 +23,20 @@ odiseo:
         tour_guide: 'Tour guide'
         what_is: 'What is LokalBuddy'
         wishlist: Wishlist
+        
+        form:
+           maxQuantity: Max. nr. of guest
 
     user:
         wishlist: Wishlist
+        your: Your Experience
+        status: Status of Experience
+        add_new: Add new experience
+        request: Request Experience
+
+    ecommerce:
+        wishlist: Wishlist
+        your: Your Experience
+        status: Status of Experience
+        add_new: Add new experience
+        request: Request Experience

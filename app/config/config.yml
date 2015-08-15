@@ -4,6 +4,7 @@ imports:
     - { resource: odiseo.yml }
     - { resource: admin.yml }
     - { resource: '@SyliusCoreBundle/Resources/config/app/main.yml' }
+    - { resource: '@OdiseoEcommerceBundle/Resources/config/app/main.yml' }    
 
 framework:
     translator:      { fallback: '%sylius.locale%' }
@@ -87,30 +88,20 @@ swiftmailer:
     spool:     { type: memory }
 
 #Sylius configuration
+odiseo_user:
+   classes:
+        user_profile: 
+            model: Odiseo\Bundle\LokalBuddyBundle\Entity\UserProfile
+
 sylius_product:
-    driver: doctrine/orm
     classes:
         product:
-            model: Odiseo\Bundle\ProductBundle\Entity\Product
-            repository: Odiseo\Bundle\ProductBundle\Repository\ProductRepository
+            model: Odiseo\Bundle\LokalBuddyBundle\Entity\Product
 
-sylius_order:
-    driver: doctrine/orm
-    classes:
-        order:
-            model: Odiseo\Bundle\OrderBundle\Entity\Order
-            repository: Odiseo\Bundle\OrderBundle\Repository\OrderRepository
-            
-sylius_resource:
-    resources:
-        odiseo.review:
-            driver: doctrine/orm
-            object_manager: default
-            templates: 	OdiseoProductBundle:Frontend/Review
-            classes:
-                model: Odiseo\Bundle\ProductBundle\Entity\ProductReview
-                controller: Odiseo\Bundle\ProductBundle\Controller\Frontend\ReviewController
-                repository: Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository
+odiseo_product:
+   classes:
+        product: 
+            model: Odiseo\Bundle\LokalBuddyBundle\Entity\Product
 
 sylius_rbac:
      permissions:
@@ -201,12 +192,7 @@ stfalcon_tinymce:
         
 fos_user:
     firewall_name: main
-    registration:
+    registration: 
         form:
             type: fos_user_registration
             validation_groups: [RegistrationOdiseoUser]
-            
-fos_message:
-    db_driver: orm
-    thread_class: Odiseo\Bundle\EcommerceBundle\Entity\Thread
-    message_class: Odiseo\Bundle\EcommerceBundle\Entity\Message

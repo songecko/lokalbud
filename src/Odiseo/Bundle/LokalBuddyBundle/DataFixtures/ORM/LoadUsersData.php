@@ -16,7 +16,7 @@ use Sylius\Bundle\FixturesBundle\DataFixtures\DataFixture;
 use Sylius\Component\Core\Model\UserInterface;
 use Odiseo\Bundle\UserBundle\Model\User;
 use Symfony\Component\Finder\Finder;
-use Odiseo\Bundle\UserBundle\Model\UserProfile;
+use Odiseo\Bundle\LokalBuddyBundle\Entity\UserProfile;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**

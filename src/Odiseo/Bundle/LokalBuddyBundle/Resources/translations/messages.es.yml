@@ -24,6 +24,9 @@ odiseo:
         tour_guide: 'Guia turística'
         what_is: 'Que es LokalBuddy'
         wishlist: 'Wishlist'
+        
+        form:
+           maxQuantity: Nro. Max. de huespedes
 
     user:
         wishlist: Wishlist

@@ -117,7 +117,7 @@ class BackendMenuBuilder extends BaseBackendMenuBuilder
     				'route' => 'sylius_backend_shipment_index',
     				'labelAttributes' => array('icon' => 'glyphicon glyphicon-plane'),
     		))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.shipments', $section)));
-    	}
+    	}*/
     	if ($this->authorizationChecker->isGranted('sylius.payment.index')) {
     		$child->addChild('payments', array(
     				'route' => 'sylius_backend_payment_index',
@@ -129,7 +129,7 @@ class BackendMenuBuilder extends BaseBackendMenuBuilder
     				'route' => 'sylius_backend_report_index',
     				'labelAttributes' => array('icon' => 'glyphicon glyphicon-stats'),
     		))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.report', $section)));
-    	}*/
+    	}
     
     	if (!$child->hasChildren()) {
     		$menu->removeChild('sales');

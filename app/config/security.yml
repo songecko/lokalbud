@@ -55,7 +55,7 @@ security:
                 login_path:   /login
                 failure_path: /login
                 oauth_user_provider:
-                    service: odiseo.oauth.user_provider
+                    service: odiseo_user.oauth.user_provider
             logout: true
             anonymous: true
 
@@ -73,6 +73,7 @@ security:
         - { path: ^/wishlist.*, role: ROLE_USER }
         - { path: "/account.*", role: ROLE_USER }
         - { path: ^/review.*, role: ROLE_USER }
+        - { path: ^/messaging.*, role: ROLE_USER }
         
         - { path: ^/admin/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/login-check, role: IS_AUTHENTICATED_ANONYMOUSLY }

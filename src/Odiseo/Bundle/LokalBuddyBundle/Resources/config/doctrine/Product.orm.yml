@@ -1,0 +1,8 @@
+Odiseo\Bundle\LokalBuddyBundle\Entity\Product:
+    type: entity
+    table: odiseo_product
+    fields:        
+        maxQuantity:
+            column: max_quantity
+            type: integer
+            nullable: true
