@@ -24,14 +24,14 @@ odiseo:
         tour_guide: 'Guia turística'
         what_is: 'Que es LokalBuddy'
         wishlist: 'Wishlist'
-        passport: Passport
-        paypal: PayPal Id
         
         form:
            maxQuantity: Nro. Max. de huespedes
 
     user:
         wishlist: Wishlist
+        passport: Passport
+        paypal: PayPal Id
 email:
     customer_welcome:
         subject: "Bienvenido a Lokal Buddy!"

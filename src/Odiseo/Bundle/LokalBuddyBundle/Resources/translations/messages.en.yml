@@ -23,8 +23,6 @@ odiseo:
         tour_guide: 'Tour guide'
         what_is: 'What is LokalBuddy'
         wishlist: Wishlist
-        passport: Passport
-        paypal: PayPal Id
         
         form:
            maxQuantity: Max. nr. of guest
@@ -36,6 +34,8 @@ odiseo:
         add_new: Add new experience
         request: Request Experience
         sign_up: Sign up
+        passport: Passport
+        paypal: PayPal Id
 
     ecommerce:
         wishlist: Wishlist
