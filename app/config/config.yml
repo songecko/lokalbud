@@ -88,11 +88,6 @@ swiftmailer:
     spool:     { type: memory }
 
 #Sylius configuration
-odiseo_user:
-   classes:
-        user_profile: 
-            model: Odiseo\Bundle\LokalBuddyBundle\Entity\UserProfile
-
 sylius_product:
     classes:
         product:
@@ -102,6 +97,11 @@ odiseo_product:
    classes:
         product: 
             model: Odiseo\Bundle\LokalBuddyBundle\Entity\Product
+
+odiseo_user:
+   classes:
+        user_profile:
+            model: Odiseo\Bundle\LokalBuddyBundle\Entity\UserProfile
 
 sylius_rbac:
      permissions:
